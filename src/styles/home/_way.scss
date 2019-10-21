@@ -1,0 +1,55 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.way {
+
+	@extend %parallax;
+	margin: 0 auto;
+	padding: 2em 0;
+
+
+	+ * {
+		margin-top: 0;
+	}
+
+
+	.entry {
+		color: #fff;
+	}
+
+
+	.entry:last-child {
+		margin-bottom: 0;
+	}
+
+
+	&__entry {
+		.title {
+			text-align: center;
+			color: #fff;
+		}
+		h3, h4, p {
+			color: #fff;
+			margin: 0;
+		}
+		.content {
+			font-size: 85%;
+		}
+		.permalink {
+			margin-top: 1em;
+		}
+	}
+
+
+}

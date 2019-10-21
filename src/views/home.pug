@@ -1,0 +1,15 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'front-page';
+	- page.title = 'Главная';
+
+
+block main
+	include home/_jumbotron
+	include home/_aboutme
+	include home/_services
+	include home/_way
+	include home/_skills
+	include home/_portfolio

@@ -1,0 +1,24 @@
+//
+//
+//  Шапка сайта
+//
+//
+
+
+.header {
+	
+	position: relative;
+	z-index: 100;
+	color: #fff;
+	background-color: $brand-primary;
+	padding: 0.5em;
+
+	.burger {
+		
+	}
+
+	.contacts {
+		text-align: right;
+	}
+
+}

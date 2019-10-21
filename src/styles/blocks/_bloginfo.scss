@@ -1,0 +1,34 @@
+
+
+
+
+
+
+
+
+
+
+.bloginfo {
+
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	.logo {
+		max-width: 3em;
+		max-height: 3em;
+		margin-right: 1em;
+	}
+
+	.name {
+		font-weight: bold;
+		text-transform: lowercase;
+		color: #fff;
+		font-size: 120%;
+	}
+
+}

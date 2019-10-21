@@ -1,0 +1,27 @@
+//-
+	Секция главной страницы
+	"Портфолио"
+
+
+mixin portfolio_entry( args )
+	a.portfolio__entry.entry( href="#" )
+		img.thumbnail( src="#", data-lazy=args.thumbnail, alt=args.title )
+		.overlay
+			h3.title #{args.title}
+			ul.categories
+				li #{args.category}
+				li #{args.category}
+			p.excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam reprehenderit, tenetur libero quae maiores recusandae. Deserunt excepturi nemo aliquam repudiandae nulla explicabo assumenda minus earum animi. Impedit id, maiores fuga.
+
+
+
+section.section.portfolio#portfolio: .container
+	h2 Мои работы
+	.slider#portfolio-slider
+		+portfolio_entry( { title: 'Абитуриент', category: 'Плагины', thumbnail: src.img+'portfolio/01.jpg' } )
+		+portfolio_entry( { title: 'Абитуриент', category: 'Темы', thumbnail: src.img+'portfolio/02.jpg' } )
+		+portfolio_entry( { title: 'ПГТУ', category: 'Сайт', thumbnail: src.img+'portfolio/03.jpg' } )
+		+portfolio_entry( { title: 'Контакты', category: 'Плагин', thumbnail: src.img+'portfolio/04.jpg' } )
+		+portfolio_entry( { title: 'DumDJ', category: 'Вёрстка', thumbnail: src.img+'portfolio/05.jpg' } )
+	button.slider-arrow.arrow-prev#portfolio-slider-prev: span.sr-only Предыдущий слайд
+	button.slider-arrow.arrow-next#portfolio-slider-next: span.sr-only Следующий слайд

@@ -1,0 +1,36 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+.aside {
+	
+	padding: 2em 0;
+
+	.widget {
+	
+		margin: 1em auto;
+
+		&__title {
+			margin-bottom: .5em;
+			& + p { margin-top: 0; }
+			&::after {
+				content: '';
+				display: block;
+				width: 30px;
+				height: 2px;
+				background-color: $brand-primary;
+			}
+		}
+
+	}
+
+}

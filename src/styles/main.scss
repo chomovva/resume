@@ -1,0 +1,53 @@
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/flex";
+@import "helpers/mixins";
+@import "helpers/extends.button";
+@import "helpers/extends.icons";
+@import "helpers/extends";
+
+
+@import "base/normalize";
+@import "base/type";
+@import "base/wrapper";
+@import "base/flexboxgrid";
+
+
+@import "widgets/tagcloud";
+@import "widgets/calendar";
+
+
+
+@import "blocks/nav";
+@import "blocks/aside";
+@import "blocks/pager";
+@import "blocks/bloginfo";
+@import "blocks/progress";
+@import "blocks/section";
+@import "blocks/socials";
+@import "blocks/contacts";       // список контактов ( используется в шапке и повале )
+@import "blocks/burger";
+@import "blocks/breadcrumbs";
+@import "blocks/pagination";
+@import "blocks/form";
+@import "blocks/slider";
+@import "blocks/buttons";
+@import "blocks/breadcrumbs";    // "хлебные крошки"
+@import "blocks/to-top-button";  // кнопка наверх
+@import "blocks/header";         // Шапка сайта
+@import "blocks/footer";         // Подвал сайта
+
+
+
+@import "home/jumbotron";      // первый экран
+@import "home/aboutme";        // секция главной страницы 2
+@import "home/services";       // секция главной страницы 3
+@import "home/skills";         // секция главной страницы 4
+@import "home/way";            // секция главной страницы 5
+@import "home/portfolio";      // секиця главной страницы 6
+
+
+
+@import "pages/home";            // главная сраница
+@import "pages/archive";         // страница блога / архива
+@import "pages/error404";        // страница ошибки 404

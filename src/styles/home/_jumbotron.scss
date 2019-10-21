@@ -1,0 +1,44 @@
+//
+//
+//	Главная страница
+//  первый экран
+//
+//
+
+
+
+
+.jumbotron {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	padding: 10em 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	box-sizing: border-box;
+
+	+ * {
+		margin-top: 100vh;
+	}
+
+	.bg {
+		@extend %parallax;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	h1 {
+		color: #fff;
+		text-align: right;
+	}
+
+}

@@ -1,0 +1,36 @@
+//-
+	Секция главной страницы
+
+
+
+
+
+mixin way_entry( args )
+	section.section.way__entry.entry: .container: .row.center-xs: .col-xs-12.col-sm-10.col-md-9.col-lg-8
+		h2.title #{args.title}
+		.content
+			block
+		p.text-center: a( href="#" ).btn.btn-primary.permalink Подробней
+
+
+
+
+mixin way_step( args )
+	tr
+		td( style="width: 30%;" )
+			h3 #{args.title}
+			p #[time #{args.start}] - #[time #{args.end}]
+		td
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut unde consequatur nisi! Enim iste, animi impedit exercitationem asperiores libero sapiente laboriosam, quos suscipit, omnis laudantium, deserunt nobis eum nulla consectetur.
+
+
+
+.way.lazy#way( data-src=src.img+'way.jpg' )
+	+way_entry( { title: 'Моё образование' } )
+		table
+			+way_step( { title: 'БГПУ', start: '2012', end: '2014' } )
+			+way_step( { title: 'самообразование', start: '2010', end: '~' } )
+	+way_entry( { title: 'Опыт работы' } )
+		table
+			+way_step( { title: 'ПГТУ', start: '2017', end: '~' } )
+			+way_step( { title: 'МПЛБ №2', start: '2015', end: '2017' } )

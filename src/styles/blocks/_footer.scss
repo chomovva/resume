@@ -1,0 +1,46 @@
+//
+//
+//	ПОдвал сайта
+//
+//
+
+
+
+.footer {
+
+
+	@extend %parallax;
+
+
+	.aside {
+		color: #fff;
+	}
+
+	.aside .widget .title {
+		color: #fff;
+	}
+
+	.aside .widget .title:before {
+		background-color: #fff;
+	}
+
+
+	.bloginfo {
+		margin: 2em auto;
+		text-align: center;
+		@include min-width( $screen-sm ) {
+			text-align: left;
+		}
+	}
+
+
+	.contacts {
+		margin: 2em auto;
+		text-align: center;
+		@include min-width( $screen-sm ) {
+			text-align: right;
+		}
+	}
+
+
+}

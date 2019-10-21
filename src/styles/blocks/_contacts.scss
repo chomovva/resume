@@ -1,0 +1,50 @@
+
+
+
+
+
+
+
+
+
+
+
+.contacts {
+
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		display: inline-block;
+		margin: 0 0.5em;
+	}
+
+	a {
+		@extend %xy-center;
+		width: 2em;
+		height: 2em;
+		background-color: #fff;
+		box-shadow: 0 0 1em rgba( 0, 0, 0, 0.2 );
+		border-radius: 50%;
+	}
+
+	a:hover:before {
+		opacity: 1;
+	}
+
+	a:before {
+		@extend %background-icon;
+		content: '';
+		display: block;
+		width: 1em;
+		height: 1em;
+		opacity: .5;
+		transition: opacity 200ms;
+	}
+
+	.viber:before { @extend %icon-viber; }
+	.telegram:before { @extend %icon-telegram; }
+	.whatsapp:before { @extend %icon-whatsapp; }
+	.email:before { @extend %icon-email; }
+
+}

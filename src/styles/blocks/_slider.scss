@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+
+
+
+.slider {
+	position: relative;
+}
+
+
+
+
+
+.slider-arrow,
+.slick-arrow {
+	@extend %xy-center;
+	display: inline-flex;
+	bottom: .5em;
+	background-color: #000;
+	border: none;
+	padding: 0;
+	margin: 0;
+	width: 2em;
+	height: 2em;
+	cursor: pointer;
+	&:before {
+		@extend %background-icon;
+		@extend %icon-arrow;
+		content: '';
+		width: 1em;
+		height: 1em;
+		transform-origin: center center;
+	}
+}
+
+
+
+
+.slick-prev,
+.arrow-prev {
+	&::before { transform: rotate( 180deg ); }
+}
+
+
+
+.slick-next,
+.arrow-next {
+
+}
+
+
+
+
+
+.slick-dots {
+	position: absolute;
+}

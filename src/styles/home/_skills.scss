@@ -1,0 +1,44 @@
+//
+//
+//
+//
+
+
+
+
+.skills {
+
+	.list {
+		margin: 1em auto;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	&__list li { margin: .5em auto; }
+
+
+	.experience {
+		margin: 2em auto;
+		display: block;
+	}
+
+
+	&__experience {
+		* {
+			display: inline-block;
+			vertical-align: baseline;
+		}
+		// .label {
+		// 	font-size: 85%;
+		// }
+		.value {
+			font-size: 5em;
+			line-height: 1em;
+			font-weight: bold;
+			color: $titles-color;
+			margin-right: .1em;
+		}
+	}
+
+
+}

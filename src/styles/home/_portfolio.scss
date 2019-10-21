@@ -1,0 +1,123 @@
+//
+// Главная страница
+// секция "Портфолио"
+//
+
+
+
+
+
+
+
+.portfolio {
+
+	background-color: lighten( $brand-primary, 30% );
+	margin: 0;
+
+	.entry {
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		position: relative;
+		margin: 1em;
+		max-width: 300px;
+		opacity: 0;
+		transition: opacity .2s;
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+		&:first-of-type {
+			margin-left: 0;
+		}
+	}
+
+	.entry:hover {
+		.overlay:before {
+			opacity: 1;
+			transform: scale( 1 );
+		}
+		.categories {
+			background-color: rgba( 0, 0, 0, .5 );
+		}
+		.thumbnail {
+			filter: grayscale( 0 );
+		}
+		.excerpt {
+			opacity: 1;
+		}
+	}
+
+
+	&__entry {
+		.thumbnail {
+			display: block;
+			width: 100%;
+			height: auto;
+			filter: grayscale( 60% );
+			transition: filter .2s;
+		}
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 2em;
+		}
+		.overlay::before {
+			content: '';
+			position: absolute;
+			top: 1em;
+			left: 1em;
+			right: 1em;
+			bottom: 1em;
+			display: block;
+			background-color: transparentize( $brand-primary, .2 );
+			transition: transform .2s, opacity .2s;
+			transform-origin: center center;
+			opacity: 0;
+			transform: scale( .5 );
+			z-index: 0;
+		}
+		.title {
+			color: #fff;
+			margin: 0;
+			position: relative;
+			z-index: 1;
+			text-shadow: .1em .1em .1em rgba( 0, 0, 0, .6 );
+		}
+		.categories {
+			display: inline-block;
+			list-style-type: none;
+			padding: .2em .5em;
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-left: -.5em;
+			font-size: 75%;
+			position: relative;
+			z-index: 1;
+			text-transform: lowercase;
+		}
+		.categories li {
+			display: inline;
+		}
+		.categories li + li:before {
+			content: ', ';
+		}
+		.excerpt {
+			position: relative;
+			font-size: 75%;
+			line-height: 1.5em;
+			margin: .5em 0;
+			overflow: hidden;
+			max-height: 4.5em;
+			text-overflow: ellipsis;
+			opacity: 0;
+			transition: opacity .2s;
+			z-index: 1;
+			text-shadow: .1em .1em .1em rgba( 0, 0, 0, .6 );
+		}
+	}
+
+}

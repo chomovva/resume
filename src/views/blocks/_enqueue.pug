@@ -1,0 +1,61 @@
+//-
+	Подключение скриптов и стилей
+
+
+link( href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext", rel="stylesheet" )
+
+
+script( src=src.js+'jquery.js' )
+
+
+link( rel="stylesheet", href=src.css+'main.css' )
+script( src=src.js+'main.js' )
+
+
+link( rel="stylesheet", href=src.css+'slick.css' )
+script( src=src.js+'slick.js' )
+script.
+	jQuery( '#portfolio-slider' ).slick( {
+		lazyLoad: 'ondemand',
+		dots: false,
+		arrows: true,
+		infinite: false,
+		speed: 300,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		prevArrow: '#portfolio-slider-prev',
+		nextArrow: '#portfolio-slider-next',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		],
+	} )
+	.on( 'lazyLoaded', function ( event, slick, image, imageSource ) {
+		jQuery( image ).closest( '.entry' ).css( 'opacity', '1' );
+	} );
+
+
+script( src=src.js+'lazyload.js' )
+script.
+	jQuery( ".lazy" ).lazy();
+
+
+link( rel="stylesheet", href=src.css+'fancybox.css' )
+script( src=src.js+'fancybox.js' )
+script.
+	jQuery( '.fancybox' ).fancybox();
+
+
+script( src=src.js+"superembed.js" )

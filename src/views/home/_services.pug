@@ -1,0 +1,33 @@
+extend ../layout/_section
+
+
+
+//-
+	Секция главной страницы
+	"Список услуг"
+
+block variables
+	- section = { name: 'services' };
+
+
+
+block column_left
+	h2 Чем я занимаюсь
+	p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+block column_right
+	ol.services__list.list
+		li: strong Вёрстка
+		li: strong Темы CSM WordPress
+		li: strong Плагины CSM WordPress
+		li: strong CodeIgniter
+		li: strong Сайт визитка
+		li: strong LandingPage
+
+
+block basement
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			a.btn.btn-primary( href="#" ) Связаться со мной

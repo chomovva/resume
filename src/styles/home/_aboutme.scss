@@ -1,0 +1,30 @@
+//
+// Главная страница
+// Секция "Обо мне"
+//
+
+
+
+
+.aboutme {
+
+	.foto {
+		position: relative;
+		margin-top: -50%;
+		margin-bottom: 1em;
+	}
+
+	&__foto {
+		img {
+			display: block;
+		}
+		.socials {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			margin: 0;
+			flex-direction: column;
+		}
+	}
+
+}

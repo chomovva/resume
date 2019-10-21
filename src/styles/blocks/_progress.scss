@@ -1,0 +1,29 @@
+//
+//
+//
+//
+
+
+
+
+
+
+
+.progress {
+
+
+	position: relative;
+	display: block;
+	background-color: lighten( $brand-default, 40% );
+	height: .5em;
+
+	.progress-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		background-color: $brand-primary;
+	}
+
+
+}
