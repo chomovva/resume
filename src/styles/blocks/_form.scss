@@ -17,18 +17,20 @@ form {
 	label {
 		display: block;
 		font-weight: bold;
-		margin-top: 0.5em;
+		margin-top: .5em;
 	}
 
 	textarea,
 	input[ type="text" ],
 	input[ type="email" ],
 	input[ type="password" ] {
-		@extend %text-control;
+		border-radius: $border-radius;
+		background-color: #fff;
+		padding: .5em 1.5em;
 		display: block;
-		border: 1px solid $brand-success;
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+		border: 1px solid $brand-primary;
+		margin-top: .5em;
+		margin-bottom: .5em;
 		width: 100%;
 		box-sizing: border-box;
 		outline: none;
@@ -41,7 +43,16 @@ form {
 
 
 	[ type="submit" ] {
+		@extend %button;
+		@extend %button-primary;
+	}
 
+	[ type="submit" ]::after {
+		@extend %icon;
+		@extend %background-icon;
+		@extend %icon-submit;
+		content: '';
+		margin-left: .5em;
 	}
 
 

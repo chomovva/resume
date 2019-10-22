@@ -10,12 +10,50 @@
 
 
 	.entry {
-		
+		margin: 1em auto;
 	}
 
 
 	&__entry {
 		
+		.thumbnail {
+			display: block;
+			margin: 1em auto;
+			position: relative;
+			max-width: 320px;
+		}
+
+		.thumbnail:hover {
+			text-decoration: none;
+		}
+
+		.thumbnail img {
+			overflow: hidden;
+			display: block;
+			border-radius: $border-radius;
+		}
+
+		.publish {
+			font-size: 85%;
+			overflow: hidden;
+			display: block;
+			border-radius: $border-radius;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: .5em 1em;
+			color: #fff;
+			background-color: #fff;
+			margin-left: 2em;
+			margin-bottom: -1em;
+			background-color: $brand-warning;
+		}
+
+		.categories {
+			font-size: 75%;
+			margin: 0;
+		}
+
 	}
 
 	

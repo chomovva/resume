@@ -2,10 +2,9 @@
 	Заголовок страницы для постов и постоянных страниц
 
 
-.pageheader
-	a.fancybox.thumbnail( href=src.img+'fotos/full-05.jpg' ): img.lazy.wp-post-thumbnail( src="#", data-src=src.img+'fotos/medium-05.jpg', alt=page.title )
-	h1.title #{page.title}
-p.lead #{page.excerpt}
-//- .jssocials-wrap
-//- 	.jssocials-heading Поделиться:
-//- 	.jssocials
+.pageheader: .row.center-xs.middle-xs
+	.col-xs-8.col-sm-4.col-md-4.col-lg-4
+		a.fancybox.thumbnail( href=src.img+'portfolio/05.jpg' ): img.lazy.wp-post-thumbnail( src="#", data-src=src.img+'portfolio/05.jpg', alt=page.title )
+	.col-xs.col-sm.col-md.col-lg
+		h1.title #{page.title}
+		p.lead #{page.excerpt}

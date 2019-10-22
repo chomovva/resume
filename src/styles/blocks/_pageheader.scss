@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pageheader {
+
+	margin: 1em 0;
+	
+	.title {
+		margin: 0;
+	}
+
+	.excertp {
+		margin: 0;
+	}
+
+	.thumbnail {
+		display: block;
+	}
+
+	.thumbnail img {
+		display: block;
+		width: 100%;
+		border-radius: $border-radius;
+		overflow: hidden;
+	}
+
+}

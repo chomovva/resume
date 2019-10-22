@@ -25,13 +25,30 @@ $brand-primary:         #3598db;
 $brand-success:         #FFC932;
 $brand-warning:         #FF6632;
 
+
+
 $body-color: #ffffff;
 $titles-color: #333333;
 $text-color: $brand-default;
 $link-color: $titles-color;
 
+
+
 $font-size-base:		14px;
-$line-height-base:	28em / 14em;
+$line-height-base:	24em / 14em;
 $line-height-computed: floor( $font-size-base * $line-height-base );
 
+
+
 $font-family-base: 'Roboto', sans-serif;
+
+
+
+$border-radius: 5px;
+
+
+
+$brand-facebook: #1877f2;
+$brand-twitter: #64a8f2;
+$brand-linkedin: #00659b;
+$brand-email: #eee;
