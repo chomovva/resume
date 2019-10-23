@@ -27,9 +27,9 @@
 
 	.bloginfo {
 		margin: 2em auto;
-		text-align: center;
-		@include min-width( $screen-sm ) {
-			text-align: left;
+		justify-content: center;
+		@include min-width( $screen-md ) {
+			justify-content: flex-start;
 		}
 	}
 
@@ -37,7 +37,7 @@
 	.contacts {
 		margin: 2em auto;
 		text-align: center;
-		@include min-width( $screen-sm ) {
+		@include min-width( $screen-md ) {
 			text-align: right;
 		}
 	}

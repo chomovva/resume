@@ -5,7 +5,7 @@
 
 mixin portfolio_entry( args )
 	a.portfolio__entry.entry( href="#" )
-		img.thumbnail( src="#", data-lazy=args.thumbnail, alt=args.title )
+		img.wp-post-thumbnail( src="#", data-lazy=args.thumbnail, alt=args.title )
 		.overlay
 			h3.title #{args.title}
 			ul.categories

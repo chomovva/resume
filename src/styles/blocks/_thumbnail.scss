@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.thumbnail {
+
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	position: relative;
+	max-width: 300px;
+
+	&:hover { text-decoration: none; }
+
+	.wp-post-thumbnail {
+		overflow: hidden;
+		display: block;
+		width: 100%;
+		border-radius: $border-radius;
+	}
+
+	.publish {
+		@extend %icon-thumbnail-publish;
+		font-size: 85%;
+		overflow: hidden;
+		display: block;
+		border-radius: $border-radius;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 0 1em 0 2em;
+		color: #fff;
+		background-color: #fff;
+		background-color: $brand-warning;
+		background-size: 1em 1em;
+		background-position: .5em center;
+		background-repeat: no-repeat;
+	}
+
+}

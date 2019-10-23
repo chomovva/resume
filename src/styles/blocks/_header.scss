@@ -13,12 +13,20 @@
 	background-color: $brand-primary;
 	padding: 0.5em;
 
-	.burger {
-		
+	.bloginfo {
+		margin-left: auto;
+		margin-right: auto;
+		justify-content: center;
+		@include min-width( $screen-sm ) {
+			justify-content: flex-start;
+		}
 	}
 
 	.contacts {
-		text-align: right;
+		text-align: left;
+		@include min-width( $screen-md ) {
+			text-align: right;
+		}
 	}
 
 }

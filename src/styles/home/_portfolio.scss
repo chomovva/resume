@@ -40,7 +40,7 @@
 		.categories {
 			background-color: rgba( 0, 0, 0, .5 );
 		}
-		.thumbnail {
+		.wp-post-thumbnail {
 			filter: grayscale( 0 );
 		}
 		.excerpt {
@@ -50,7 +50,7 @@
 
 
 	&__entry {
-		.thumbnail {
+		.wp-post-thumbnail {
 			display: block;
 			width: 100%;
 			height: auto;

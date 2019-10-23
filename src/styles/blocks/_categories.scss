@@ -18,7 +18,8 @@
 	}
 
 	a {
-		color: $text-color;
+		color: lighten( $text-color, 20% );
+		transition: color .2s;
 	}
 
 	a:hover {
