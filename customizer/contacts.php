@@ -6,7 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 
-
 $wp_customize->add_section(
     RESUME_SLUG . '_contacts',
     array(
@@ -16,6 +15,7 @@ $wp_customize->add_section(
         'panel'            => RESUME_SLUG
     )
 ); /**/
+
 
 
 foreach ( array(

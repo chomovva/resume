@@ -1,6 +1,6 @@
 			</main>
 			<div class="wrapper__item wrapper__item--footer footer lazy" data-src="<?php echo RESUME_URL; ?>images/footer.jpg">
-				<?php get_sidebar(); ?>
+				<?php if ( is_active_sidebar( 'footer' ) ) get_sidebar(); ?>
 				<footer>
 					<div class="container">
 						<div class="row middle-xs">

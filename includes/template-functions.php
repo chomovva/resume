@@ -2,7 +2,7 @@
 
 
 
-namespace openday;
+namespace resume;
 
 
 
@@ -172,46 +172,17 @@ function the_pager() {
 
 
 
-function the_pageheader() {
-	if ( is_archive() ) {
-		$title = get_the_archive_title();
-		$excerpt = get_the_archive_description();
-		$term = get_queried_object();
-		$thumbnail_id = get_term_meta( $term->term_id, OPENDAY_SLUG . '_thumbnail', true );
-	} else {
-		$title = get_the_title();
-		$excerpt = ( has_excerpt( get_the_ID() ) ) ? get_the_excerpt( get_the_ID() ) : false;
-		$thumbnail_id = ( has_post_thumbnail( get_the_ID() ) ) ? get_post_thumbnail_id( get_the_ID() ) : false;
-	}
-	include get_theme_file_path( 'views/pageheader.php' );
-}
-
-
-
-
-function the_publish_date( $timestamp ) {
+function the_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src' ) {
 	printf(
-		'<time datetime="%1$s" class="publish"><span class="day">%2$s</span> <span class="month">%3$s</span> <span class="year">%4$s</span></time>',
-		date( 'Y-m-d G:i', $timestamp ),
-		date( 'd', $timestamp ),
-		date_i18n( 'M', $timestamp ),
-		date( 'Y', $timestamp )
-	);
-}
-
-
-
-
-function the_thumbnail_image( $post_id, $size = 'thumbnail' ) {
-	printf(
-		'<img class="lazy wp-post-thumbnail" src="#" data-src="%1$s" alt="%2$s"/>',
+		'<img class="lazy wp-post-thumbnail" src="#" data-%3$s="%1$s" alt="%2$s"/>',
 		( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, $size ) : OPENDAY_URL . 'images/thumbnail.png',
 		the_title_attribute( array(
 			'before' => '',
 			'after'  => '',
 			'echo'   => false,
 			'post'   => $post_id,
-		) )
+		) ),
+		$attribute
 	);
 }
 

@@ -13,7 +13,7 @@ foreach ( array(
     'skills',
     'portfolio',
 ) as $key ) {
-    if ( get_theme_mod( OPENDAY_SLUG . "_{$key}_flag", false ) )
+    if ( get_theme_mod( RESUME_SLUG . "_{$key}_flag", false ) )
         get_template_part( "parts/home/$key" );
 }
 

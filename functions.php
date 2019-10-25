@@ -6,12 +6,9 @@
 
 define( 'RESUME_URL', get_template_directory_uri() . '/' );
 define( 'RESUME_DIR', get_template_directory() . '/' );
-define( 'RESUME_TEXTDOMAIN', 'openday' );
+define( 'RESUME_TEXTDOMAIN', 'resume' );
 define( 'RESUME_VERSION', '0.0.1' );
-define( 'RESUME_SLUG', 'openday' );
-define( 'RESUME_ONE_MIN', 60 );
-define( 'RESUME_ONE_HOUR', 60*60 );
-define( 'RESUME_ONE_DAY', 60*60*24 );
+define( 'RESUME_SLUG', 'resume' );
 
 
 
@@ -34,16 +31,22 @@ if ( function_exists( 'pll_register_string' ) ) {
 if ( is_customize_preview() ) {
 	add_action( 'customize_register', function ( $wp_customize ) {
 		$wp_customize->add_panel(
-			resume_SLUG,
+			RESUME_SLUG,
 			array(
 				'capability'      => 'edit_theme_options',
-				'title'           => __( 'Настройки темы "Open Day"', RESUME_TEXTDOMAIN ),
+				'title'           => __( 'Настройки темы "Резюме"', RESUME_TEXTDOMAIN ),
 				'priority'        => 200
 			)
 		);
 		include get_theme_file_path( 'customizer/jumbotron.php' );
+		include get_theme_file_path( 'customizer/aboutme.php' );
+		include get_theme_file_path( 'customizer/services.php' );
+		include get_theme_file_path( 'customizer/advantages.php' );
+		include get_theme_file_path( 'customizer/skills.php' );
+		include get_theme_file_path( 'customizer/experience.php' );
+		include get_theme_file_path( 'customizer/portfolio.php' );
 		include get_theme_file_path( 'customizer/404.php' );
-		include get_theme_file_path( 'customizer/socials.php' );
+		include get_theme_file_path( 'customizer/contacts.php' );
 		include get_theme_file_path( 'customizer/links.php' );
 	} );
 }
@@ -69,7 +72,7 @@ add_action( 'after_setup_theme', 'resume_theme_supports' );
 
 
 function resume_load_textdomain() {
-	load_theme_textdomain( RESUME_TEXTDOMAIN, resume_DIR . 'languages/' );
+	load_theme_textdomain( RESUME_TEXTDOMAIN, RESUME_DIR . 'languages/' );
 }
 add_action( 'after_setup_theme', 'resume_load_textdomain' );
 
@@ -114,3 +117,20 @@ function resume_register_sidebars() {
 	) );
 }
 add_action( 'widgets_init', 'resume_register_sidebars' );
+
+
+
+
+
+/**
+ * Редирект на запись со страницы поиска, если найдена всего одна запись
+ */
+function resume_single_result(){  
+	if( ! is_search() ) return;
+	global $wp_query;
+	if( $wp_query->post_count == 1 ) {  
+		wp_redirect( get_permalink( reset( $wp_query->posts )->ID ) );
+		die;
+	}  
+}
+add_action( 'template_redirect', 'resume_single_result' );

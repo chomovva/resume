@@ -27,4 +27,12 @@
 		}
 	}
 
+	.permalink::before {
+		@extend %icon;
+		@extend %background-icon;
+		@extend %icon-file;
+		content: '';
+		margin-right: 1em;
+	}
+
 }

@@ -13,17 +13,20 @@
 	.list {
 		padding: 0;
 		list-style-type: none;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: flex-start;
+		// display: flex;
+		// flex-direction: row;
+		// flex-wrap: wrap;
+		// justify-content: space-between;
+		// align-items: flex-start;
+		column-count: 2;
+		column-gap: 1em;
+		column-width: 10em;
 		counter-reset: services-items;
 	}
 
 	&__list {
 		li {
-			width: 45%;
+			// width: 45%;
 			counter-increment: services-items;
 			margin-top: .5em;
 			margin-bottom: .5em;

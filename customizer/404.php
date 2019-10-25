@@ -12,27 +12,8 @@ $wp_customize->add_section(
     array(
         'title'            => __( 'Страница ошибки 404', RESUME_TEXTDOMAIN ),
         'priority'         => 10,
-        'description'      => __( 'Якорь #error404', RESUME_TEXTDOMAIN ),
+        'description'      => '',
         'panel'            => RESUME_SLUG
-    )
-); /**/
-
-
-
-$wp_customize->add_setting(
-    RESUME_SLUG . '_error404_flag',
-    array(
-        'default'           => false,
-        'transport'         => 'reset',
-        'sanitize_callback' => 'sanitize_text_field',
-    )
-);
-$wp_customize->add_control(
-    RESUME_SLUG . '_error404_flag',
-    array(
-        'section'           => RESUME_SLUG . '_error404',
-        'label'             => __( 'Использовать секцию', RESUME_TEXTDOMAIN ),
-        'type'              => 'checkbox',
     )
 ); /**/
 

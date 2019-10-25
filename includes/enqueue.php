@@ -56,8 +56,8 @@ add_action( 'wp_enqueue_scripts', 'openday_styles', 10, 0 );
 
 
 function openday_ctitical_styles() {
-	if ( file_exists( OPENDAY_DIR . 'styles/critical.min.css' ) ) {
-		echo '<style type="text/css">' . file_get_contents( OPENDAY_DIR . 'styles/critical.min.css' ) . '</style>';
+	if ( file_exists( RESUME_DIR . 'styles/critical.min.css' ) ) {
+		echo '<style type="text/css">' . file_get_contents( RESUME_DIR . 'styles/critical.min.css' ) . '</style>';
 	}
 }
 add_action( 'wp_head', 'openday_ctitical_styles', 10, 0 );
