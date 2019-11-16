@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 $wp_customize->add_section(
     RESUME_SLUG . '_portfolio',
     array(
-        'title'            => __( 'Новости', RESUME_TEXTDOMAIN ),
+        'title'            => __( 'Портфолио', RESUME_TEXTDOMAIN ),
         'priority'         => 10,
         'description'      => __( 'Секция главной страницы. Якорь #portfolio. Работы (посты) берутся из категории.', RESUME_TEXTDOMAIN ),
         'panel'            => RESUME_SLUG
@@ -60,7 +60,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     RESUME_SLUG . '_portfolio_title',
     array(
-        'default'           => __( 'Новости', RESUME_TEXTDOMAIN ),
+        'default'           => __( 'Портфолио', RESUME_TEXTDOMAIN ),
         'transport'         => 'reset',
         'sanitize_callback' => 'sanitize_text_field',
     )
@@ -77,38 +77,22 @@ $wp_customize->add_control(
 
 
 $wp_customize->add_setting(
-    RESUME_SLUG . '_portfolio_description',
+    RESUME_SLUG . '_portfolio_numberposts',
     array(
-        'default'           => '',
+        'default'           => '10',
         'transport'         => 'reset',
-        'sanitize_callback' => 'sanitize_textarea_field',
+        'sanitize_callback' => 'absint',
     )
 );
 $wp_customize->add_control(
-    RESUME_SLUG . '_portfolio_description',
+    RESUME_SLUG . '_portfolio_numberposts',
     array(
         'section'           => RESUME_SLUG . '_portfolio',
-        'label'             => __( 'Подзаголовок', RESUME_TEXTDOMAIN ),
-        'type'              => 'textarea',
-    )
-); /**/
-
-
-
-
-$wp_customize->add_setting(
-    RESUME_SLUG . '_portfolio_label',
-    array(
-        'default'           => __( 'Смотреть все новости', RESUME_TEXTDOMAIN ),
-        'transport'         => 'reset',
-        'sanitize_callback' => 'sanitize_text_field',
-    )
-);
-$wp_customize->add_control(
-    RESUME_SLUG . '_portfolio_label',
-    array(
-        'section'           => RESUME_SLUG . '_portfolio',
-        'label'             => __( 'Текст кнопки', RESUME_TEXTDOMAIN ),
-        'type'              => 'text',
+        'label'             => __( 'Заголовок', RESUME_TEXTDOMAIN ),
+        'type'              => 'number',
+        'input_attrs'       => array(
+            'min'             => '1',
+            'max'             => '20',
+        ),
     )
 ); /**/

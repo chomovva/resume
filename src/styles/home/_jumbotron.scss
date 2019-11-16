@@ -23,7 +23,7 @@
 	box-sizing: border-box;
 
 	+ * {
-		margin-top: 100vh;
+		margin-top: 100vh !important;
 	}
 
 	.bg {

@@ -119,3 +119,19 @@ jQuery( document ).ready( function () {
 		setCounter();
 	}
 } );
+
+
+
+
+
+
+jQuery( document ).ready( function () {
+	jQuery( '.fancybox' ).fancybox();
+	jQuery( '.wp-block-gallery a' ).fancybox();
+} );
+
+
+
+jQuery( document ).ready( function () {
+	jQuery( '.lazy' ).lazy();
+} );

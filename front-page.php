@@ -4,9 +4,10 @@
 get_header();
 
 
+get_template_part( "parts/home/jumbotron" );
+
 
 foreach ( array(
-    'jumbotron',
     'aboutme',
     'services',
     'way',

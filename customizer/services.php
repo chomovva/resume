@@ -37,6 +37,9 @@ $wp_customize->add_control(
 ); /**/
 
 
+
+
+
 $wp_customize->add_setting(
     RESUME_SLUG . '_services_page_id',
     array(
@@ -56,6 +59,8 @@ $wp_customize->add_control(
 
 
 
+
+
 $wp_customize->add_setting(
     RESUME_SLUG . '_services_title',
     array(
@@ -75,22 +80,26 @@ $wp_customize->add_control(
 
 
 
+
+
 $wp_customize->add_setting(
-    RESUME_SLUG . '_services_description',
+    RESUME_SLUG . '_services_excerpt',
     array(
-        'default'           => __( 'Чем я занимаюсь', RESUME_TEXTDOMAIN ),
+        'default'           => '',
         'transport'         => 'reset',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'sanitize_textarea_field',
     )
 );
 $wp_customize->add_control(
-    RESUME_SLUG . '_services_description',
+    RESUME_SLUG . '_services_excerpt',
     array(
         'section'           => RESUME_SLUG . '_services',
-        'label'             => __( 'Заголовок', RESUME_TEXTDOMAIN ),
-        'type'              => 'text',
+        'label'             => __( 'Описание', RESUME_TEXTDOMAIN ),
+        'type'              => 'textarea',
     )
 ); /**/
+
+
 
 
 
@@ -110,6 +119,8 @@ $wp_customize->add_control(
         'type'              => 'text',
     )
 ); /**/
+
+
 
 
 
@@ -148,7 +159,7 @@ for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_services_count', 6 ); $i++ ) {
       RESUME_SLUG . "_services[{$i}]",
       array(
           'section'           => RESUME_SLUG . '_services',
-          'label'             => sprintf( __( 'слуга %1$s', RESUME_TEXTDOMAIN ), ( $i + 1 ) ),
+          'label'             => sprintf( __( 'услуга %1$s', RESUME_TEXTDOMAIN ), ( $i + 1 ) ),
           'type'              => 'text',
       )
   ); /**/

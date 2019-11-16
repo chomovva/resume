@@ -24,7 +24,7 @@ foreach ( array(
 	'linkedin'  => __( 'LinkedIn', RESUME_TEXTDOMAIN ),
 	'vk'        => __( 'Вконтакте', RESUME_TEXTDOMAIN ),
 	'github'    => __( 'GitHub', RESUME_TEXTDOMAIN ),
-	'youtube'   => __( 'YouTUbe', RESUME_TEXTDOMAIN ),
+	'youtube'   => __( 'YouTube', RESUME_TEXTDOMAIN ),
 ) as $key => $label ) {
 	$wp_customize->add_setting(
 		RESUME_SLUG . "_links[$key]",

@@ -1,6 +1,6 @@
 {
   "name": "resume",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
@@ -24,5 +24,10 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.0"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.1",
+    "npm": "^6.12.1",
+    "sass": "^1.23.1"
   }
 }

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 $wp_customize->add_section(
     RESUME_SLUG . '_way',
     array(
-        'title'            => __( 'Обо мне', RESUME_TEXTDOMAIN ),
+        'title'            => __( 'Образование и опыт работы', RESUME_TEXTDOMAIN ),
         'priority'         => 10,
         'description'      => __( 'Секция главной страницы. Якорь #way', RESUME_TEXTDOMAIN ),
         'panel'            => RESUME_SLUG
@@ -72,7 +72,7 @@ $wp_customize->add_control(
     RESUME_SLUG . '_way_count',
     array(
         'section'           => RESUME_SLUG . '_way',
-        'label'             => __( 'Количество услуг', RESUME_TEXTDOMAIN ),
+        'label'             => __( 'Количество страниц', RESUME_TEXTDOMAIN ),
         'type'              => 'number',
         'atts'              => array(
           'min'               => '1',

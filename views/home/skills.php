@@ -1,3 +1,15 @@
+<?php
+
+
+namespace resume;
+
+
+if ( ! defined( 'ABSPATH' ) ) { exit; };
+
+
+?>
+
+
 <section class="section skills" id="skills">
 	<div class="container">
 		<div class="row">
@@ -8,14 +20,15 @@
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-5 col-sm-offset-1">
 				<?php if ( ! empty( $skills ) ) : ?>
 					<ul class="skills__list list">
-						<?php foreach ( $skills as $skill ) : ?>
+						<?php for ( $i = 0; $i < $skills_count; $i++ ) : if ( ! empty( $skills[ $i ][ 'label' ] ) ) : ?>
 							<li class="clearfix">
-								<strong class="font-normal"><?php echo $skill[ 'label' ]; ?> <spam class="pull-right"><?php echo $skill[ 'value' ]; ?></spam></strong>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar" style="width: <?php echo esc_attr( $skill[ 'label' ] ); ?>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
+								<strong class="font-normal">
+									<?php echo $skills[ $i ][ 'label' ]; ?> 
+									<spam class="pull-right"><?php echo $skills[ $i ][ 'value' ]; ?></spam>
+								</strong>
+								<?php echo get_progress_bar( $skills[ $i ][ 'value' ] ); ?>
 							</li>
-						<?php endforeach; ?>
+						<?php endif; endfor; ?>
 					</ul>
 				<?php endif; ?>
 			</div>

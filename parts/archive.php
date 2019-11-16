@@ -1,80 +1,79 @@
-<h1 class="title">Архив</h1>
-	<p class="lead">Portfolio WordPress Developer</p>
-	<!-- хлебные крошки (#breadcrumb)-->
-	<div class="breadcrumbs" id="bredcrumbs">
-		<ol>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Library</a></li>
-			<li class="active">Data</li>
-		</ol>
-	</div>
-	<!-- end хлебные крошки (#breadcrumb)-->
-	<div class="archive__entry entry">
-		<div class="row center-xs">
-			<div class="col-xs-8 col-sm-4 col-md-4 col-lg-4"><a class="thumbnail" href="#"><img class="lazy wp-post-thumbnail" src="#" data-src="../images/portfolio/01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, eius, inventore! Qui, q ab, laudantium."/>
-					<div class="publish"><span class="day">20</span> <span class="month">окт</span> <span class="year">2019</span></div></a></div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-				<h3 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, eius, inventore! Qui, q ab, laudantium.</h3>
-				<ul class="categories">
-					<li><a href="#">тема</a></li>
-					<li><a href="#">плагин</a></li>
-					<li><a href="#">вёрстка</a></li>
-				</ul>
-				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur nam, omnis perspiciatis reprehenderit temporibus sint porro libero? Id aut nam animi eveniet perferendis repudiandae aperiam, mollitia expedita officia consectetur laboriosam.</p>
-				<div class="row center-xs middle-xs">
-					<div class="col-xs-6">
-						<ul class="share">
-							<li><a class="facebook" href="#"><span class="sr-only">Поделиться в facebook</span></a></li>
-							<li><a class="twitter" href="#"><span class="sr-only">Поделиться в twitter</span></a></li>
-							<li><a class="linkedin" href="#"><span class="sr-only">Поделиться в linkedin</span></a></li>
-							<li><a class="email" href="#"><span class="sr-only">Поделиться в email</span></a></li>
-						</ul>
+<?php
+
+
+namespace resume;
+
+
+if ( ! defined( 'ABSPATH' ) ) { exit; };
+
+
+the_archive_title( '<h1 class="title">', '</h1>' );
+
+
+$current_term_id = __return_empty_array();
+
+
+if ( is_tax() || is_tag() || is_category() ) {
+	$term = get_queried_object();
+	$current_term_id = $term->term_id;
+	if ( ! empty( trim( $term->description ) ) ) {
+		echo '<div class="lead">' . $tems->description . '</div>';
+	}
+}
+
+
+
+
+the_breadcrumbs();
+
+
+if ( have_posts() ) {
+
+	while( have_posts() ) {
+
+		the_post();
+
+		?>
+
+
+			<div id="post-<?php the_ID(); ?>" class="archive__entry entry">
+				<div class="row center-xs">
+					<div class="col-xs-8 col-sm-4 col-md-4 col-lg-4">
+						<a class="thumbnail" href="<?php the_permalink( get_the_ID() ); ?>">
+							<?php
+								the_thumbnail_image( get_the_ID(), 'medium' );
+								echo get_publish_date();
+							?>
+						</a>
 					</div>
-					<div class="col-xs-6">
-						<p class="text-right"><a class="permalink btn btn-primary" href="#">Подробней</a></p>
+					<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+						<?php
+							the_title( '<h3 class="title">', '</h3>', true );
+							echo get_entry_categories( get_the_ID(), $current_term_id );
+						?>
+						<p class="excerpt"><?php echo get_the_excerpt( get_the_ID() ); ?></p>
+						<div class="row center-xs middle-xs">
+							<div class="col-xs-6">
+								<?php echo get_share( get_the_ID() ); ?>
+							</div>
+							<div class="col-xs-6">
+								<p class="text-right">
+									<a class="permalink btn btn-primary" href="<?php the_permalink( get_the_ID() ) ?>">
+										<?php _e( 'Подробней', RESUME_TEXTDOMAIN ); ?>
+									</a>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	
-	
-	
-	<div class="archive__entry entry">
-		<div class="row center-xs">
-			<div class="col-xs-8 col-sm-4 col-md-4 col-lg-4"><a class="thumbnail" href="#"><img class="lazy wp-post-thumbnail" src="#" data-src="../images/portfolio/03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia "/>
-					<div class="publish"><span class="day">20</span> <span class="month">окт</span> <span class="year">2019</span></div></a></div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-				<h3 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia </h3>
-				<ul class="categories">
-					<li><a href="#">тема</a></li>
-					<li><a href="#">плагин</a></li>
-					<li><a href="#">вёрстка</a></li>
-				</ul>
-				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur nam, omnis perspiciatis reprehenderit temporibus sint porro libero? Id aut nam animi eveniet perferendis repudiandae aperiam, mollitia expedita officia consectetur laboriosam.</p>
-				<div class="row center-xs middle-xs">
-					<div class="col-xs-6">
-						<ul class="share">
-							<li><a class="facebook" href="#"><span class="sr-only">Поделиться в facebook</span></a></li>
-							<li><a class="twitter" href="#"><span class="sr-only">Поделиться в twitter</span></a></li>
-							<li><a class="linkedin" href="#"><span class="sr-only">Поделиться в linkedin</span></a></li>
-							<li><a class="email" href="#"><span class="sr-only">Поделиться в email</span></a></li>
-						</ul>
-					</div>
-					<div class="col-xs-6">
-						<p class="text-right"><a class="permalink btn btn-primary" href="#">Подробней</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	
 
-	<!--Пагинация WP
-	-->
-	<nav class="navigation pagination">
-		<h2 class="screen-reader-text">Навигация по записям</h2>
-		<div class="nav-links"><span class="page-numbers current"><span class="meta-nav screen-reader-text">Страница </span>1</span><a class="page-numbers" href="#"><span class="meta-nav screen-reader-text">Страница </span>2</a><span class="page-numbers dots">…</span><a class="page-numbers" href="#"><span class="meta-nav screen-reader-text">Страница </span>86</a><a class="page-numbers" href="#"><span class="meta-nav screen-reader-text">Страница </span>87</a><a class="next page-numbers" href="#">»</a></div>
-	</nav>
+		<?php
+
+	}
+
+	the_posts_pagination();
+
+}

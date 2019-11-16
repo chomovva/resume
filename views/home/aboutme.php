@@ -1,7 +1,8 @@
+<?php if ( ! defined( 'ABSPATH' ) ) { exit; }; ?>
 <section class="section aboutme" id="aboutme">
   <div class="container">
     <div class="row center-xs">
-      <div class="col-xs-6 col-sm-5 col-md-4 col-lg-4 col-sm-offset-1">
+      <div class="col-xs-10 col-sm-5 col-md-4 col-lg-4 col-sm-offset-1">
         <div class="aboutme__foto foto">
           <img class="lazy" src="#" data-src="<?php echo esc_attr( $foto_src ); ?>" alt="<?php echo esc_attr( $foto_alt ); ?>">
           <?php echo $socials_links; ?>

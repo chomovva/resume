@@ -20,25 +20,6 @@ $wp_customize->add_section(
 
 
 $wp_customize->add_setting(
-    RESUME_SLUG . '_jumbotron_flag',
-    array(
-        'default'           => false,
-        'transport'         => 'reset',
-        'sanitize_callback' => 'sanitize_text_field',
-    )
-);
-$wp_customize->add_control(
-    RESUME_SLUG . '_jumbotron_flag',
-    array(
-        'section'           => RESUME_SLUG . '_jumbotron',
-        'label'             => __( 'Использовать секцию', RESUME_TEXTDOMAIN ),
-        'type'              => 'checkbox',
-    )
-); /**/
-
-
-
-$wp_customize->add_setting(
     RESUME_SLUG . '_jumbotron_title',
     array(
         'default'           => get_bloginfo( 'name' ),

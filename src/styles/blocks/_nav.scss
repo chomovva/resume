@@ -64,31 +64,6 @@
 		@include min-width ( $screen-md ) { min-width: 30%; }
 	}
 
-
-	.languages {
-		padding-left: 0;
-		list-style-type: none;
-		li {
-			display: inline-block;
-			margin: 0 .5em 0 0;
-		}
-		a {
-			display: block;
-			padding: 0 1em;
-			transition: background-color .2s;
-		}
-		a:hover {
-			text-decoration: none;
-			background-color: transparentize( $brand-primary, .8 );
-		}
-		.current {
-			padding: 0 1em;
-			background-color: $brand-primary;
-			color: #fff;
-		}
-	}
-
-
 }
 
 

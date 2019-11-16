@@ -1,0 +1,348 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-11-15 23:49+0200\n"
+"PO-Revision-Date: 2019-11-16 00:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: src\n"
+"X-Poedit-SearchPathExcluded-2: examples\n"
+
+#: 404.php:8 customizer/404.php:25
+msgid "Ошибка 404"
+msgstr "Помилка 404"
+
+#: 404.php:21
+msgid "На главную"
+msgstr "На головну"
+
+#: customizer/404.php:13
+msgid "Страница ошибки 404"
+msgstr "Сторінка помилки 404"
+
+#: customizer/404.php:34 customizer/aboutme.php:71 customizer/advantages.php:72
+#: customizer/jumbotron.php:34 customizer/portfolio.php:72
+#: customizer/portfolio.php:91 customizer/services.php:76
+msgid "Заголовок"
+msgstr "Заголовок"
+
+#: customizer/404.php:53
+msgid "Подзаголовок"
+msgstr "Підзаголовок"
+
+#: customizer/aboutme.php:13 customizer/aboutme.php:62
+#: parts/home/aboutme.php:18
+msgid "Обо мне"
+msgstr "Про мене"
+
+#: customizer/aboutme.php:15
+msgid "Секция главной страницы. Якорь #aboutme"
+msgstr "Секція головної сторінки. Якір #aboutme"
+
+#: customizer/aboutme.php:34 customizer/advantages.php:34
+#: customizer/portfolio.php:34 customizer/services.php:34 customizer/way.php:34
+msgid "Использовать секцию"
+msgstr "Використовувати секцію"
+
+#: customizer/aboutme.php:52 customizer/advantages.php:53
+#: customizer/services.php:55
+msgid "Выбор страницы"
+msgstr "Вибір сторінки"
+
+#: customizer/aboutme.php:91
+msgid "Фото"
+msgstr "Фото"
+
+#: customizer/aboutme.php:103 parts/home/aboutme.php:24
+msgid "Скачать резюме"
+msgstr "Завантажити резюме"
+
+#: customizer/aboutme.php:112 customizer/services.php:118
+msgid "Текст кнопки"
+msgstr "Текст кнопки"
+
+#: customizer/aboutme.php:132
+msgid "Файл"
+msgstr "Файл"
+
+#: customizer/advantages.php:13
+msgid "Секция преимуществ"
+msgstr "Секція переваг"
+
+#: customizer/advantages.php:15
+msgid ""
+"Секция главной страницы. Якорь #skills. В секции так же отображаются скилы и "
+"опыт."
+msgstr ""
+"Секція головної сторінки. Якір #skills. У секції так же відображаються "
+"навички і досвід."
+
+#: customizer/advantages.php:63 parts/home/skills.php:12
+msgid "Мои скилы"
+msgstr "Мої навички"
+
+#: customizer/contacts.php:12
+msgid "Контакты"
+msgstr "Контакти"
+
+#: customizer/contacts.php:14
+msgid "Список контактов"
+msgstr "Список контактів"
+
+#: customizer/experience.php:13
+msgid "Опыт"
+msgstr "Досвід"
+
+#: customizer/experience.php:15
+msgid "Отображаются в сеции преимуществ"
+msgstr "Відображаються в сеціі переваг"
+
+#: customizer/experience.php:35
+#, php-format
+msgid "Заголовок №%1$s"
+msgstr "Тема №%1$ s"
+
+#: customizer/experience.php:51
+#, php-format
+msgid "Значение %1$s"
+msgstr "Значення %1$s"
+
+#: customizer/jumbotron.php:13
+msgid "Первый экран"
+msgstr "Перший екран"
+
+#: customizer/jumbotron.php:15
+msgid "Секция главной страницы. Якорь #jumbotron"
+msgstr "Секція головної сторінки. Якір #jumbotron"
+
+#: customizer/jumbotron.php:54
+msgid "Фон"
+msgstr "Фон"
+
+#: customizer/links.php:13
+msgid "Профили"
+msgstr "Профілі"
+
+#: customizer/links.php:15
+msgid "Ссылки на профили в в социальных сетях и прочее"
+msgstr "Посилання на профілі в в соціальних мережах та інше"
+
+#: customizer/links.php:22
+msgid "Facebook"
+msgstr "Facebook"
+
+#: customizer/links.php:23
+msgid "Twitter"
+msgstr "Twitter"
+
+#: customizer/links.php:24
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: customizer/links.php:25
+msgid "Вконтакте"
+msgstr "Вконтакте"
+
+#: customizer/links.php:26
+msgid "GitHub"
+msgstr "GitHub"
+
+#: customizer/links.php:27
+msgid "YouTube"
+msgstr "YouTube"
+
+#: customizer/portfolio.php:13 customizer/portfolio.php:63
+#: parts/home/portfolio.php:29
+msgid "Портфолио"
+msgstr "Портфоліо"
+
+#: customizer/portfolio.php:15
+msgid ""
+"Секция главной страницы. Якорь #portfolio. Работы (посты) берутся из "
+"категории."
+msgstr ""
+"Секція головної сторінки. Якір #portfolio. Роботи (пости) беруться з "
+"категорії."
+
+#: customizer/portfolio.php:52
+msgid "Выбор категории"
+msgstr "Вибір категорії"
+
+#: customizer/services.php:13
+msgid "Услуги"
+msgstr "Послуги"
+
+#: customizer/services.php:15
+msgid "Секция главной страницы. Якорь #services"
+msgstr "Секція головної сторінки. Якір #services"
+
+#: customizer/services.php:67 parts/home/services.php:18
+msgid "Чем я занимаюсь"
+msgstr "Чим я займаюсь"
+
+#: customizer/services.php:97
+msgid "Описание"
+msgstr "Опис"
+
+#: customizer/services.php:109 parts/archive.php:62 parts/home/services.php:19
+#: views/home/way.php:13
+msgid "Подробней"
+msgstr "Детальніше"
+
+#: customizer/services.php:139
+msgid "Количество услуг"
+msgstr "Кількість послуг"
+
+#: customizer/services.php:162
+#, php-format
+msgid "услуга %1$s"
+msgstr "послуги %1$s"
+
+#: customizer/skills.php:13
+msgid "Скилы"
+msgstr "Навички"
+
+#: customizer/skills.php:15
+msgid ""
+"Секция главной страницы. Якорь #skills. При изменении количества зписей "
+"сохранитесь и перезагрузите страницу."
+msgstr ""
+"Секція головної сторінки. Якір #skills. При зміні кількості зпісей "
+"збережетеся і перезавантажте сторінку."
+
+#: customizer/skills.php:34
+msgid "Количество навыков"
+msgstr "Кількість навичок"
+
+#: customizer/skills.php:58
+#, php-format
+msgid "заголовок %1$s"
+msgstr "заголовок %1$s"
+
+#: customizer/skills.php:74
+#, php-format
+msgid "оценка навыка %1$s"
+msgstr "оцінка досвіду %1$s"
+
+#: customizer/way.php:13
+msgid "Образование и опыт работы"
+msgstr "Освіта і досвід роботи"
+
+#: customizer/way.php:15
+msgid "Секция главной страницы. Якорь #way"
+msgstr "Секція головної сторінки. Якір #way"
+
+#: customizer/way.php:54
+msgid "Фоновое изображение"
+msgstr "Фонове зображення"
+
+#: customizer/way.php:75
+msgid "Количество страниц"
+msgstr "Кількість сторінок"
+
+#: customizer/way.php:99
+#, php-format
+msgid "Выбор страницы #%1$s"
+msgstr "Вибір сторінки #%1$s"
+
+#: functions.php:37
+msgid "Настройки темы \"Резюме\""
+msgstr "Налаштування теми \"Резюме\""
+
+#: functions.php:89
+msgid "Главное меню"
+msgstr "Головне меню"
+
+#: functions.php:90
+msgid "Меню страницы 404"
+msgstr "Меню сторінки 404"
+
+#: functions.php:102
+msgid "Сайдбар подвала"
+msgstr "Сайдбар підвалу"
+
+#: functions.php:112
+msgid "Колонка"
+msgstr "Колонка"
+
+#: header.php:22
+msgid "Открыть меню"
+msgstr "Відкрити меню"
+
+#: includes/template-functions.php:67
+msgid "Главная"
+msgstr "Головна"
+
+#: includes/template-functions.php:80
+msgid "Домашняя страница"
+msgstr "Домашня сторінка"
+
+#: includes/template-functions.php:149
+msgid "Смотреть предыдущий пост"
+msgstr "Дивитися попередній пост"
+
+#: includes/template-functions.php:153
+msgid "Смотреть следующий пост"
+msgstr "Наступне пост"
+
+#: includes/template-functions.php:241
+msgid "Поделиться в VK"
+msgstr "Поділіться в VK"
+
+#: includes/template-functions.php:242
+msgid "Поделиться в Facebook"
+msgstr "Поділіться в Facebook"
+
+#: includes/template-functions.php:243
+msgid "Поделиться в Twitter"
+msgstr "Поділіться в Twitter"
+
+#: includes/template-functions.php:244
+msgid "Поделиться в LinkedIn"
+msgstr "Поділіться в LinkedIn"
+
+#: includes/template-functions.php:245
+msgid "Отправить по email"
+msgstr "Надіслати по email"
+
+#: parts/nav.php:17
+msgid "Закрыть меню"
+msgstr "Закрити меню"
+
+#: parts/nav.php:22
+msgid "Меню"
+msgstr "Меню"
+
+#: views/home/portfolio.php:27
+msgid "Предыдущий слайд"
+msgstr "Попередній слайд"
+
+#: views/home/portfolio.php:30
+msgid "Следующий слайд"
+msgstr "Наступний слайд"
+
+#~ msgid "Поделиться в vkontacte"
+#~ msgstr "Поділитися в vkontacte"
+
+#~ msgid "Поделиться в facebook"
+#~ msgstr "Поділитися в facebook"
+
+#~ msgid "Поделиться в twitter"
+#~ msgstr "Поділитися в twitter"
+
+#~ msgid "Поделиться в linkedin"
+#~ msgstr "Поділитися в linkedin"
+
+#~ msgid "Поделиться в email"
+#~ msgstr "Поділитися в email"

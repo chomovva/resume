@@ -4,6 +4,7 @@
 
 .pager {
 
+	@extend .clearfix;
 	margin: 25px 0px;
 
 	.item {

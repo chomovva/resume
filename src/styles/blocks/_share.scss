@@ -51,12 +51,14 @@
 	}
 
 
+	.vk { background-color: $brand-vk; }
 	.facebook { background-color: $brand-facebook; }
 	.twitter { background-color: $brand-twitter; }
 	.linkedin { background-color: $brand-linkedin; }
 	.email { background-color: $brand-email; }
 
 
+	.vk:before { @extend %icon-vk; }
 	.facebook:before { @extend %icon-facebook; }
 	.twitter:before { @extend %icon-twitter; }
 	.linkedin:before { @extend %icon-linkedin; }

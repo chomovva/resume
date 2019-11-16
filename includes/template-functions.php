@@ -16,7 +16,7 @@ function get_custom_logo_img() {
 	if ( $custom_logo_id ) {
 		$result = sprintf(
 			'<img class="custom-logo" src="%1$s" alt="%2$s">',
-			wp_get_attachment_image_src( $custom_logo_id, 'thumbnail', false ),
+			wp_get_attachment_image_url( $custom_logo_id, 'thumbnail', false ),
 			get_bloginfo( 'name', 'display' )
 		);
 	}
@@ -26,7 +26,7 @@ function get_custom_logo_img() {
 
 
 function get_languages_list() {
-	$result = array();
+	$result = __return_empty_array();
 	if ( ( function_exists( 'pll_the_languages' ) ) && ( function_exists( 'pll_current_language' ) ) ) {
 		$current = pll_current_language( 'slug' );
 		$other = pll_the_languages( array(
@@ -38,14 +38,13 @@ function get_languages_list() {
 			'force_home'         => 0,
 			'echo'               => 0,
 			'hide_if_no_translation' => 0,
-			'hide_current'       => 1,
+			'hide_current'       => 0,
 			'post_id'            => ( is_singular() ) ? get_the_ID() : NULL,
 			'raw'                => 1,
 		) );
 		if ( ( $other ) && ( ! empty( $other ) ) ) {
-			$result[] = '<li class="current">' . $current . '</li>';
 			foreach ( $other as $lang ) $result[] = sprintf(
-				'<li><a href="%1$s">%2$s</a></li>',
+				( $lang[ 'slug' ] == $current ) ? '<li class="current">%2$s</li>' : '<li><a href="%1$s">%2$s</a></li>',
 				$lang[ 'url' ],
 				$lang[ 'name' ]
 			);
@@ -65,7 +64,7 @@ function the_breadcrumbs() {
 			if ( ! is_front_page() ) {
 				echo '<a href="';
 				echo home_url();
-				echo '">'.__( 'Главная', OPENDAY_TEXTDOMAIN );
+				echo '">'.__( 'Главная', RESUME_TEXTDOMAIN );
 				echo "</a> » ";
 				if ( is_category() || is_single() ) {
 						the_category(' ');
@@ -78,7 +77,7 @@ function the_breadcrumbs() {
 				}
 			}
 			else {
-				echo __( 'Домашняя страница', OPENDAY_TEXTDOMAIN );
+				echo __( 'Домашняя страница', RESUME_TEXTDOMAIN );
 			}
 	}
 	$result = ob_get_contents();
@@ -95,23 +94,25 @@ function the_breadcrumbs() {
 
 
 function get_translate_id( $id, $type = 'post' ) {
-	$result = '';
-	if ( $id && ! empty( $id ) ) {
-		if ( defined( 'POLYLANG_FILE' ) ) {
-			switch ( $type ) {
-				case 'category':
-					$translate = ( function_exists( 'pll_get_term' ) ) ? pll_get_term( $id, pll_current_language( 'slug' ) ) : $translate;
-					break;
-				case 'post':
-				case 'page':
-				default:
-					$translate = ( function_exists( 'pll_get_post' ) ) ? pll_get_post( $id, pll_current_language( 'slug' ) ) : $translate;
-					break;
-			} // switch
-			$result = ( $translate ) ? $translate : '';
-		} // if defined
-	}
-	return $result;
+    $result = '';
+    if ( $id && ! empty( $id ) ) {
+        if ( defined( 'POLYLANG_FILE' ) ) {
+            switch ( $type ) {
+                case 'category':
+                    $translate = ( function_exists( 'pll_get_term' ) ) ? pll_get_term( $id, pll_current_language( 'slug' ) ) : $translate;
+                    break;
+                case 'post':
+                case 'page':
+                default:
+                    $translate = ( function_exists( 'pll_get_post' ) ) ? pll_get_post( $id, pll_current_language( 'slug' ) ) : $translate;
+                    break;
+            } // switch
+            $result = ( $translate ) ? $translate : '';
+        } else {
+            $result = $id;
+        }
+    }
+    return $result;
 }
 
 
@@ -145,11 +146,11 @@ function the_pager() {
 	foreach ( array(
 		'previous'  => array(
 			'entry'     => get_previous_post(),
-			'label'     => __( 'Смотреть предыдущий пост', OPENDAY_TEXTDOMAIN ),
+			'label'     => __( 'Смотреть предыдущий пост', RESUME_TEXTDOMAIN ),
 		),
 		'next'      => array(
 			'entry'     => get_next_post(),
-			'label'     => __( 'Смотреть следующий пост', OPENDAY_TEXTDOMAIN ),
+			'label'     => __( 'Смотреть следующий пост', RESUME_TEXTDOMAIN ),
 		),
 	) as $key => $value ) {
 		if ( $value[ 'entry' ] && ! is_wp_error( $value[ 'entry' ] ) ) {
@@ -172,17 +173,18 @@ function the_pager() {
 
 
 
-function the_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src' ) {
+function the_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src', $class_name = 'lazy' ) {
 	printf(
-		'<img class="lazy wp-post-thumbnail" src="#" data-%3$s="%1$s" alt="%2$s"/>',
-		( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, $size ) : OPENDAY_URL . 'images/thumbnail.png',
+		'<img class="%4$s wp-post-thumbnail" src="#" data-%3$s="%1$s" alt="%2$s"/>',
+		( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, $size ) : RESUME_URL . 'images/thumbnail.png',
 		the_title_attribute( array(
 			'before' => '',
 			'after'  => '',
 			'echo'   => false,
 			'post'   => $post_id,
 		) ),
-		$attribute
+		$attribute,
+		$class_name
 	);
 }
 
@@ -200,7 +202,7 @@ function get_categories_choices() {
 		'parent'       => '',
 		'orderby'      => 'name',
 		'order'        => 'ASC',
-		'hide_empty'   => 1,
+		'hide_empty'   => 0,
 		'hierarchical' => 1,
 		'exclude'      => '',
 		'include'      => '',
@@ -213,4 +215,103 @@ function get_categories_choices() {
 		}
 	}
 	return $result;
+}
+
+
+
+
+
+function get_progress_bar( $value = '50' ) {
+	ob_start();
+	include get_theme_file_path( 'views/progress-bar.php' );
+	$result = ob_get_contents();
+	ob_end_clean();
+	return $result;
+}
+
+
+
+
+
+function get_share( $post_id = false ) {
+	if ( ! $post_id ) { $post_id = get_the_ID(); }
+	$format = __return_empty_string();
+	$result = __return_empty_array();
+	foreach ( array(
+		'vk'       => __( 'Поделиться в VK', RESUME_TEXTDOMAIN ),
+		'facebook' => __( 'Поделиться в Facebook', RESUME_TEXTDOMAIN ),
+		'twitter'  => __( 'Поделиться в Twitter', RESUME_TEXTDOMAIN ),
+		'linkedin' => __( 'Поделиться в LinkedIn', RESUME_TEXTDOMAIN ),
+		'email'    => __( 'Отправить по email', RESUME_TEXTDOMAIN ),
+	) as $key => $label ) {
+		switch ( $key ) {
+			case 'vk':
+				$format = 'https://vk.com/share.php?url=%1$s&title=%2$s&image=%3$s';
+				break;
+			case 'facebook':
+				$format = 'https://www.facebook.com/sharer.php?u=%1$s&amp;t=%2$s';
+				break;
+			case 'twitter':
+				$format = 'https://twitter.com/share?url=%1$s&amp;text=%2$s';
+				break;
+			case 'linkedin':
+				$format = 'https://www.linkedin.com/shareArticle?mini=true&url=%1$s&title=%2$s';
+				break;
+			case 'email':
+				$format = 'mailto:info@example.com?&subject=%4$s&body=%2$s %1$s';
+				break;
+		}
+		$link = sprintf(
+			$format,
+			get_permalink( $post_id ),
+			esc_attr( get_the_title( $post_id ) ),
+			( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, 'medium' ) : RESUME_URL . 'images/thumbnail.png',
+			esc_attr( get_bloginfo( 'name' ) )
+		);
+		$result[] = sprintf(
+			'<li><a class="%1$s" target="_blank" href="%2$s"><span class="sr-only">%3$s</span></a></li>',
+			$key,
+			$link,
+			$label
+		);
+	}
+	return ( empty( $result ) ) ? '' : '<ul class="share">' . implode( "\r\n", $result ) . '</ul>';
+}
+
+
+
+
+
+function get_publish_date( $date = '' ) {
+	$timestamp = ( empty( $date ) ) ? strtotime( get_the_date( '', get_the_ID() ) ) : strtotime( $date );
+	return ( $timestamp ) ? sprintf(
+		'<div class="publish"><span class="day">%1$s</span> <span class="month">%2$s</span> <span class="year">%3$s</span></div>',
+		date( 'd', $timestamp ),
+		date_i18n( 'M', $timestamp ),
+		date( 'Y', $timestamp )
+	) : '';
+}
+
+
+
+
+function get_entry_categories( $post_id, $exclude = '', $link = true ) {
+	$result = __return_empty_array();
+	$terms = get_terms( array(
+		'taxonomy'    => 'category',
+		'object_ids'  => $post_id,
+		'exclude'     => $exclude,
+		'fields'      => 'id=>name',
+	) );
+	$format = ( $link ) ? '<li><a href="%1$s">%2$s</a></li>' : '<li>%2$s</li>';
+	if ( is_array( $terms ) && ! empty( $terms ) ) {
+		foreach ( $terms as $term_id => $name ) {
+			$result[] = sprintf(
+				$format,
+				get_category_link( $term_id ),
+				$name
+			);
+		}
+	}
+	return ( empty( $result ) ) ? '' : '<ul class="categories">' . implode( "\r\n", $result ) . '</ul>';
 }

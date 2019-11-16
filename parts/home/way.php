@@ -8,6 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 $page_ids = get_theme_mod( RESUME_SLUG . '_way_page_ids', array() );
 $entries = __return_empty_array();
+$bgi_src = get_theme_mod( RESUME_SLUG . '_way_bgi', RESUME_URL . 'images/way.jpg' );
+
+
 
 if ( is_array( $page_ids ) && ! empty( $page_ids ) ) {
 
@@ -18,8 +21,8 @@ if ( is_array( $page_ids ) && ! empty( $page_ids ) ) {
 		if ( ! empty( $page_id ) ) {
 			$page = get_page( $page_id, OBJECT, 'raw' );
 			$parts = get_extended( $page->post_content );
-			$entries[] = array(
-				'title'     => apply_filters( 'the_title', $page->post_title, $page->ID );
+			if ( ! empty( trim( $parts[ 'main' ] ) ) ) $entries[] = array(
+				'title'     => apply_filters( 'the_title', $page->post_title, $page->ID ),
 				'content'   => do_shortcode( $parts[ 'main' ], false ),
 				'permalink' => get_permalink( $page->ID ),
 			);			

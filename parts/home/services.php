@@ -17,8 +17,8 @@ if ( ! empty( $page_id ) ) {
 
 		$title = get_theme_mod( RESUME_SLUG . '_services_title', __( 'Чем я занимаюсь', RESUME_TEXTDOMAIN ) );
 		$label = get_theme_mod( RESUME_SLUG . '_services_label', __( 'Подробней', RESUME_TEXTDOMAIN ) );
-		$excerpt = get_theme_mod( RESUME_SLUG . '_services_excerpt', __( 'Подробней', RESUME_TEXTDOMAIN ) );
-		$services = __return_empty_array();
+		$excerpt = get_theme_mod( RESUME_SLUG . '_services_excerpt', '' );
+		$services = get_theme_mod( RESUME_SLUG . '_services', __return_empty_array() );
 		$permalink = get_permalink( $page->ID );
 
 		foreach ( get_theme_mod( RESUME_SLUG . '_services', array() ) as $value ) {
@@ -30,7 +30,7 @@ if ( ! empty( $page_id ) ) {
 		if ( function_exists( 'pll__' ) ) {
 			$title = pll__( $title );
 			$label = pll__( $label );
-			$excerpt = pll__( $excerpts );
+			$excerpt = pll__( $excerpt );
 			$services = array_map( 'pll__', $services );
 		}
 

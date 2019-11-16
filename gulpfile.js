@@ -14,10 +14,33 @@ var cache          = require( 'gulp-cache' );
 var del            = require( 'del' );
 var browserSync    = require( 'browser-sync' );
 var zip            = require( 'gulp-zip' );
+var concat         = require( 'gulp-concat' );
 
 
 
 styles.compiler      = require( 'node-sass' );
+
+
+
+
+gulp.task( 'gutenberg_scripts', function() {
+	return gulp.src( './src/scripts/gutenberg/*.js' )
+		.pipe( plumber() )
+		.pipe( concat( 'gutenberg.js') )
+		.pipe( gulp.dest( './scripts/' ) );
+	}
+);
+
+
+gulp.task( 'gutenberg_styles', function () {
+	return gulp.src( [ './src/styles/gutenberg.scss' ] )
+		.pipe( plumber() )
+		.pipe( sourcemaps.init() )
+		.pipe( styles().on( 'error', styles.logError ) )
+		.pipe( autoprefixer() )
+		.pipe( sourcemaps.write( '.' ) )
+		.pipe( gulp.dest( './styles/' ) );
+} );
 
 
 
@@ -64,7 +87,7 @@ gulp.task( 'fonts', function () {
 
  
 gulp.task( 'styles', function () {
-	return gulp.src( './src/styles/*.scss' )
+	return gulp.src( [ './src/styles/*.scss', '!./src/styles/gutenberg.scss' ] )
 		.pipe( plumber() )
 		.pipe( sourcemaps.init() )
 		.pipe( styles().on( 'error', styles.logError ) )
@@ -105,7 +128,7 @@ gulp.task( 'index', function () {
 
 
 gulp.task( 'scripts', function () {
-	return gulp.src( './src/scripts/*.js' )
+	return gulp.src( [ './src/scripts/*.js', '!./src/scripts/gutenberg.js' ] )
 		.pipe( plumber() )
 		.pipe( gulp.dest( './scripts/' ) )
 		.pipe( minscripts() )
@@ -117,7 +140,7 @@ gulp.task( 'scripts', function () {
 
 
 gulp.task( 'minscripts', function () {
-	return gulp.src( [ './scripts/*.js', '!./scripts/*.min.js' ] )
+	return gulp.src( [ './scripts/*.js', '!./scripts/*.min.js', '!./scripts/gutenberg.js' ] )
 		.pipe( plumber() )
 		.pipe( minscripts() )
 		.pipe( rename( { suffix: '.min' } ) )
@@ -162,9 +185,15 @@ gulp.task( 'clearcache', function () {
 gulp.task( 'minify', gulp.series( 'minstyles', 'minscripts' ) );
 
 
+gulp.task( 'gutenberg', function () {
+	gulp.watch( './src/scripts/gutenberg/*.js',          gulp.series( 'gutenberg_scripts' ) );
+	gulp.watch( './src/styles/**/*.scss',                gulp.series( 'gutenberg_styles' ) );
+} );
+
+
 
 gulp.task( 'watch', function () {
-	gulp.watch( './src/styles/**/*.scss',                gulp.series( 'styles') );
+	gulp.watch( [ './src/styles/**/*.scss', './src/styles/gutenberg/*.scss' ], gulp.series( 'styles') );
 	gulp.watch( './src/views/**/*.pug',                  gulp.series( 'html', 'index' ) );
 	gulp.watch( './src/scripts/**/*.js',                 gulp.series( 'scripts' ) );
 	gulp.watch( './src/images/**/*.{png,jpg,svg,gif}',   gulp.series( 'images' ) );

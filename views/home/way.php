@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) { exit; }; ?>
 <div class="way lazy" id="way" data-src="<?php echo esc_attr( $bgi_src ); ?>">
   <?php if ( ! empty( $entries ) ) : ?>
     <?php foreach ( $entries as $entry ) : ?>

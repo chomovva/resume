@@ -19,24 +19,24 @@ $wp_customize->add_section(
 
 
 foreach ( array(
-	'viber'    => __( 'Viber', RESUME_TEXTDOMAIN ),
-	'whatsapp' => __( 'WhatsApp', RESUME_TEXTDOMAIN ),
-	'telegram' => __( 'Telegram', RESUME_TEXTDOMAIN ),
-	'email'    => __( 'Email', RESUME_TEXTDOMAIN ),
-) as $key => $label ) {
+	'Viber',
+	'WhatsApp',
+	'Telegram',
+	'Email',
+) as $key ) {
 	$wp_customize->add_setting(
 	    RESUME_SLUG . "_contacts[$key]",
 	    array(
 	        'default'           => '',
 	        'transport'         => 'reset',
-	        'sanitize_callback' => 'esc_url',
+	        'sanitize_callback' => 'sanitize_text_field',
 	    )
 	);
 	$wp_customize->add_control(
 	    RESUME_SLUG . "_contacts[$key]",
 	    array(
 	        'section'           => RESUME_SLUG . '_contacts',
-	        'label'             => $label,
+	        'label'             => $key,
 	        'type'              => 'text',
 	    )
 	); /**/
