@@ -157,6 +157,7 @@ function the_pager() {
 			$title = apply_filters( 'the_title', $value[ 'entry' ]->post_title, $value[ 'entry' ]->ID );
 			$label = $value[ 'label' ];
 			$permalink = get_permalink( $value[ 'entry' ]->ID );
+			$excerpt = ( empty( trim( $value[ 'entry' ]->post_excerpt ) ) ) ? strip_tags( wp_trim_excerpt( $value[ 'entry' ]->post_content ) ) : $value[ 'entry' ]->post_excerpt;
 			include get_theme_file_path( 'views/adjacent-post.php' );
 		}
 	}
@@ -173,8 +174,8 @@ function the_pager() {
 
 
 
-function the_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src', $class_name = 'lazy' ) {
-	printf(
+function get_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src', $class_name = 'lazy' ) {
+	return sprintf(
 		'<img class="%4$s wp-post-thumbnail" src="#" data-%3$s="%1$s" alt="%2$s"/>',
 		( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, $size ) : RESUME_URL . 'images/thumbnail.png',
 		the_title_attribute( array(
@@ -188,6 +189,30 @@ function the_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src',
 	);
 }
 
+
+
+
+function the_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src', $class_name = 'lazy' ) {
+	echo get_thumbnail_image( $post_id, $size, $attribute, $class_name );
+}
+
+
+
+
+function the_pageheader() {
+	if ( is_archive() ) {
+		$title = get_the_archive_title();
+		$excerpt = do_shortcode( get_the_archive_description() );
+		$thumbnail = __return_empty_string();
+		$date = __return_empty_string();
+	} else {
+		$title = single_post_title( '', false );
+		$excerpt = ( has_excerpt( get_the_ID() ) ) ? get_the_excerpt( get_the_ID() ) : false;
+		$thumbnail = get_thumbnail_image( get_the_ID(), 'thumbnail_medium' );
+		$date = ( is_single() ) ? get_publish_date() : __return_empty_string();
+	}
+	include get_theme_file_path( 'views/pageheader.php' );
+}
 
 
 
@@ -234,9 +259,25 @@ function get_progress_bar( $value = '50' ) {
 
 
 function get_share( $post_id = false ) {
-	if ( ! $post_id ) { $post_id = get_the_ID(); }
+	if ( $post_id ) { $post_id = get_the_ID(); }
 	$format = __return_empty_string();
 	$result = __return_empty_array();
+	$title = __return_empty_string();
+	$permalink = __return_empty_string();
+	$thumbnail_url = RESUME_URL . 'images/thumbnail.png';
+	$blog_name = get_bloginfo( 'name' );
+	if ( $post_id || is_singular() ) {
+		$permalink = get_permalink( $post_id );
+		$title = get_the_title( $post_id );
+		$thumbnail_url = ( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, 'medium' ) : $thumbnail_url;
+	} elseif ( is_front_page() ) {
+		$permalink = get_home_url();
+		$title = get_bloginfo( 'name' );
+		$thumbnail_url = ( has_header_image() ) ? get_header_image() : $thumbnail_url;
+	} elseif ( $term_id = get_queried_object()->term_id ) {
+		$permalink = get_term_link( $term_id );
+		$title = single_term_title( $term_id, 0 );
+	}
 	foreach ( array(
 		'vk'       => __( 'Поделиться в VK', RESUME_TEXTDOMAIN ),
 		'facebook' => __( 'Поделиться в Facebook', RESUME_TEXTDOMAIN ),
@@ -263,10 +304,10 @@ function get_share( $post_id = false ) {
 		}
 		$link = sprintf(
 			$format,
-			get_permalink( $post_id ),
-			esc_attr( get_the_title( $post_id ) ),
-			( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, 'medium' ) : RESUME_URL . 'images/thumbnail.png',
-			esc_attr( get_bloginfo( 'name' ) )
+			$permalink,
+			esc_attr( $title ),
+			$thumbnail_url,
+			esc_attr( $blog_name )
 		);
 		$result[] = sprintf(
 			'<li><a class="%1$s" target="_blank" href="%2$s"><span class="sr-only">%3$s</span></a></li>',

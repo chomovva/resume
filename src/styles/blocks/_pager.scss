@@ -52,8 +52,12 @@
 
 	.title {
 		font-variant: normal;
-		font-weight: normal;
+		// font-weight: normal;
 		margin: 0;
+	}
+
+	.excerpt {
+		@extend .small;
 	}
 
 	.arrow {

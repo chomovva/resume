@@ -11,7 +11,14 @@
       <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 first-sm">
         <h2><?php echo $title; ?></h2>
         <?php echo $content; ?>
-        <?php if ( ! empty( $file ) ) : ?><a class="btn btn-primary permalink" role="button" href="<?php echo esc_attr( $file ); ?>"><?php echo $label; ?></a><?php endif; ?>
+        <div>
+          <?php if ( ! empty( $permalink ) ) : ?>
+            <a class="btn btn-primary permalink" role="button" href="<?php echo esc_attr( $permalink ); ?>"><?php echo $more_label; ?></a>
+          <?php endif; ?>
+          <?php if ( ! empty( $file ) ) : ?>
+            <a class="btn btn-warning file-link" role="button" href="<?php echo esc_attr( $file ); ?>"><?php echo $file_label; ?></a>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
   </div>

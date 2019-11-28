@@ -2,12 +2,18 @@
 
 
 
+// namespace resume;
+
+
+
+if ( ! defined( 'ABSPATH' ) ) { exit; };
+
 
 
 define( 'RESUME_URL', get_template_directory_uri() . '/' );
 define( 'RESUME_DIR', get_template_directory() . '/' );
 define( 'RESUME_TEXTDOMAIN', 'resume' );
-define( 'RESUME_VERSION', '0.0.5' );
+define( 'RESUME_VERSION', '0.0.6' );
 define( 'RESUME_SLUG', 'resume' );
 
 
@@ -137,3 +143,17 @@ function resume_single_result(){
 	}  
 }
 add_action( 'template_redirect', 'resume_single_result' );
+
+
+
+
+
+/**
+ * AJAX загрузка постов
+ */
+function resume_ajax_portfolio_load_posts() {
+	get_template_part( 'parts/home/portfolio' );
+	wp_die();
+}
+add_action( 'wp_ajax_portfolio_pagination', 'resume_ajax_portfolio_load_posts' );
+add_action( 'wp_ajax_nopriv_portfolio_pagination', 'resume_ajax_portfolio_load_posts' );

@@ -96,9 +96,26 @@ $wp_customize->add_control(
 );
 
 
+$wp_customize->add_setting(
+	RESUME_SLUG . '_aboutme_more_label',
+	array(
+		'default'           => __( 'Подробней обо мне', RESUME_TEXTDOMAIN ),
+		'transport'         => 'reset',
+		'sanitize_callback' => 'sanitize_text_field',
+	)
+);
+$wp_customize->add_control(
+	RESUME_SLUG . '_aboutme_more_label',
+	array(
+		'section'           => RESUME_SLUG . '_aboutme',
+		'label'             => __( 'Текст кнопки', RESUME_TEXTDOMAIN ),
+		'type'              => 'text',
+	)
+); /**/
+
 
 $wp_customize->add_setting(
-	RESUME_SLUG . '_aboutme_label',
+	RESUME_SLUG . '_aboutme_file_label',
 	array(
 		'default'           => __( 'Скачать резюме', RESUME_TEXTDOMAIN ),
 		'transport'         => 'reset',
@@ -106,7 +123,7 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	RESUME_SLUG . '_aboutme_label',
+	RESUME_SLUG . '_aboutme_file_label',
 	array(
 		'section'           => RESUME_SLUG . '_aboutme',
 		'label'             => __( 'Текст кнопки', RESUME_TEXTDOMAIN ),

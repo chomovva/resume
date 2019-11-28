@@ -14,6 +14,15 @@
 	background-color: lighten( $brand-primary, 30% );
 	margin: 0;
 
+	.controls {
+		display: flex;
+		align-items: center;
+	}
+
+	.controls > * + * {
+		margin-left: .5em
+	}
+
 	.entry {
 		display: block;
 		color: #fff;
@@ -92,8 +101,11 @@
 		.categories li {
 			display: inline;
 		}
-		.categories li + li:before {
+		.categories li:after {
 			content: ', ';
+		}
+		.categories li:last-child:after {
+			content: '';
 		}
 		.excerpt {
 			position: relative;

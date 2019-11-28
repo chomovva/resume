@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-15 23:49+0200\n"
-"PO-Revision-Date: 2019-11-16 00:28+0200\n"
+"POT-Creation-Date: 2019-11-16 13:28+0200\n"
+"PO-Revision-Date: 2019-11-16 13:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -64,15 +64,20 @@ msgstr "Вибір сторінки"
 msgid "Фото"
 msgstr "Фото"
 
-#: customizer/aboutme.php:103 parts/home/aboutme.php:24
-msgid "Скачать резюме"
-msgstr "Завантажити резюме"
+#: customizer/aboutme.php:102 parts/home/aboutme.php:25
+msgid "Подробней обо мне"
+msgstr "Детальніше про мене"
 
-#: customizer/aboutme.php:112 customizer/services.php:118
+#: customizer/aboutme.php:111 customizer/aboutme.php:129
+#: customizer/services.php:118
 msgid "Текст кнопки"
 msgstr "Текст кнопки"
 
-#: customizer/aboutme.php:132
+#: customizer/aboutme.php:120 parts/home/aboutme.php:26
+msgid "Скачать резюме"
+msgstr "Завантажити резюме"
+
+#: customizer/aboutme.php:149
 msgid "Файл"
 msgstr "Файл"
 

@@ -10,11 +10,13 @@
 
 	.foto {
 		position: relative;
-		margin-top: -50%;
 		margin-bottom: 1em;
 		max-width: 280px;
 		margin-left: auto;
 		margin-right: auto;
+		@include min-width( $screen-md ) {
+			margin-top: -50%;
+		}
 	}
 
 	&__foto {
@@ -31,6 +33,14 @@
 	}
 
 	.permalink::before {
+		@extend %icon;
+		@extend %background-icon;
+		@extend %icon-aboutme;
+		content: '';
+		margin-right: 1em;
+	}
+
+	.file-link::before {
 		@extend %icon;
 		@extend %background-icon;
 		@extend %icon-file;

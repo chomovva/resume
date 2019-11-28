@@ -9,6 +9,11 @@ $title = get_theme_mod( RESUME_SLUG . '_jumbotron_title', get_bloginfo( 'name' )
 $src = get_theme_mod( RESUME_SLUG . '_jumbotron_bgi', RESUME_URL . 'images/jumbotron.jpg' );
 
 
+if ( empty( $src ) ) {
+	$src = RESUME_URL . 'images/jumbotron.jpg';
+}
+
+
 if ( function_exists( 'pll__' ) ) {
 	$title = pll__( $title );
 }

@@ -7,19 +7,17 @@ namespace resume;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-get_template_part( 'parts/pageheader' );
+if ( have_posts() ) {
 
+	while ( have_posts() ) {
 
-?>
+		the_post();
 
-<div class="lead">
-	<?php echo get_share( get_the_ID() ); ?>
-</div>
+		the_content();
+		the_pager();
 
-<?php
+		comments_template();
 
-the_breadcrumbs();
-the_content();
-the_pager();
+	}
 
-comments_template();
+}

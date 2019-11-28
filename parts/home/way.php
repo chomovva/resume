@@ -11,6 +11,11 @@ $entries = __return_empty_array();
 $bgi_src = get_theme_mod( RESUME_SLUG . '_way_bgi', RESUME_URL . 'images/way.jpg' );
 
 
+if ( empty( $bgi_src ) ) {
+	$bgi_src = RESUME_URL . 'images/way.jpg';
+}
+
+
 
 if ( is_array( $page_ids ) && ! empty( $page_ids ) ) {
 

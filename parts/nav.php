@@ -30,5 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 				) );
 			}
 		?>
+		<h3><?php _e( 'Поделиться' ); ?></h3>
+		<div class="lead"><?php echo get_share( false ); ?></div>
 	</div>
 </nav>

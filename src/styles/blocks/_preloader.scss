@@ -1,0 +1,45 @@
+
+
+@keyframes bounce_preloader{
+	0% {
+		transform:scale( 1 );
+		background-color:rgb( 53, 153, 219 );
+	}
+	100% {
+		transform: scale( .3 );
+		background-color: $brand-primary;
+	}
+}
+
+
+
+.preloader {
+
+	width: 174px;
+	height: 1em;
+	margin: .5em;
+	display: flex;
+	align-items: center;
+
+	.bar {
+		background-color: rgba( 53, 153, 219, .48 );
+		width: 1em;
+		height: 1em;
+		animation-name: bounce_preloader;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: normal;
+		transform: scale( .3 );
+		border-radius: 50%;
+	}
+
+	.bar--1 { animation-delay:  .6s; }
+	.bar--2 { animation-delay:  .75s; }
+	.bar--3 { animation-delay: 0.9s; }
+	.bar--4 { animation-delay: 1.05s; }
+	.bar--5 { animation-delay: 1.2s; }
+	.bar--6 { animation-delay: 1.35s; }
+	.bar--7 { animation-delay: 1.5s; }
+	.bar--8 { animation-delay: 1.64s; }
+
+}

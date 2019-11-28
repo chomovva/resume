@@ -16,12 +16,16 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
  * @param bool $in_footer подключать в шапке или подвале
  */
 function resume_scripts() {
+	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'resume-main', RESUME_URL . 'scripts/main.js', array( 'jquery', 'fancybox' ), RESUME_VERSION, true );
 	wp_localize_script( 'resume-main', 'resumeTheme', array( 'toTopBtn' => 'Наверх' ) );
 	wp_enqueue_script( 'lazyload', RESUME_URL . 'scripts/lazyload.min.js', array( 'jquery' ), '1.7.6', true );
 	wp_enqueue_script( 'fancybox', RESUME_URL . 'scripts/fancybox.min.js', array( 'jquery' ), '3.3.5', true );
 	wp_enqueue_script( 'superembed', RESUME_URL . 'scripts/superembed.min.js', array( 'jquery' ), '3.1', true );
 	wp_register_script( 'slick', RESUME_URL . 'scripts/slick.min.js', array( 'jquery' ), '1.8.0', true );
+	wp_localize_script( 'jquery', 'resume', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'resume_scripts' );
 

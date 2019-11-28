@@ -3,5 +3,8 @@
   <div class="arrow">
     <div class="sr-only"><?php echo $label; ?></div>
   </div>
-  <h4 class="title"><?php echo $title; ?></h4>
+  <div class="wrap">
+  	<h4 class="title"><?php echo $title; ?></h4>
+  	<p class="excerpt"><?php echo $excerpt; ?></p>
+  </div>
 </a>
