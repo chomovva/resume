@@ -73,26 +73,3 @@ $wp_customize->add_control(
         'type'              => 'text',
     )
 ); /**/
-
-
-
-$wp_customize->add_setting(
-    RESUME_SLUG . '_portfolio_numberposts',
-    array(
-        'default'           => '10',
-        'transport'         => 'reset',
-        'sanitize_callback' => 'absint',
-    )
-);
-$wp_customize->add_control(
-    RESUME_SLUG . '_portfolio_numberposts',
-    array(
-        'section'           => RESUME_SLUG . '_portfolio',
-        'label'             => __( 'Заголовок', RESUME_TEXTDOMAIN ),
-        'type'              => 'number',
-        'input_attrs'       => array(
-            'min'             => '1',
-            'max'             => '20',
-        ),
-    )
-); /**/

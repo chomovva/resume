@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 define( 'RESUME_URL', get_template_directory_uri() . '/' );
 define( 'RESUME_DIR', get_template_directory() . '/' );
 define( 'RESUME_TEXTDOMAIN', 'resume' );
-define( 'RESUME_VERSION', '0.0.6' );
+define( 'RESUME_VERSION', '0.0.7' );
 define( 'RESUME_SLUG', 'resume' );
 
 
@@ -157,3 +157,44 @@ function resume_ajax_portfolio_load_posts() {
 }
 add_action( 'wp_ajax_portfolio_pagination', 'resume_ajax_portfolio_load_posts' );
 add_action( 'wp_ajax_nopriv_portfolio_pagination', 'resume_ajax_portfolio_load_posts' );
+
+
+
+
+
+
+/**
+ * Добавление ленивой загрузки для изображений контента
+ */
+function resume_add_content_lazyload_images( $content ) {
+	$result = __return_empty_array();
+	$elements = preg_split( get_html_split_regex(), $content, -1, PREG_SPLIT_DELIM_CAPTURE );;
+	if ( is_array( $elements ) ) {
+		foreach ( $elements as $element ) {
+			if ( 'img' === substr( $element, 1, 3 ) ) {
+				$attrs = wp_kses_hair( $element, array( 'http', 'https' ) );
+				if ( ! array_key_exists( 'data-src', $attrs ) || ! array_key_exists( 'data-lazy', $attrs ) ) {
+					$attrs[ 'class' ][ 'value' ] = ' lazy';
+					$attrs[ 'data-src' ][ 'value' ] = $attrs[ 'src' ][ 'value' ];
+					$attrs[ 'src' ][ 'value' ] = '#';
+					if ( array_key_exists( 'srcset', $attrs ) ) {
+						$attrs[ 'data-srcset' ][ 'value' ] = $attrs[ 'srcset' ][ 'value' ];
+						$attrs[ 'srcset' ][ 'value' ] = '#';
+					}
+					$element = '<img';
+					foreach ( $attrs as $attr => $value ) {
+						$element .= sprintf( ' %1$s="%2$s"', $attr, $value[ 'value' ] );
+					}
+					$element .= ' />';
+				}
+			} elseif ( empty( trim( $element ) ) ) {
+				continue;
+			}
+			$result[] = $element;
+		}
+	} else {
+		$result[] = $content;
+	}
+	return implode( "", $result );
+}
+add_filter( 'the_content', 'resume_add_content_lazyload_images', 10, 1 );

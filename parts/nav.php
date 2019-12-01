@@ -30,7 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 				) );
 			}
 		?>
-		<h3><?php _e( 'Поделиться' ); ?></h3>
+		<h3><?php _e( 'Поделиться', RESUME_TEXTDOMAIN ); ?></h3>
 		<div class="lead"><?php echo get_share( false ); ?></div>
+		<h3><?php _e( 'Поиск по сайту', RESUME_TEXTDOMAIN ); ?></h3>
+		<?php get_search_form( true ); ?>
 	</div>
 </nav>

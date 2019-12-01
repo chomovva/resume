@@ -312,7 +312,7 @@ function get_share( $post_id = false ) {
 		$result[] = sprintf(
 			'<li><a class="%1$s" target="_blank" href="%2$s"><span class="sr-only">%3$s</span></a></li>',
 			$key,
-			$link,
+			urlencode( $link ),
 			$label
 		);
 	}

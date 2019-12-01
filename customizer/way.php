@@ -53,7 +53,7 @@ $wp_customize->add_control(
        array(
            'label'      => __( 'Фоновое изображение', RESUME_TEXTDOMAIN ),
            'section'    => RESUME_SLUG . '_way',
-           'settings'   => RESUME_SLUG . '_way_foto'
+           'settings'   => RESUME_SLUG . '_way_bgi'
        )
    )
 );

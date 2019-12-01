@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 							<li class="clearfix">
 								<strong class="font-normal">
 									<?php echo $skills[ $i ][ 'label' ]; ?> 
-									<spam class="pull-right"><?php echo $skills[ $i ][ 'value' ]; ?></spam>
+									<span class="pull-right"><?php echo $skills[ $i ][ 'value' ]; ?></span>
 								</strong>
 								<?php echo get_progress_bar( $skills[ $i ][ 'value' ] ); ?>
 							</li>

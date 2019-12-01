@@ -18,7 +18,6 @@ $cat = get_category( $cat_id, OBJECT, 'raw' );
 if ( $cat && ! is_wp_error( $cat ) ) {
 
 	$entries = get_posts( array(
-		// 'numberposts' => get_theme_mod( RESUME_SLUG . '_portfolio_numberposts', '10' ),
 		'numberposts' => 5,
 		'category'    => $cat->term_id,
 		'orderby'     => 'date',
@@ -40,7 +39,7 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 		$slides = ob_get_contents();
 		ob_end_clean();
 
-		if ( isset( $_POST[ 'action' ] ) && 'portfolio_pagination' == $_POST[ 'action' ] ) {
+		if ( wp_doing_ajax() ) {
 			echo $slides;
 		} else {
 			$title = get_theme_mod( RESUME_SLUG . '_portfolio_title', __( 'Портфолио', RESUME_TEXTDOMAIN ) );
@@ -51,7 +50,6 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_script( 'slick' );
 			wp_enqueue_style( 'slick' );
-			wp_add_inline_script( 'slick', file_get_contents ( RESUME_DIR . 'scripts/portfolio-init.js' ), 'after' );
 			?>
 				<section class="section portfolio" id="portfolio">
 					<div class="container">

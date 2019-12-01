@@ -22,6 +22,15 @@ styles.compiler      = require( 'node-sass' );
 
 
 
+gulp.task( 'main_scripts', function() {
+	return gulp.src( './src/scripts/main/*.js' )
+		.pipe( plumber() )
+		.pipe( concat( 'main.js') )
+		.pipe( gulp.dest( './scripts/' ) );
+	}
+);
+
+
 
 gulp.task( 'gutenberg_scripts', function() {
 	return gulp.src( './src/scripts/gutenberg/*.js' )
@@ -128,7 +137,7 @@ gulp.task( 'index', function () {
 
 
 gulp.task( 'scripts', function () {
-	return gulp.src( [ './src/scripts/*.js', '!./src/scripts/gutenberg.js' ] )
+	return gulp.src( [ './src/scripts/*.js' ] )
 		.pipe( plumber() )
 		.pipe( gulp.dest( './scripts/' ) )
 		.pipe( minscripts() )
@@ -195,7 +204,7 @@ gulp.task( 'gutenberg', function () {
 gulp.task( 'watch', function () {
 	gulp.watch( [ './src/styles/**/*.scss', './src/styles/gutenberg/*.scss' ], gulp.series( 'styles') );
 	gulp.watch( './src/views/**/*.pug',                  gulp.series( 'html', 'index' ) );
-	gulp.watch( './src/scripts/**/*.js',                 gulp.series( 'scripts' ) );
+	gulp.watch( './src/scripts/**/*.js',                 gulp.series( 'scripts', 'main_scripts' ) );
 	gulp.watch( './src/images/**/*.{png,jpg,svg,gif}',   gulp.series( 'images' ) );
 	gulp.watch( './src/video/**/*.*',                    gulp.series( 'video' ) );
 	gulp.watch( './src/fonts/**/*.*',                    gulp.series( 'fonts' ) );
@@ -204,6 +213,6 @@ gulp.task( 'watch', function () {
 
 
 gulp.task( 'default', gulp.series(
-	gulp.parallel( 'html', 'index', 'styles', 'scripts', 'images', 'video', 'fonts' ),
+	gulp.parallel( 'html', 'index', 'styles', 'scripts', 'images', 'video', 'fonts', 'main_scripts' ),
 	gulp.parallel( 'watch', 'server' )
 ) );
