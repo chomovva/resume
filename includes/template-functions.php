@@ -140,6 +140,18 @@ function render_links_list( $contacts, $class_name ) {
 
 
 
+function get_trim_excerpt( $content ) {
+	$result = __return_empty_string();
+	$content = strip_shortcodes( $content );
+	$content = excerpt_remove_blocks( $content );
+	$content = str_replace( ']]>', ']]&gt;', $content );
+	$content = strip_tags( $content );
+	$result = wp_trim_words( $content );
+	return $result;
+}
+
+
+
 
 function the_pager() {
 	ob_start();
@@ -157,7 +169,7 @@ function the_pager() {
 			$title = apply_filters( 'the_title', $value[ 'entry' ]->post_title, $value[ 'entry' ]->ID );
 			$label = $value[ 'label' ];
 			$permalink = get_permalink( $value[ 'entry' ]->ID );
-			$excerpt = ( empty( trim( $value[ 'entry' ]->post_excerpt ) ) ) ? strip_tags( wp_trim_excerpt( $value[ 'entry' ]->post_content ) ) : $value[ 'entry' ]->post_excerpt;
+			$excerpt = ( empty( trim( $value[ 'entry' ]->post_excerpt ) ) ) ? get_trim_excerpt( $value[ 'entry' ]->post_content ) : $value[ 'entry' ]->post_excerpt;
 			include get_theme_file_path( 'views/adjacent-post.php' );
 		}
 	}
@@ -312,7 +324,7 @@ function get_share( $post_id = false ) {
 		$result[] = sprintf(
 			'<li><a class="%1$s" target="_blank" href="%2$s"><span class="sr-only">%3$s</span></a></li>',
 			$key,
-			urlencode( $link ),
+			$link,
 			$label
 		);
 	}

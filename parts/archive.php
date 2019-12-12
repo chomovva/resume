@@ -35,7 +35,7 @@ if ( have_posts() ) {
 					<div class="col-xs-8 col-sm-4 col-md-4 col-lg-4">
 						<a class="thumbnail" href="<?php the_permalink( get_the_ID() ); ?>">
 							<?php
-								echo get_thumbnail_image( get_the_ID(), 'medium' );
+								echo get_thumbnail_image( get_the_ID(), 'thumbnail_medium' );
 								echo get_publish_date();
 							?>
 						</a>

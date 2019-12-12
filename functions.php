@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 define( 'RESUME_URL', get_template_directory_uri() . '/' );
 define( 'RESUME_DIR', get_template_directory() . '/' );
 define( 'RESUME_TEXTDOMAIN', 'resume' );
-define( 'RESUME_VERSION', '0.0.7' );
+define( 'RESUME_VERSION', '0.0.8' );
 define( 'RESUME_SLUG', 'resume' );
 
 
