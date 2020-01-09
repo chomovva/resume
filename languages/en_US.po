@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-01 19:31+0200\n"
-"PO-Revision-Date: 2019-12-01 19:31+0200\n"
+"POT-Creation-Date: 2020-01-09 22:54+0200\n"
+"PO-Revision-Date: 2020-01-09 22:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -103,6 +103,22 @@ msgstr "Contacts"
 #: customizer/contacts.php:14
 msgid "Список контактов"
 msgstr "Contact list"
+
+#: customizer/contacts.php:22
+msgid "Viber"
+msgstr "Viber"
+
+#: customizer/contacts.php:23
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: customizer/contacts.php:24
+msgid "Telegram"
+msgstr "Telegram"
+
+#: customizer/contacts.php:25
+msgid "Email"
+msgstr "Email"
 
 #: customizer/experience.php:13
 msgid "Опыт"
@@ -262,7 +278,7 @@ msgstr "Page Selection #%1$s"
 
 #: functions.php:43
 msgid "Настройки темы \"Резюме\""
-msgstr ""
+msgstr "RESUME theme settings"
 
 #: functions.php:95
 msgid "Главное меню"
@@ -280,7 +296,7 @@ msgstr "Basement sidebar"
 msgid "Колонка"
 msgstr "Column"
 
-#: header.php:22
+#: header.php:33
 msgid "Открыть меню"
 msgstr "Open menu"
 
@@ -292,31 +308,31 @@ msgstr "Home"
 msgid "Домашняя страница"
 msgstr "Homepage"
 
-#: includes/template-functions.php:149
+#: includes/template-functions.php:161
 msgid "Смотреть предыдущий пост"
 msgstr "View previous post"
 
-#: includes/template-functions.php:153
+#: includes/template-functions.php:165
 msgid "Смотреть следующий пост"
 msgstr "See next post"
 
-#: includes/template-functions.php:282
+#: includes/template-functions.php:294
 msgid "Поделиться в VK"
 msgstr "Share on VK"
 
-#: includes/template-functions.php:283
+#: includes/template-functions.php:295
 msgid "Поделиться в Facebook"
 msgstr "Share on Facebook"
 
-#: includes/template-functions.php:284
+#: includes/template-functions.php:296
 msgid "Поделиться в Twitter"
 msgstr "Share on Twitter"
 
-#: includes/template-functions.php:285
+#: includes/template-functions.php:297
 msgid "Поделиться в LinkedIn"
 msgstr "Share on LinkedIn"
 
-#: includes/template-functions.php:286
+#: includes/template-functions.php:298
 msgid "Отправить по email"
 msgstr "Email"
 

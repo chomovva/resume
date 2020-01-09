@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-01 19:29+0200\n"
-"PO-Revision-Date: 2019-12-01 19:30+0200\n"
+"POT-Creation-Date: 2020-01-09 22:52+0200\n"
+"PO-Revision-Date: 2020-01-09 22:52+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -104,6 +104,22 @@ msgstr "Контакти"
 #: customizer/contacts.php:14
 msgid "Список контактов"
 msgstr "Список контактів"
+
+#: customizer/contacts.php:22
+msgid "Viber"
+msgstr "Viber"
+
+#: customizer/contacts.php:23
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: customizer/contacts.php:24
+msgid "Telegram"
+msgstr "Telegram"
+
+#: customizer/contacts.php:25
+msgid "Email"
+msgstr "Email"
 
 #: customizer/experience.php:13
 msgid "Опыт"
@@ -281,7 +297,7 @@ msgstr "Сайдбар підвалу"
 msgid "Колонка"
 msgstr "Колонка"
 
-#: header.php:22
+#: header.php:33
 msgid "Открыть меню"
 msgstr "Відкрити меню"
 
@@ -293,31 +309,31 @@ msgstr "Головна"
 msgid "Домашняя страница"
 msgstr "Домашня сторінка"
 
-#: includes/template-functions.php:149
+#: includes/template-functions.php:161
 msgid "Смотреть предыдущий пост"
 msgstr "Дивитися попередній пост"
 
-#: includes/template-functions.php:153
+#: includes/template-functions.php:165
 msgid "Смотреть следующий пост"
 msgstr "Наступне пост"
 
-#: includes/template-functions.php:282
+#: includes/template-functions.php:294
 msgid "Поделиться в VK"
 msgstr "Поділіться в VK"
 
-#: includes/template-functions.php:283
+#: includes/template-functions.php:295
 msgid "Поделиться в Facebook"
 msgstr "Поділіться в Facebook"
 
-#: includes/template-functions.php:284
+#: includes/template-functions.php:296
 msgid "Поделиться в Twitter"
 msgstr "Поділіться в Twitter"
 
-#: includes/template-functions.php:285
+#: includes/template-functions.php:297
 msgid "Поделиться в LinkedIn"
 msgstr "Поділіться в LinkedIn"
 
-#: includes/template-functions.php:286
+#: includes/template-functions.php:298
 msgid "Отправить по email"
 msgstr "Надіслати по email"
 
