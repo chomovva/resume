@@ -81,7 +81,7 @@ if ( is_array( $experience ) && ! empty( $experience ) ) {
  * */
 $services = get_theme_mod( RESUME_SLUG . '_services', array() );
 if ( is_array( $services ) && ! empty( $services ) ) {
-    for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_services_count', 6 ); $i++) { 
+    for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_services_count', 6 ); $i++ ) { 
         if ( isset( $services[ $i ] ) && ! empty( trim( $services[ $i ] ) ) )  {
             pll_register_string( "services_{$i}", $services[ $i ], RESUME_TEXTDOMAIN, false );
         }
