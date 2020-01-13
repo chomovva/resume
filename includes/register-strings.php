@@ -26,7 +26,7 @@ foreach ( array(
     'services_excerpt',
 ) as $key ) {
     $value = wp_strip_all_tags( get_theme_mod( RESUME_SLUG . '_' . $key, '' ) );
-    if ( ! empty( $value ) ) {
+    if ( ! empty( trim( $value ) ) ) {
         pll_register_string( $key, $value, RESUME_TEXTDOMAIN, false );
     }
 }
@@ -39,7 +39,9 @@ foreach ( array(
  * */
 if ( ! empty( $contacts = get_theme_mod( RESUME_SLUG . '_contacts', array() ) ) ) {
     foreach ( $contacts as $key => $value ) {
-        pll_register_string( "contacts_{$key}", $value, RESUME_TEXTDOMAIN, false );
+        if ( ! empty( trim( $value ) ) ) {
+            pll_register_string( "contacts_{$key}", $value, RESUME_TEXTDOMAIN, false );
+        }
     }
 }
 
@@ -50,7 +52,9 @@ if ( ! empty( $contacts = get_theme_mod( RESUME_SLUG . '_contacts', array() ) ) 
  * */
 if ( ! empty( $links = get_theme_mod( RESUME_SLUG . '_links', array() ) ) ) {
     foreach ( $links as $key => $value ) {
-        pll_register_string( "links_{$key}", $value, RESUME_TEXTDOMAIN, false );
+        if ( ! empty( trim( $value ) ) ) {
+            pll_register_string( "links_{$key}", $value, RESUME_TEXTDOMAIN, false );
+        }
     }
 }
 
@@ -63,8 +67,23 @@ if ( ! empty( $links = get_theme_mod( RESUME_SLUG . '_links', array() ) ) ) {
 $experience = get_theme_mod( RESUME_SLUG . '_experience', array() );
 if ( is_array( $experience ) && ! empty( $experience ) ) {
     for ( $i = 0; $i < 4; $i++) { 
-        if ( isset( $experience[ $i ][ 'label' ] ) && ! empty( $experience[ $i ][ 'label' ] ) )  {
+        if ( isset( $experience[ $i ][ 'label' ] ) && ! empty( trim( $experience[ $i ][ 'label' ] ) ) )  {
             pll_register_string( "experience_{$i}", $experience[ $i ][ 'label' ], RESUME_TEXTDOMAIN, false );
+        }
+    }
+}
+
+
+
+
+/**
+ * Регистрация переводов строк для списка услуг
+ * */
+$services = get_theme_mod( RESUME_SLUG . '_services', array() );
+if ( is_array( $services ) && ! empty( $services ) ) {
+    for ( $i = 0; $i < 4; $i++) { 
+        if ( isset( $services[ $i ] ) && ! empty( trim( $services[ $i ] ) ) )  {
+            pll_register_string( "services_{$i}", $services[ $i ], RESUME_TEXTDOMAIN, false );
         }
     }
 }
