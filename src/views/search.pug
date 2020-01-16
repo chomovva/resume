@@ -1,0 +1,36 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'search';
+	- page.title = 'Результаты поиска';
+
+
+
+mixin search_entry( args )
+	.search__entry.entry
+		h3.title: a( href="#" ) #{args.title}
+		.small 20.12.2020
+		p.excerpt #{args.excerpt}
+		p.text-right: a.btn.btn-sm.btn-primary( href="#" ) Подробней
+
+
+block main
+	.container: .row
+		.col-xs-12.col-sm-12.col-md-8.col-lg-8
+			h1.title #{page.title}
+			p.lead #{page.excerpt}
+			include blocks/_breadcrumb
+			+search_entry( { title: 'Заголовок найденго поста 1', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ducimus unde, tenetur maxime blanditiis, accusamus magnam mollitia et veniam consectetur consequatur id ad amet, facilis soluta beatae quia! Debitis, architecto?' } )
+			+search_entry( { title: 'Заголовок найденго поста 2', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatibus nihil, architecto accusamus itaque impedit repellendus veniam reprehenderit modi vitae odit ut mollitia illo at repudiandae id! Veritatis, veniam, ratione.' } )
+			+search_entry( { title: 'Заголовок найденго поста 3', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti totam dolor minus. Voluptatum labore debitis optio dolor commodi molestiae distinctio nam, magni earum nihil vero esse deleniti fugit doloremque sed.' } )
+			+search_entry( { title: 'Заголовок найденго поста 4', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas voluptatem minima quidem accusantium fugiat reiciendis quas sint, incidunt, perferendis animi sunt! Sapiente eum, suscipit rem, enim modi impedit laborum exercitationem.' } )
+			+search_entry( { title: 'Заголовок найденго поста 5', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti enim necessitatibus dolorem debitis, libero vero ullam iusto repudiandae quae eligendi possimus, aut, numquam officia explicabo! Eos a illum commodi ipsam.' } )
+			+search_entry( { title: 'Заголовок найденго поста 6', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ducimus unde, tenetur maxime blanditiis, accusamus magnam mollitia et veniam consectetur consequatur id ad amet, facilis soluta beatae quia! Debitis, architecto?' } )
+			+search_entry( { title: 'Заголовок найденго поста 7', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatibus nihil, architecto accusamus itaque impedit repellendus veniam reprehenderit modi vitae odit ut mollitia illo at repudiandae id! Veritatis, veniam, ratione.' } )
+			+search_entry( { title: 'Заголовок найденго поста 8', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti totam dolor minus. Voluptatum labore debitis optio dolor commodi molestiae distinctio nam, magni earum nihil vero esse deleniti fugit doloremque sed.' } )
+			+search_entry( { title: 'Заголовок найденго поста 9', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas voluptatem minima quidem accusantium fugiat reiciendis quas sint, incidunt, perferendis animi sunt! Sapiente eum, suscipit rem, enim modi impedit laborum exercitationem.' } )
+			+search_entry( { title: 'Заголовок найденго поста 10', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti enim necessitatibus dolorem debitis, libero vero ullam iusto repudiandae quae eligendi possimus, aut, numquam officia explicabo! Eos a illum commodi ipsam.' } )
+			include blocks/_pagination
+		.col-xs-12.col-sm-12.col-md-4.col-lg-4
+			include asides/_column

@@ -57,3 +57,8 @@ img.alignright, a.alignright img { margin: 5px 0px 10px 10px; }
 .list-inline { @extend %list-inline; }
 
 .screen-reader-text, .sr-only { display: none; }
+
+
+.bg-primary { background-color: lighten( $brand-primary, 25% ); }
+.bg-warning { background-color: lighten( $brand-warning, 25% ); }
+.bg-success { background-color: lighten( $brand-success, 25% ); }

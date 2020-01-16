@@ -286,6 +286,9 @@ function get_share( $post_id = false ) {
 		$permalink = get_home_url();
 		$title = get_bloginfo( 'name' );
 		$thumbnail_url = ( has_header_image() ) ? get_header_image() : $thumbnail_url;
+	} elseif ( is_search() ) {
+		$permalink = get_search_link( get_search_query() );
+		$title = sprintf( __( 'Результаты поиска %s', RESUME_TEXTDOMAIN ), get_search_query() );
 	} elseif ( $term_id = get_queried_object()->term_id ) {
 		$permalink = get_term_link( $term_id );
 		$title = single_term_title( $term_id, 0 );
@@ -367,4 +370,27 @@ function get_entry_categories( $post_id, $exclude = '', $link = true ) {
 		}
 	}
 	return ( empty( $result ) ) ? '' : '<ul class="categories">' . implode( "\r\n", $result ) . '</ul>';
+}
+
+
+
+
+
+
+/**
+ * Подсветка результатов поиска
+ **/
+function search_backlight( $text ) {
+	if ( is_search() ) {
+		$query_terms = get_query_var( 'search_terms' );
+		if ( empty( $query_terms ) ) $query_terms = array( get_query_var( 's' ) );
+		if ( empty( $query_terms ) ) return $text;
+		foreach( $query_terms as $term ) {
+			$term = preg_quote( $term, '/' );
+			$text = preg_replace_callback( "/$term/iu", function( $match ) {
+				return '<span class="bg-success">'. $match[ 0 ] .'</span>';
+			}, $text );
+		}
+	}
+	return $text;
 }

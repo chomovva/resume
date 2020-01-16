@@ -10,7 +10,13 @@
 
 
 	.entry {
-		margin: 1em auto;
+		margin: 2em auto;
+	}
+
+
+	.entry + .entry {
+		border-top: 1px solid $border-color;
+		padding-top: 2em;
 	}
 
 
