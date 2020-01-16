@@ -23,6 +23,7 @@ form {
 	textarea,
 	input[ type="text" ],
 	input[ type="email" ],
+	input[ type="search" ],
 	input[ type="password" ] {
 		border-radius: $border-radius;
 		background-color: #fff;
