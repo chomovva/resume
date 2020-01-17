@@ -19,7 +19,8 @@ if ( ! empty( $page_id ) ) {
 	$page = get_page( $page_id, OBJECT, 'raw' );
 
 	if ( $page && ! is_wp_error( $page ) ) {
-		$content = do_shortcode( $page->post_content, false );
+		$parts = get_extended( $page->post_content );
+		$content = do_shortcode( $parts[ 'main' ], false );
 	}
 
 	$skills = get_theme_mod( RESUME_SLUG . '_skills', array() );
