@@ -18,10 +18,16 @@
 	table {
 		width: 100%;
 		text-align: center;
-		line-height: 200%;
 	}
 	td {
 		padding: 0;
+		line-height: 2.5em;
+	}
+	tbody td + td {
+		border-left: 1px solid lighten( $brand-primary, 25% );
+	}
+	tbody tr + tr td {
+		border-top: 1px solid lighten( $brand-primary, 25% );
 	}
 	#today {
 		background-color: $brand-primary;
@@ -35,7 +41,8 @@
 		display: block;
 		width: inherit;
 		height: inherit;
-		background-color: lighten( $brand-primary, 35% );
+		color: $brand-primary;
+		font-weight: bold;
 		transition: color 200ms, background-color 200ms;
 	}
 	a:hover {

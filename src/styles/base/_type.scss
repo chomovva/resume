@@ -13,7 +13,7 @@
 .text-capitalize     { text-transform: capitalize; }
 
 
-.small { font-size: 80%; }
+.small { @extend %small; }
 .lead {
 	margin-bottom: $line-height-base;
   font-size: floor( ( $font-size-base * 1.15 ) );
