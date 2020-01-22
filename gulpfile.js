@@ -100,7 +100,7 @@ gulp.task( 'styles', function () {
 		.pipe( plumber() )
 		.pipe( sourcemaps.init() )
 		.pipe( styles().on( 'error', styles.logError ) )
-		.pipe( autoprefixer() )
+		.pipe( autoprefixer( [ 'last 15 versions', '> 1%', 'ie 11' ], { cascade: true } ) )
 		.pipe( sourcemaps.write( '.' ) )
 		.pipe( gulp.dest( './styles/' ) )
 		.on( 'end', browserSync.reload );
@@ -136,7 +136,7 @@ gulp.task( 'index', function () {
 
 
 
-gulp.task( 'scripts', function () {
+gulp.task( 'other_scripts', function () {
 	return gulp.src( [ './src/scripts/*.js' ] )
 		.pipe( plumber() )
 		.pipe( gulp.dest( './scripts/' ) )
@@ -194,11 +194,13 @@ gulp.task( 'clearcache', function () {
 gulp.task( 'minify', gulp.series( 'minstyles', 'minscripts' ) );
 
 
+gulp.task( 'scripts', gulp.series( 'main_scripts', 'gutenberg_scripts', 'other_scripts', 'minscripts' ) );
+
+
 gulp.task( 'gutenberg', function () {
 	gulp.watch( './src/scripts/gutenberg/*.js',          gulp.series( 'gutenberg_scripts' ) );
 	gulp.watch( './src/styles/**/*.scss',                gulp.series( 'gutenberg_styles' ) );
 } );
-
 
 
 gulp.task( 'watch', function () {

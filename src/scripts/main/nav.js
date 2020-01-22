@@ -2,7 +2,7 @@
 /* Навигационное меню */
 jQuery( document ).ready( function () {
 
-	jQuery( 'body' ).on( 'click', '#burger, #close', function() {
+	jQuery( 'body' ).on( 'click', '#burger, #close, #bg', function() {
 		if ( jQuery( 'body' ).attr( 'data-nav' ) == 'active' ) {
 			jQuery( '#nav' ).removeClass( 'nav--active' );
 			jQuery( '#burger' ).removeClass( 'burger--active' );

@@ -1,0 +1,31 @@
+
+
+
+
+
+
+.blocks-gallery-grid {
+
+	.blocks-gallery-item figure a {
+		display: block;
+		width: 100%;
+	}
+
+	.blocks-gallery-item__caption {
+		background-color: rgba( 0, 0, 0, .5 ) !important;
+		background-image: none !important;
+		padding: 1em !important;
+		box-sizing: border-box;
+		transition: background-color .2s;
+	}
+
+	.blocks-gallery-item:hover .blocks-gallery-item__caption {
+		background-color: rgba( 0, 0, 0, .7 ) !important;
+	}
+
+	.blocks-gallery-item img {
+		width: 100%;
+		box-shadow: 0 .5em 1em rgba( 0, 0, 0, .5 );
+	}
+
+}
