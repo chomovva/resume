@@ -94,25 +94,25 @@ function the_breadcrumbs() {
 
 
 function get_translate_id( $id, $type = 'post' ) {
-    $result = '';
-    if ( $id && ! empty( $id ) ) {
-        if ( defined( 'POLYLANG_FILE' ) ) {
-            switch ( $type ) {
-                case 'category':
-                    $translate = ( function_exists( 'pll_get_term' ) ) ? pll_get_term( $id, pll_current_language( 'slug' ) ) : $translate;
-                    break;
-                case 'post':
-                case 'page':
-                default:
-                    $translate = ( function_exists( 'pll_get_post' ) ) ? pll_get_post( $id, pll_current_language( 'slug' ) ) : $translate;
-                    break;
-            } // switch
-            $result = ( $translate ) ? $translate : '';
-        } else {
-            $result = $id;
-        }
-    }
-    return $result;
+	$result = '';
+	if ( $id && ! empty( $id ) ) {
+		if ( defined( 'POLYLANG_FILE' ) ) {
+			switch ( $type ) {
+				case 'category':
+					$translate = ( function_exists( 'pll_get_term' ) ) ? pll_get_term( $id, pll_current_language( 'slug' ) ) : $translate;
+					break;
+				case 'post':
+				case 'page':
+				default:
+					$translate = ( function_exists( 'pll_get_post' ) ) ? pll_get_post( $id, pll_current_language( 'slug' ) ) : $translate;
+					break;
+			} // switch
+			$result = ( $translate ) ? $translate : '';
+		} else {
+			$result = $id;
+		}
+	}
+	return $result;
 }
 
 
@@ -393,4 +393,34 @@ function search_backlight( $text ) {
 		}
 	}
 	return $text;
+}
+
+
+
+/**
+ * Конвертер ассоциативного массива в css правила
+ **/
+function css_array_to_css( $rules, $args = array() ) {
+	$args = array_merge( array(
+		'indent'     => 0,
+		'container'  => false,
+	), $args );
+	$css = __return_empty_string();
+	$prefix = str_repeat( '  ', $args[ 'indent' ] );
+	foreach ($rules as $key => $value ) {
+		if ( is_array( $value ) ) {
+			$selector = $key;
+			$properties = $value;
+			$css .= $prefix . "$selector {\n";
+			$css .= $prefix . css_array_to_css( $properties, array(
+				'indent'     => $args[ 'indent' ] + 1,
+				'container'  => false,
+			) );
+			$css .= $prefix . "}\n";
+		} else {
+			$property = $key;
+			$css .= $prefix . "$property: $value;\n";
+		}
+	}
+	return ( $args[ 'container' ] ) ? "\n<style>\n" . $css . "\n</style>\n" : $css;
 }
