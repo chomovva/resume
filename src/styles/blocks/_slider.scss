@@ -13,8 +13,24 @@
 }
 
 
+.slider .controls {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
 
 
+
+.slider .controls .morelink {
+	@extend %small;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.slider .controls .slider-arrow + .slider-arrow {
+	margin-left: .5em;
+}
 
 .slider-arrow,
 .slick-arrow {

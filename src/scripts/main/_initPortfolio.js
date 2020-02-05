@@ -1,6 +1,6 @@
 jQuery( document ).ready( function () {
-	var $slider = jQuery( '#portfolio-slider' );
-	if ( $slider.length > 0 && typeof( resume ) != 'undefined' ) {
+	var $slider = jQuery( '#portfolio-items' );
+	if ( $slider.length > 0 ) {
 		$slider.slick( {
 			lazyLoad: 'ondemand',
 			dots: false,

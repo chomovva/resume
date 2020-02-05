@@ -1,0 +1,26 @@
+%entry {
+
+	margin: 2em auto;
+
+	& + .entry {
+		border-top: 1px solid $border-color;
+		padding-top: 2em;
+	}
+
+}
+
+
+%entry-components {
+
+	.categories {
+		font-size: 75%;
+		margin: 0;
+	}
+
+	.permalink {
+		@extend %button;
+		@extend %button-primary;
+		float: right;
+	}
+
+}

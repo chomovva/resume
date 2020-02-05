@@ -16,21 +16,32 @@ mixin preloader( args )
 
 
 
-
 mixin progress( percent )
 	.progress
 		.progress-bar( role="progressbar", style="width: " + percent + "%", aria-valuenow=percent, aria-valuemin="0", aria-valuemax="100" )
 
 
 
+mixin entry( args )
+	div( class=args.class+" entry" ): .row.center-xs
+		.col-xs-8.col-sm-4.col-md-4.col-lg-3
+			a.thumbnail( href="#" )
+				img.lazy.wp-post-thumbnail( src="#", data-src=args.thumbnail, alt=args.title )
+				.publish #[span.day 20] #[span.month окт] #[span.year 2019]
+		.col-xs-12.col-sm-8.col-md-8.col-lg-9
+			h3.title #{args.title}
+			ul.categories
+				li: a( href="#" ) тема
+				li: a( href="#" ) плагин
+				li: a( href="#" ) вёрстка
+			p.excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur nam, omnis perspiciatis reprehenderit temporibus sint porro libero? Id aut nam animi eveniet perferendis repudiandae aperiam, mollitia expedita officia consectetur laboriosam.
+			.row.center-xs.middle-xs
+				.col-xs-6: include ../blocks/_share
+				.col-xs-6: a.permalink( href="#" ) Подробней
+
+
 
 mixin widget( args )
 	.widget
-		if ( args.title )
-			h3.widget__title.title #{args.title}
-		else
-			h3.widget__title.title Hello, world!
-		if block
-			block
-		else
-			p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+		h3.widget__title.title #{args.title}
+		block

@@ -1,0 +1,10 @@
+//-
+	Главная страница
+	Секция "Блог"
+
+section.section.blog#blog: .container
+	h2 Блог
+	+entry( { class: "blog__entry", thumbnail: src.img+'portfolio/01.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, eius, inventore! Qui, q ab, laudantium.' } )
+	+entry( { class: "blog__entry", thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
+	+entry( { class: "blog__entry", thumbnail: src.img+'portfolio/02.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
+	p.text-center: a.moreinfo( href="#" ) Смотреть ещё

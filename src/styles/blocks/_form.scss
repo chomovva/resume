@@ -35,7 +35,7 @@ form {
 		width: 100%;
 		box-sizing: border-box;
 		outline: none;
-
+		color: $text-color;
 		&:read-only {
 			font-size: 75%;
 			border: 1px solid darken( $body-color, 3% );
