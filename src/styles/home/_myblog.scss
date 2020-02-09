@@ -1,0 +1,25 @@
+.myblog {
+
+	background-color: lighten( $brand-success, 30% );
+
+	.entry {
+		@extend %entry;
+	}
+
+	&__entry {
+
+		@extend %entry-components;
+
+		.overlay {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+	}
+
+	.entry:nth-of-type( even ) > .row { flex-direction: row-reverse; }
+	// .entry:nth-of-type( even ) .share { justify-content: flex-end; }
+
+}

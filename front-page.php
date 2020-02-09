@@ -4,15 +4,14 @@
 get_header();
 
 
-get_template_part( "parts/home/jumbotron" );
-
-
 foreach ( array(
+	'jumbotron',
     'aboutme',
     'services',
     'way',
     'skills',
     'portfolio',
+    'myblog',
 ) as $key ) {
     if ( get_theme_mod( RESUME_SLUG . "_{$key}_flag", false ) )
         get_template_part( "parts/home/$key" );

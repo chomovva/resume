@@ -8,12 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 $wp_customize->add_section(
-	RESUME_SLUG . '_links',
+	"{$slug}_links",
 	array(
 		'title'            => __( 'Профили', RESUME_TEXTDOMAIN ),
 		'priority'         => 10,
 		'description'      => __( 'Ссылки на профили в в социальных сетях и прочее', RESUME_TEXTDOMAIN ),
-		'panel'            => RESUME_SLUG
+		'panel'            => "{$slug}_lists",
 	)
 ); /**/
 
@@ -27,7 +27,7 @@ foreach ( array(
 	'youtube'   => __( 'YouTube', RESUME_TEXTDOMAIN ),
 ) as $key => $label ) {
 	$wp_customize->add_setting(
-		RESUME_SLUG . "_links[$key]",
+		"{$slug}_links[$key]",
 		array(
 			'default'           => '',
 			'transport'         => 'reset',
@@ -35,9 +35,9 @@ foreach ( array(
 		)
 	);
 	$wp_customize->add_control(
-		RESUME_SLUG . "_links[$key]",
+		"{$slug}_links[$key]",
 		array(
-			'section'           => RESUME_SLUG . '_links',
+			'section'           => "{$slug}_links",
 			'label'             => $label,
 			'type'              => 'text',
 		)

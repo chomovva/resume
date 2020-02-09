@@ -7,12 +7,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 $wp_customize->add_section(
-    RESUME_SLUG . '_contacts',
+    "{$slug}_contacts",
     array(
         'title'            => __( 'Контакты', RESUME_TEXTDOMAIN ),
         'priority'         => 10,
         'description'      => __( 'Список контактов', RESUME_TEXTDOMAIN ),
-        'panel'            => RESUME_SLUG
+        'panel'            => "{$slug}_lists",
     )
 ); /**/
 
@@ -25,7 +25,7 @@ foreach ( array(
 	'email'    => __( 'Email', RESUME_TEXTDOMAIN ),
 ) as $key => $label ) {
 	$wp_customize->add_setting(
-	    RESUME_SLUG . "_contacts[$key]",
+	    "{$slug}_contacts[$key]",
 	    array(
 	        'default'           => '',
 	        'transport'         => 'reset',
@@ -33,9 +33,9 @@ foreach ( array(
 	    )
 	);
 	$wp_customize->add_control(
-	    RESUME_SLUG . "_contacts[$key]",
+	    "{$slug}_contacts[$key]",
 	    array(
-	        'section'           => RESUME_SLUG . '_contacts',
+	        'section'           => "{$slug}_contacts",
 	        'label'             => $label,
 	        'type'              => 'text',
 	    )

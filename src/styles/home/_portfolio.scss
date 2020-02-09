@@ -49,7 +49,6 @@
 		}
 	}
 
-
 	&__entry {
 		.wp-post-thumbnail {
 			display: block;
@@ -121,4 +120,8 @@
 		}
 	}
 
+}
+
+.portfolio + .section {
+	margin-top: 0;
 }

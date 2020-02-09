@@ -32,27 +32,7 @@ if ( function_exists( 'pll_register_string' ) ) {
 
 
 if ( is_customize_preview() ) {
-	add_action( 'customize_register', function ( $wp_customize ) {
-		$wp_customize->add_panel(
-			RESUME_SLUG,
-			array(
-				'capability'      => 'edit_theme_options',
-				'title'           => __( 'Настройки темы "Резюме"', RESUME_TEXTDOMAIN ),
-				'priority'        => 200
-			)
-		);
-		include get_theme_file_path( 'customizer/jumbotron.php' );
-		include get_theme_file_path( 'customizer/aboutme.php' );
-		include get_theme_file_path( 'customizer/services.php' );
-		include get_theme_file_path( 'customizer/advantages.php' );
-		include get_theme_file_path( 'customizer/skills.php' );
-		include get_theme_file_path( 'customizer/way.php' );
-		include get_theme_file_path( 'customizer/experience.php' );
-		include get_theme_file_path( 'customizer/portfolio.php' );
-		include get_theme_file_path( 'customizer/404.php' );
-		include get_theme_file_path( 'customizer/contacts.php' );
-		include get_theme_file_path( 'customizer/links.php' );
-	} );
+	include get_theme_file_path( 'includes/customizer.php' );
 }
 
 

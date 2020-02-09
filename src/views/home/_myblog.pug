@@ -2,9 +2,11 @@
 	Главная страница
 	Секция "Блог"
 
-section.section.blog#blog: .container
-	h2 Блог
+section.section.myblog#myblog: .container
+	.row
+		.col-xs-12.col-sm-12.col-md: h2 Блог
+		.col-xs-12.col-sm-12.col-md-10: p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 	+entry( { class: "blog__entry", thumbnail: src.img+'portfolio/01.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, eius, inventore! Qui, q ab, laudantium.' } )
 	+entry( { class: "blog__entry", thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
 	+entry( { class: "blog__entry", thumbnail: src.img+'portfolio/02.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
-	p.text-center: a.moreinfo( href="#" ) Смотреть ещё
+	p.text-center: a.morelink( href="#" ) Смотреть ещё

@@ -12,6 +12,10 @@
 
 %entry-components {
 
+	.title a:hover {
+		text-decoration: none;
+	}
+
 	.categories {
 		font-size: 75%;
 		margin: 0;

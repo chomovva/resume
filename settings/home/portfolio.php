@@ -6,21 +6,20 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 
-
 $wp_customize->add_section(
-    RESUME_SLUG . '_portfolio',
+    "{$slug}_portfolio",
     array(
         'title'            => __( 'Портфолио', RESUME_TEXTDOMAIN ),
         'priority'         => 10,
         'description'      => __( 'Секция главной страницы. Якорь #portfolio. Работы (посты) берутся из категории.', RESUME_TEXTDOMAIN ),
-        'panel'            => RESUME_SLUG
+        'panel'            => "{$slug}_home",
     )
 ); /**/
 
 
 
 $wp_customize->add_setting(
-    RESUME_SLUG . '_portfolio_flag',
+    "{$slug}_portfolio_flag",
     array(
         'default'           => false,
         'transport'         => 'reset',
@@ -28,17 +27,18 @@ $wp_customize->add_setting(
     )
 );
 $wp_customize->add_control(
-    RESUME_SLUG . '_portfolio_flag',
+    "{$slug}_portfolio_flag",
     array(
-        'section'           => RESUME_SLUG . '_portfolio',
+        'section'           => "{$slug}_portfolio",
         'label'             => __( 'Использовать секцию', RESUME_TEXTDOMAIN ),
         'type'              => 'checkbox',
     )
 ); /**/
 
 
+
 $wp_customize->add_setting(
-    RESUME_SLUG . '_portfolio_cat_id',
+    "{$slug}_portfolio_cat_id",
     array(
         'default'           => '',
         'transport'         => 'reset',
@@ -46,9 +46,9 @@ $wp_customize->add_setting(
     )
 );
 $wp_customize->add_control(
-    RESUME_SLUG . '_portfolio_cat_id',
+    "{$slug}_portfolio_cat_id",
     array(
-        'section'           => RESUME_SLUG . '_portfolio',
+        'section'           => "{$slug}_portfolio",
         'label'             => __( 'Выбор категории', RESUME_TEXTDOMAIN ),
         'type'              => 'select',
         'choices'           => resume\get_categories_choices(),
@@ -58,7 +58,7 @@ $wp_customize->add_control(
 
 
 $wp_customize->add_setting(
-    RESUME_SLUG . '_portfolio_title',
+    "{$slug}_portfolio_title",
     array(
         'default'           => __( 'Портфолио', RESUME_TEXTDOMAIN ),
         'transport'         => 'reset',
@@ -66,9 +66,9 @@ $wp_customize->add_setting(
     )
 );
 $wp_customize->add_control(
-    RESUME_SLUG . '_portfolio_title',
+    "{$slug}_portfolio_title",
     array(
-        'section'           => RESUME_SLUG . '_portfolio',
+        'section'           => "{$slug}_portfolio",
         'label'             => __( 'Заголовок', RESUME_TEXTDOMAIN ),
         'type'              => 'text',
     )

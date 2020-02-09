@@ -58,7 +58,6 @@ add_action( 'wp_print_styles', 'resume_print_styles' );
  */
 function resume_styles() {
 	wp_enqueue_style( 'resume-main', RESUME_URL . 'styles/main.min.css', array(), RESUME_VERSION, 'all' );
-	// wp_enqueue_style( 'resume-font', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&amp;display=swap&amp;subset=cyrillic,cyrillic-ext', array(), '14', 'all' );
 	wp_enqueue_style( 'resume-font', RESUME_URL . 'styles/fonts.min.css', array(), RESUME_VERSION, 'all' );
 	wp_enqueue_style( 'fancybox', RESUME_URL . 'styles/fancybox.min.css', array(), '3.3.5', 'all' );
 	wp_enqueue_style( 'slick', RESUME_URL . 'styles/slick.min.css', array(), '1.8.0', 'all' );
@@ -69,6 +68,13 @@ function resume_styles() {
 	wp_enqueue_style( 'wpdiscuz-font-awesome' );
 	wp_enqueue_style( 'wpdiscuz-frontend-css' );
 	wp_enqueue_style( 'wpdiscuz-user-content-css' );
+	if ( is_front_page() && ! get_theme_mod( RESUME_SLUG . '_jumbotron_flag', false ) ) {
+		wp_add_inline_style( 'resume-main', resume\css_array_to_css( array(
+			'.home .header' => array(
+				'background-color'  => '#3598db',
+			),
+		), array( 'container' => false ) ) );
+	}
 }
 add_action( 'get_footer', 'resume_styles', 10, 0 );
 

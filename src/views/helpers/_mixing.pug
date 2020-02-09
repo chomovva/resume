@@ -29,7 +29,7 @@ mixin entry( args )
 				img.lazy.wp-post-thumbnail( src="#", data-src=args.thumbnail, alt=args.title )
 				.publish #[span.day 20] #[span.month окт] #[span.year 2019]
 		.col-xs-12.col-sm-8.col-md-8.col-lg-9
-			h3.title #{args.title}
+			h3.title: a( href="#" ) #{args.title}
 			ul.categories
 				li: a( href="#" ) тема
 				li: a( href="#" ) плагин

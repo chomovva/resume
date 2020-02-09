@@ -424,3 +424,21 @@ function css_array_to_css( $rules, $args = array() ) {
 	}
 	return ( $args[ 'container' ] ) ? "\n<style>\n" . $css . "\n</style>\n" : $css;
 }
+
+
+
+
+function render_entry( $entry, $classes, $current_term_id ) {
+	$entry = get_post( $entry );
+	$post_id = $entry->ID;
+	$classes = implode( " ", get_post_class( $classes . ' entry', $entry->ID ) );
+	$title = $entry->post_title;
+	$excerpt = ( empty( $entry->post_excerpt ) ) ? wp_trim_excerpt( $entry->post_excerpt, $entry ) : $entry->post_excerpt;
+	$permalink = get_the_permalink( $entry->ID );
+	$thumbnail_image = get_thumbnail_image( $entry->ID, 'thumbnail_medium' );
+	$publish_date = get_publish_date( $entry->post_date );
+	$label = __( 'Подробней', RESUME_TEXTDOMAIN );
+	$share = get_share( $entry->ID );
+	$categories = get_entry_categories( $entry->ID, $current_term_id );
+	include get_theme_file_path( 'views/entry.php' );
+}

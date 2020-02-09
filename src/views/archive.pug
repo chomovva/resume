@@ -12,14 +12,14 @@ block main
 			h1.title #{page.title}
 			p.lead #{page.excerpt}
 			include blocks/_breadcrumb
-			+entry( { thumbnail: src.img+'portfolio/01.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, eius, inventore! Qui, q ab, laudantium.' } )
-			+entry( { thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
-			+entry( { thumbnail: src.img+'portfolio/02.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
-			+entry( { thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
-			+entry( { thumbnail: src.img+'portfolio/03.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
-			+entry( { thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae numquam, voluptates auugit quos delectus!' } )
-			+entry( { thumbnail: src.img+'portfolio/04.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quo praesentium aperi' } )
-			+entry( { thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat omnis vero voluptate repesse ea!' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'portfolio/01.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, eius, inventore! Qui, q ab, laudantium.' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'portfolio/02.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'portfolio/03.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis amet, mollitia ' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae numquam, voluptates auugit quos delectus!' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'portfolio/04.jpg', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quo praesentium aperi' } )
+			+entry( { class: "archive__entry", thumbnail: src.img+'thumbnail.png', title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat omnis vero voluptate repesse ea!' } )
 			include blocks/_pagination
 		.col-xs-12.col-sm-12.col-md-4.col-lg-4
 			include asides/_column

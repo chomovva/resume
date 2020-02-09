@@ -44,3 +44,10 @@
 	}
 
 }
+
+
+.jumbotron + .aboutme .foto {
+	@include min-width( $screen-md ) {
+		margin-top: -50%;
+	}
+}
