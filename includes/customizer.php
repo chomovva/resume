@@ -25,7 +25,7 @@ function resume_customize_register( $wp_customize ) {
 		'way',          // опыт работы и образование 
 		'portfolio',    // моё портфолио
 		'reviews',      // отзывы
-		'myblog',         // блог
+		'myblog',       // блог
 	) as $path_name ) {
 		include get_theme_file_path( "settings/home/{$path_name}.php" );
 	}
@@ -48,7 +48,7 @@ function resume_customize_register( $wp_customize ) {
 		"{$slug}_lists",
 		array(
 			'capability'      => 'edit_theme_options',
-			'title'           => __( 'Списки', RESUME_TEXTDOMAIN ),
+			'title'           => __( 'Списки темы', RESUME_TEXTDOMAIN ),
 			'priority'        => 201
 		)
 	);

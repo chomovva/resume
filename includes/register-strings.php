@@ -14,16 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
  * Перевод сблоков
  * */
 foreach ( array(
-    'error404_title',
-    'error404_description',
-    'aboutme_title',
-    'aboutme_more_label',
-    'aboutme_file_label',
-    'jumbotron_title',
-    'skills_title',
-    'portfolio_title',
-    'services_title',
-    'services_excerpt',
+    'error404_title'        => __( 'Ошибка 404', RESUME_TEXTDOMAIN ),
+    'error404_description'  => '',
+    'aboutme_title'         => __( 'Обо мне', RESUME_TEXTDOMAIN ),
+    'aboutme_more_label'    => __( 'Подробней обо мне', RESUME_TEXTDOMAIN ),
+    'aboutme_file_label'    => __( 'Скачать резюме', RESUME_TEXTDOMAIN ),
+    'jumbotron_title'       => '',
+    'skills_title'          => __( '', RESUME_TEXTDOMAIN ),
+    'portfolio_title'       => __( 'Портфолио', RESUME_TEXTDOMAIN ),
+    'portfolio_description' => '',
+    'services_title'        => __( '', RESUME_TEXTDOMAIN ),
+    'services_excerpt'      => __( '', RESUME_TEXTDOMAIN ),
 ) as $key ) {
     $value = wp_strip_all_tags( get_theme_mod( RESUME_SLUG . '_' . $key, '' ) );
     if ( ! empty( trim( $value ) ) ) {

@@ -59,24 +59,24 @@ for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_skills_count', 5 ); $i++ ) {
 			'type'              => 'text',
 		)
 	); /**/
-  $wp_customize->add_setting(
-	RESUME_SLUG . "_skills[{$i}][value]",
-	array(
-		'default'           => 50,
-		'transport'         => 'reset',
-		'sanitize_callback' => 'absint',
-	)
-  );
-  $wp_customize->add_control(
-	  RESUME_SLUG . "_skills[{$i}][value]",
-	  array(
-		  'section'           => RESUME_SLUG . '_skills',
-		  'label'             => sprintf( __( 'оценка навыка %1$s', RESUME_TEXTDOMAIN ), ( $i + 1 ) ),
-		  'type'              => 'number',
-		  'atts'              => array(
-			'min'               => '1',
-			'max'               => '100',
-		  ),
-	  )
-  ); /**/
+	$wp_customize->add_setting(
+		RESUME_SLUG . "_skills[{$i}][value]",
+		array(
+			'default'           => 50,
+			'transport'         => 'reset',
+			'sanitize_callback' => 'absint',
+		)
+	);
+	$wp_customize->add_control(
+		RESUME_SLUG . "_skills[{$i}][value]",
+		array(
+			'section'           => RESUME_SLUG . '_skills',
+			'label'             => sprintf( __( 'оценка навыка %1$s', RESUME_TEXTDOMAIN ), ( $i + 1 ) ),
+			'type'              => 'number',
+			'atts'              => array(
+				'min'               => '1',
+				'max'               => '100',
+			),
+		)
+	); /**/
 }

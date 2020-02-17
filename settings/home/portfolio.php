@@ -73,3 +73,22 @@ $wp_customize->add_control(
         'type'              => 'text',
     )
 ); /**/
+
+
+
+$wp_customize->add_setting(
+    "{$slug}_portfolio_description",
+    array(
+        'default'           => __( 'Портфолио', RESUME_TEXTDOMAIN ),
+        'transport'         => 'reset',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    )
+);
+$wp_customize->add_control(
+    "{$slug}_portfolio_description",
+    array(
+        'section'           => "{$slug}_portfolio",
+        'label'             => __( 'Подзаголовок', RESUME_TEXTDOMAIN ),
+        'type'              => 'textarea',
+    )
+); /**/

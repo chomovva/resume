@@ -38,6 +38,29 @@ $wp_customize->add_control(
 
 
 $wp_customize->add_setting(
+	"{$slug}_reviews_type",
+	array(
+		'default'           => 'items',
+		'transport'         => 'reset',
+		'sanitize_callback' => 'sanitize_text_field',
+	)
+);
+$wp_customize->add_control(
+	"{$slug}_reviews_type",
+	array(
+		'section'           => "{$slug}_reviews",
+		'label'             => __( 'Тип содержимого секции', RESUME_TEXTDOMAIN ),
+		'type'              => 'select',
+		'choices'           => array(
+			'items'           => esc_attr__( 'формализованный список', RESUME_TEXTDOMAIN ),
+			'content'         => esc_attr__( 'содержимое страницы', RESUME_TEXTDOMAIN ),
+		),
+	)
+); /**/
+
+
+
+$wp_customize->add_setting(
 	"{$slug}_reviews_title",
 	array(
 		'default'           => __( 'Отзывы', RESUME_TEXTDOMAIN ),
@@ -89,5 +112,24 @@ $wp_customize->add_control(
 		'section'           => "{$slug}_reviews",
 		'label'             => __( 'Выбор страницы', RESUME_TEXTDOMAIN ),
 		'type'              => 'dropdown-pages',
+	)
+); /**/
+
+
+
+$wp_customize->add_setting(
+	"{$slug}_reviews_label",
+	array(
+		'default'           => __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ),
+		'transport'         => 'reset',
+		'sanitize_callback' => 'sanitize_text_field',
+	)
+);
+$wp_customize->add_control(
+	"{$slug}_reviews_label",
+	array(
+		'section'           => "{$slug}_reviews",
+		'label'             => __( 'Подпись кнопки', RESUME_TEXTDOMAIN ),
+		'type'              => 'text',
 	)
 ); /**/
