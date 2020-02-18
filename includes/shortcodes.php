@@ -46,10 +46,10 @@ add_shortcode( 'languages_list', 'resume\get_languages_list' );
 
 function get_defaut_contact_form() {
 	$check = md5( date( 'Y-m-d' ) );
-	$fields = array( 'email' => '', 'author' => '', 'message' => '' );
+	$fields = array( 'email' => '', 'author' => '', 'message' => '', 'check' => '' );
 	$result = __return_empty_string();
-	if ( isset( $_POST[ 'resume_contact_form_data' ] ) ) {
-		if ( isset( $_POST[ 'email' ] ) && empty( $_POST[ 'email' ] ) ) {
+	if ( isset( $_POST[ 'check' ] ) && isset( $_POST[ 'resume_contact_form_data' ] ) ) {
+		if ( isset( $_POST[ 'email' ] ) && empty( $_POST[ 'email' ] ) && $_POST[ 'check' ] == $check ) {
 			if ( isset( $_POST[ 'resume_contact_form_data' ][ 'author' ] ) ) {
 				$fields[ 'author' ] = sanitize_text_field( $_POST[ 'resume_contact_form_data' ][ 'author' ] );
 			} else {
@@ -144,7 +144,7 @@ function get_defaut_contact_form() {
 				<label for="resume_contact_form_message"><?php _e( 'Сообщение', RESUME_TEXTDOMAIN ); ?></label>
 				<textarea id="resume_contact_form_message" name="resume_contact_form_data[message]" required="required"><?php echo $fields[ 'message' ]; ?></textarea>
 			</div>
-			<input type="hidden" name="resume_contact_form_data[check]" value="<?php echo esc_attr( $check ); ?>">
+			<input type="hidden" name="check" value="<?php echo esc_attr( $check ); ?>">
 			<input type="email" name="email" value="" style="visibility: hidden;">
 			<button type="submit"><?php _e( 'Отправить', RESUME_TEXTDOMAIN ); ?></button>
 		</form>
