@@ -1,5 +1,6 @@
 jQuery( document ).ready( function () {
 	var $slider = jQuery( '#reviews-items' );
+	console.log( $slider.length );
 	if ( $slider.length > 0 ) {
 		$slider.slick( {
 			lazyLoad: 'ondemand',

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 /**
  * Перевод сблоков
- * */
+ */
 foreach ( array(
     'error404_title'        => __( 'Ошибка 404', RESUME_TEXTDOMAIN ),
     'error404_description'  => '',
@@ -23,6 +23,9 @@ foreach ( array(
     'skills_title'          => __( '', RESUME_TEXTDOMAIN ),
     'portfolio_title'       => __( 'Портфолио', RESUME_TEXTDOMAIN ),
     'portfolio_description' => '',
+    'reviews_title'         => __( 'Отзывы', RESUME_TEXTDOMAIN ),
+    'reviews_description'   => '',
+    'reviews_label'         => __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ),
     'services_title'        => __( '', RESUME_TEXTDOMAIN ),
     'services_excerpt'      => __( '', RESUME_TEXTDOMAIN ),
 ) as $key ) {
@@ -37,7 +40,7 @@ foreach ( array(
 
 /**
  * Перевод контактов
- * */
+ */
 if ( ! empty( $contacts = get_theme_mod( RESUME_SLUG . '_contacts', array() ) ) ) {
     foreach ( $contacts as $key => $value ) {
         if ( ! empty( trim( $value ) ) ) {
@@ -50,7 +53,7 @@ if ( ! empty( $contacts = get_theme_mod( RESUME_SLUG . '_contacts', array() ) ) 
 
 /**
  * Ссылок на соц. сети
- * */
+ */
 if ( ! empty( $links = get_theme_mod( RESUME_SLUG . '_links', array() ) ) ) {
     foreach ( $links as $key => $value ) {
         if ( ! empty( trim( $value ) ) ) {
@@ -64,7 +67,7 @@ if ( ! empty( $links = get_theme_mod( RESUME_SLUG . '_links', array() ) ) ) {
 
 /**
  * Заголовки для наименований показателей опыта работы
- * */
+ */
 $experience = get_theme_mod( RESUME_SLUG . '_experience', array() );
 if ( is_array( $experience ) && ! empty( $experience ) ) {
     for ( $i = 0; $i < 4; $i++) { 
@@ -79,12 +82,31 @@ if ( is_array( $experience ) && ! empty( $experience ) ) {
 
 /**
  * Регистрация переводов строк для списка услуг
- * */
+ */
 $services = get_theme_mod( RESUME_SLUG . '_services', array() );
 if ( is_array( $services ) && ! empty( $services ) ) {
     for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_services_count', 6 ); $i++ ) { 
         if ( isset( $services[ $i ] ) && ! empty( trim( $services[ $i ] ) ) )  {
             pll_register_string( "services_{$i}", $services[ $i ], RESUME_TEXTDOMAIN, false );
+        }
+    }
+}
+
+
+
+
+/**
+ * Регистрация переводов отзывов об оказанных услугах
+ */
+$reviews = get_theme_mod( RESUME_SLUG . '_reviews', array() );
+if ( is_array( $reviews ) && ! empty( $reviews ) ) {
+    for ( $i = 0;  $i < get_theme_mod( RESUME_SLUG . '_reviews_count', 5 );  $i++ ) {
+        if ( isset( $reviews[ $i ] ) && is_array( $reviews[ $i ] ) ) {
+            foreach ( array( 'author', 'content', 'link', 'label' ) as $key ) {
+                if ( isset( $reviews[ $i ][ $key ] ) && ! empty( trim( $reviews[ $i ][ $key ] ) ) ) {
+                    pll_register_string( "reviews_{$i}_{$key}", $reviews[ $i ][ $key ], RESUME_TEXTDOMAIN, false );
+                }
+            }
         }
     }
 }

@@ -55,6 +55,7 @@ function resume_customize_register( $wp_customize ) {
 	foreach ( array(
 		'experience',   // опыт работы (показатель - значение)
 		'services',     // список услуг
+		'reviews',      // отзывы
 		'contacts',     // список моих контактов
 		'links',        // ссылки на профили социальных сетей
 	) as $path_name ) {

@@ -54,25 +54,27 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 				<section class="section portfolio" id="portfolio">
 					<div class="container">
 						<h2><?php echo $title; ?></h2>
-						<div class="slider" id="portfolio-slider">
-							<?php echo $slides; ?>
-						</div>
-						<div class="controls">
-							<button class="slider-arrow arrow-prev" id="portfolio-slider-prev">
-								<span class="sr-only"><?php _e( 'Предыдущий слайд', RESUME_TEXTDOMAIN ); ?></span>
-							</button>
-							<button class="slider-arrow arrow-next" id="portfolio-slider-next">
-								<span class="sr-only"><?php _e( 'Следующий слайд', RESUME_TEXTDOMAIN ); ?></span>
-							</button>
-							<div class="preloader" id="portfolio-preloader" style="display: none;">
-								<div class="bar bar--1"></div>
-								<div class="bar bar--2"></div>
-								<div class="bar bar--3"></div>
-								<div class="bar bar--4"></div>
-								<div class="bar bar--5"></div>
-								<div class="bar bar--6"></div>
-								<div class="bar bar--7"></div>
-								<div class="bar bar--8"></div>
+						<div class="slider">
+							<div id="portfolio-items">
+								<?php echo $slides; ?>
+							</div>
+							<div class="controls">
+								<button class="slider-arrow arrow-prev" id="portfolio-slider-prev">
+									<span class="sr-only"><?php _e( 'Предыдущий слайд', RESUME_TEXTDOMAIN ); ?></span>
+								</button>
+								<button class="slider-arrow arrow-next" id="portfolio-slider-next">
+									<span class="sr-only"><?php _e( 'Следующий слайд', RESUME_TEXTDOMAIN ); ?></span>
+								</button>
+								<div class="preloader" id="portfolio-preloader" style="display: none;">
+									<div class="bar bar--1"></div>
+									<div class="bar bar--2"></div>
+									<div class="bar bar--3"></div>
+									<div class="bar bar--4"></div>
+									<div class="bar bar--5"></div>
+									<div class="bar bar--6"></div>
+									<div class="bar bar--7"></div>
+									<div class="bar bar--8"></div>
+								</div>
 							</div>
 						</div>
 					</div>

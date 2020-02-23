@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 function the_resume_links( $atts ) {
 	$atts = shortcode_atts( array(
 		'type' => 'contacts',
-	), $atts );
+	), $atts, 'the_resume_links' );
 	$reuslt = __return_empty_array();
 	if ( in_array( $atts[ 'type' ], array( 'contacts', 'links' ) ) ) {
 		$contacts = get_theme_mod( RESUME_SLUG . "_{$atts[ 'type' ]}", array() );
@@ -146,7 +146,10 @@ function get_defaut_contact_form() {
 			</div>
 			<input type="hidden" name="check" value="<?php echo esc_attr( $check ); ?>">
 			<input type="email" name="email" value="" style="visibility: hidden;">
-			<button type="submit"><?php _e( 'Отправить', RESUME_TEXTDOMAIN ); ?></button>
+			<div class="form-group">
+				<button type="submit"><?php _e( 'Отправить', RESUME_TEXTDOMAIN ); ?></button>
+			</div>
+			<br>
 		</form>
 	<?
 	$html = ob_get_contents();
@@ -155,3 +158,80 @@ function get_defaut_contact_form() {
 }
 
 add_shortcode( 'defaut_contact_form', 'resume\get_defaut_contact_form' );
+
+
+
+
+function get_reviews_list( $atts ) {
+	$atts = shortcode_atts( array(
+		'section' => true,
+	), $atts, 'the_reviews_list' );
+	$html = __return_empty_string();
+	$items = get_theme_mod( RESUME_SLUG . '_reviews', array() );
+	if ( is_array( $items ) && ! empty( $items ) ) {
+		ob_start();
+		for ( $i = 0;  $i < get_theme_mod( RESUME_SLUG . '_reviews_count', 5 );  $i++ ) {
+			if ( isset( $items[ $i ] ) && is_array( $items[ $i ] ) ) {
+				$items[ $i ] = parse_only_allowed_args( array(
+					'author'  => '',
+					'foto'    => RESUME_URL . 'images/user.png',
+					'content' => '',
+					'link'    => '',
+					'label'   => __( 'Подробней о проекте', RESUME_TEXTDOMAIN ),
+				), $items[ $i ] );
+				if ( ! empty( $items[ $i ][ 'author' ] ) && ! empty( $items[ $i ][ 'content' ] ) ) {
+					if ( is_int( $items[ $i ][ 'foto' ] ) ) {
+						$items[ $i ][ 'foto' ] = wp_get_attachment_image_url( $items[ $i ][ 'foto' ], 'thumbnail', false );
+					}
+					if ( ! filter_var( $items[ $i ][ 'foto' ], FILTER_VALIDATE_URL ) ) {
+						$items[ $i ][ 'foto' ] = RESUME_URL . 'images/user.png';
+					}
+					if ( function_exists( 'pll__' ) ) {
+						$items[ $i ][ 'author' ] = pll__( $items[ $i ][ 'author' ] );
+						$items[ $i ][ 'content' ] = pll__( $items[ $i ][ 'content' ] );
+						$items[ $i ][ 'link' ] = pll__( $items[ $i ][ 'link' ] );
+						$items[ $i ][ 'label' ] = pll__( $items[ $i ][ 'label' ] );
+					}
+					extract( $items[ $i ] );
+					include get_theme_file_path( 'views/items/review.php' );
+				}
+			}
+		}
+		$html = ob_get_contents();
+		ob_end_clean();
+	}
+	if ( ! empty( $html ) ) {
+		$morelink = get_theme_mod( RESUME_SLUG . '_reviews_morelink', '' );
+		wp_enqueue_script( 'slick' );
+		wp_enqueue_style( 'slick' );
+		ob_start();
+		?>
+			<div class="slider">
+				<div id="reviews-items">
+					<?php echo $html; ?>	
+				</div>
+				<div class="controls">
+					<button class="slider-arrow arrow-prev" id="reviews-slider-prev">
+						<span class="sr-only"><?php _e( 'Предыдущий слайд' ); ?></span>
+					</button>
+					<button class="slider-arrow arrow-next" id="reviews-slider-next">
+						<span class="sr-only"><?php _e( 'Следующий слайд' ); ?></span>
+					</button>
+					<?php if ( ! empty( $morelink ) ) : ?>
+						<a class="morelink" href="<?php echo esc_attr( $morelink ); ?>">
+							<?php _e( 'Смотреть все', RESUME_TEXTDOMAIN ); ?>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div>
+		<?
+		$html = ob_get_contents();
+		ob_end_clean();
+		if ( $atts[ 'section' ] ) {
+			$html = '<section class="section reviews" id="reviews">' . $html . '</section>';
+		}
+	}
+	return $html;
+}
+
+add_shortcode( 'the_reviews_list', 'resume\get_reviews_list' );

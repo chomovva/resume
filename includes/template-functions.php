@@ -442,3 +442,18 @@ function render_entry( $entry, $classes, $current_term_id ) {
 	$categories = get_entry_categories( $entry->ID, $current_term_id );
 	include get_theme_file_path( 'views/entry.php' );
 }
+
+
+
+function parse_only_allowed_args( $default, $args ) {
+	$args = ( array ) $args;
+	$result  = array();
+	foreach ( $default as $key => $value ) {
+		if ( array_key_exists( $key, $args ) ) {
+			$result[ $key ] = $args[ $key ];
+		} else {
+			$result[ $key ] = $value;
+		}
+	}
+	return $result;
+}

@@ -11,6 +11,7 @@ foreach ( array(
     'way',
     'skills',
     'portfolio',
+    'reviews',
     'myblog',
 ) as $key ) {
     if ( get_theme_mod( RESUME_SLUG . "_{$key}_flag", false ) )
