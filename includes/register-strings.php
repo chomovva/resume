@@ -20,14 +20,14 @@ foreach ( array(
     'aboutme_more_label'    => __( 'Подробней обо мне', RESUME_TEXTDOMAIN ),
     'aboutme_file_label'    => __( 'Скачать резюме', RESUME_TEXTDOMAIN ),
     'jumbotron_title'       => '',
-    'skills_title'          => __( '', RESUME_TEXTDOMAIN ),
+    'skills_title'          => '',
     'portfolio_title'       => __( 'Портфолио', RESUME_TEXTDOMAIN ),
     'portfolio_description' => '',
     'reviews_title'         => __( 'Отзывы', RESUME_TEXTDOMAIN ),
     'reviews_description'   => '',
     'reviews_label'         => __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ),
-    'services_title'        => __( '', RESUME_TEXTDOMAIN ),
-    'services_excerpt'      => __( '', RESUME_TEXTDOMAIN ),
+    'services_title'        => '',
+    'services_excerpt'      => '',
 ) as $key ) {
     $value = wp_strip_all_tags( get_theme_mod( RESUME_SLUG . '_' . $key, '' ) );
     if ( ! empty( trim( $value ) ) ) {

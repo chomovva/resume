@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-01 19:30+0200\n"
-"PO-Revision-Date: 2019-12-01 19:31+0200\n"
+"POT-Creation-Date: 2020-02-23 23:06+0200\n"
+"PO-Revision-Date: 2020-02-23 23:10+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e\n"
@@ -18,271 +18,149 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: src\n"
 "X-Poedit-SearchPathExcluded-2: examples\n"
 
-#: 404.php:8 customizer/404.php:25
+#: 404.php:8 includes/register-strings.php:17 settings/pages/error404.php:25
 msgid "Ошибка 404"
-msgstr "Share"
+msgstr "Share on vkontacte"
 
 #: 404.php:21
 msgid "На главную"
 msgstr "To Home Page"
 
-#: customizer/404.php:13
-msgid "Страница ошибки 404"
-msgstr "404 Error Page"
-
-#: customizer/404.php:34 customizer/aboutme.php:71 customizer/advantages.php:72
-#: customizer/jumbotron.php:34 customizer/portfolio.php:72
-#: customizer/services.php:76
-msgid "Заголовок"
-msgstr "Headline"
-
-#: customizer/404.php:53
-msgid "Подзаголовок"
-msgstr "Subtitle"
-
-#: customizer/aboutme.php:13 customizer/aboutme.php:62
-#: parts/home/aboutme.php:18
-msgid "Обо мне"
-msgstr "About me"
-
-#: customizer/aboutme.php:15
-msgid "Секция главной страницы. Якорь #aboutme"
-msgstr "Section of the main page. Anchor #aboutme"
-
-#: customizer/aboutme.php:34 customizer/advantages.php:34
-#: customizer/portfolio.php:34 customizer/services.php:34 customizer/way.php:34
-msgid "Использовать секцию"
-msgstr "Use section"
-
-#: customizer/aboutme.php:52 customizer/advantages.php:53
-#: customizer/services.php:55
-msgid "Выбор страницы"
-msgstr "Page Selection"
-
-#: customizer/aboutme.php:91
-msgid "Фото"
-msgstr "Foto"
-
-#: customizer/aboutme.php:102 parts/home/aboutme.php:25
-msgid "Подробней обо мне"
-msgstr "More about me"
-
-#: customizer/aboutme.php:111 customizer/aboutme.php:129
-#: customizer/services.php:118
-msgid "Текст кнопки"
-msgstr "Button text"
-
-#: customizer/aboutme.php:120 parts/home/aboutme.php:26
-msgid "Скачать резюме"
-msgstr "Download CV"
-
-#: customizer/aboutme.php:149
-msgid "Файл"
-msgstr "File"
-
-#: customizer/advantages.php:13
-msgid "Секция преимуществ"
-msgstr "Benefits Section"
-
-#: customizer/advantages.php:15
-msgid ""
-"Секция главной страницы. Якорь #skills. В секции так же отображаются скилы и "
-"опыт."
-msgstr ""
-"Section of the main page. Anchor #skills. The section also displays skills "
-"and experience."
-
-#: customizer/advantages.php:63 parts/home/skills.php:12
-msgid "Мои скилы"
-msgstr "My skills"
-
-#: customizer/contacts.php:12
-msgid "Контакты"
-msgstr "Contacts"
-
-#: customizer/contacts.php:14
-msgid "Список контактов"
-msgstr "Contact list"
-
-#: customizer/experience.php:13
-msgid "Опыт"
-msgstr "Experience"
-
-#: customizer/experience.php:15
-msgid "Отображаются в сеции преимуществ"
-msgstr "Displayed in Benefits Section"
-
-#: customizer/experience.php:35
-#, php-format
-msgid "Заголовок №%1$s"
-msgstr "Title #%1$s"
-
-#: customizer/experience.php:51
-#, php-format
-msgid "Значение %1$s"
-msgstr "%1$s value"
-
-#: customizer/jumbotron.php:13
-msgid "Первый экран"
-msgstr "First screen"
-
-#: customizer/jumbotron.php:15
-msgid "Секция главной страницы. Якорь #jumbotron"
-msgstr "Section of the main page. Anchor #jumbotron"
-
-#: customizer/jumbotron.php:54
-msgid "Фон"
-msgstr "Background"
-
-#: customizer/links.php:13
-msgid "Профили"
-msgstr "Profiles"
-
-#: customizer/links.php:15
-msgid "Ссылки на профили в в социальных сетях и прочее"
-msgstr "Links to profiles on social networks and more"
-
-#: customizer/links.php:22
-msgid "Facebook"
-msgstr "Facebook"
-
-#: customizer/links.php:23
-msgid "Twitter"
-msgstr "Twitter"
-
-#: customizer/links.php:24
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: customizer/links.php:25
-msgid "Вконтакте"
-msgstr "VKontacte"
-
-#: customizer/links.php:26
-msgid "GitHub"
-msgstr "GitHub"
-
-#: customizer/links.php:27
-msgid "YouTube"
-msgstr "YouTube"
-
-#: customizer/portfolio.php:13 customizer/portfolio.php:63
-#: parts/home/portfolio.php:45
-msgid "Портфолио"
-msgstr "Portfolio"
-
-#: customizer/portfolio.php:15
-msgid ""
-"Секция главной страницы. Якорь #portfolio. Работы (посты) берутся из "
-"категории."
-msgstr ""
-"Section of the main page. Anchor #portfolio. Jobs (posts) are taken from the "
-"category."
-
-#: customizer/portfolio.php:52
-msgid "Выбор категории"
-msgstr "Category selection"
-
-#: customizer/services.php:13
-msgid "Услуги"
-msgstr "Services"
-
-#: customizer/services.php:15
-msgid "Секция главной страницы. Якорь #services"
-msgstr "Section of the main page. Anchor #services"
-
-#: customizer/services.php:67 parts/home/services.php:18
-msgid "Чем я занимаюсь"
-msgstr "What I'm doing"
-
-#: customizer/services.php:97
-msgid "Описание"
-msgstr "Description"
-
-#: customizer/services.php:109 parts/archive.php:54 parts/home/services.php:19
-#: views/home/way.php:13
-msgid "Подробней"
-msgstr "More details"
-
-#: customizer/services.php:139
-msgid "Количество услуг"
-msgstr "Number of Services"
-
-#: customizer/services.php:162
-#, php-format
-msgid "услуга %1$s"
-msgstr "service %1$s"
-
-#: customizer/skills.php:13
-msgid "Скилы"
-msgstr "Skills"
-
-#: customizer/skills.php:15
-msgid ""
-"Секция главной страницы. Якорь #skills. При изменении количества зписей "
-"сохранитесь и перезагрузите страницу."
-msgstr ""
-"Section of the main page. Anchor #skills. If you change the number of "
-"entries, save and reload the page."
-
-#: customizer/skills.php:34
-msgid "Количество навыков"
-msgstr "Number of skills"
-
-#: customizer/skills.php:58
-#, php-format
-msgid "заголовок %1$s"
-msgstr "header %1$s"
-
-#: customizer/skills.php:74
-#, php-format
-msgid "оценка навыка %1$s"
-msgstr "skill rating %1$s"
-
-#: customizer/way.php:13
-msgid "Образование и опыт работы"
-msgstr "Education and work experience"
-
-#: customizer/way.php:15
-msgid "Секция главной страницы. Якорь #way"
-msgstr "Section of the main page. Anchor #way"
-
-#: customizer/way.php:54
-msgid "Фоновое изображение"
-msgstr "Background image"
-
-#: customizer/way.php:75
-msgid "Количество страниц"
-msgstr "Number of pages"
-
-#: customizer/way.php:99
-#, php-format
-msgid "Выбор страницы #%1$s"
-msgstr "Page Selection #%1$s"
-
-#: functions.php:43
-msgid "Настройки темы \"Резюме\""
-msgstr ""
-
-#: functions.php:95
+#: functions.php:72
 msgid "Главное меню"
 msgstr "Main menu"
 
-#: functions.php:96
+#: functions.php:73
 msgid "Меню страницы 404"
 msgstr "Page Menu 404"
 
-#: functions.php:108
+#: functions.php:85
 msgid "Сайдбар подвала"
 msgstr "Basement sidebar"
 
-#: functions.php:118
+#: functions.php:95
 msgid "Колонка"
 msgstr "Column"
 
-#: header.php:22
+#: header.php:33
 msgid "Открыть меню"
 msgstr "Open menu"
+
+#: includes/customizer.php:15
+msgid "Блоки домашней страницы"
+msgstr "Homepage Blocks"
+
+#: includes/customizer.php:37
+msgid "Шаблоны страниц"
+msgstr "Page Templates"
+
+#: includes/customizer.php:51
+msgid "Списки темы"
+msgstr "Template lists"
+
+#: includes/register-strings.php:19 parts/home/aboutme.php:18
+#: settings/home/aboutme.php:12 settings/home/aboutme.php:62
+msgid "Обо мне"
+msgstr "About me"
+
+#: includes/register-strings.php:20 parts/home/aboutme.php:25
+#: settings/home/aboutme.php:103
+msgid "Подробней обо мне"
+msgstr "More about me"
+
+#: includes/register-strings.php:21 parts/home/aboutme.php:26
+#: settings/home/aboutme.php:122
+msgid "Скачать резюме"
+msgstr "Download CV"
+
+#: includes/register-strings.php:24 parts/home/portfolio.php:45
+#: settings/home/portfolio.php:12 settings/home/portfolio.php:63
+#: settings/home/portfolio.php:82
+msgid "Портфолио"
+msgstr "Portfolio"
+
+#: includes/register-strings.php:26 parts/home/reviews.php:11
+#: settings/home/reviews.php:12 settings/home/reviews.php:66
+#: settings/lists/reviews.php:13
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: includes/register-strings.php:28 parts/home/reviews.php:15
+#: settings/home/reviews.php:123
+msgid "Смотреть все отзывы"
+msgstr "See all reviews"
+
+#: includes/shortcodes.php:59
+msgid "Аноним"
+msgstr "Anonymous"
+
+#: includes/shortcodes.php:79
+msgid "IP пользователя"
+msgstr "User IP"
+
+#: includes/shortcodes.php:87
+msgid "Имя пользователя"
+msgstr "Имя пользователя"
+
+#: includes/shortcodes.php:95
+msgid "Email пользователя"
+msgstr "User Email"
+
+#: includes/shortcodes.php:102 includes/shortcodes.php:144
+msgid "Сообщение"
+msgstr "Message"
+
+#: includes/shortcodes.php:114
+msgid "Сообщение с сайта"
+msgstr "Message from the site"
+
+#: includes/shortcodes.php:117
+msgid "Сообщение отправлено, мы с Вами обязательно свяжемся."
+msgstr "Message sent, we will contact you."
+
+#: includes/shortcodes.php:119
+msgid "Произошла ошибка. Попробуйте позже или свяжитесь с администратором"
+msgstr "An error has occurred. Try again later or contact the administrator."
+
+#: includes/shortcodes.php:122
+msgid "Вы в черном списке. Попробуйте позже или свяжитесь с администратором."
+msgstr "You are blacklisted. Try again later or contact the administrator."
+
+#: includes/shortcodes.php:125
+msgid "Введён некорректный email"
+msgstr "Введён некорректный email"
+
+#: includes/shortcodes.php:128
+msgid "Подозрение на спам. Попробуйте ещё раз."
+msgstr "Suspicion of spam. Try again."
+
+#: includes/shortcodes.php:136
+msgid "Ваше имя"
+msgstr "Your name"
+
+#: includes/shortcodes.php:140
+msgid "Ваш email"
+msgstr "Your email"
+
+#: includes/shortcodes.php:150
+msgid "Отправить"
+msgstr "Send"
+
+#: includes/shortcodes.php:180 settings/lists/reviews.php:135
+msgid "Подробней о проекте"
+msgstr "More about the project"
+
+#: includes/shortcodes.php:215 parts/home/portfolio.php:63
+msgid "Предыдущий слайд"
+msgstr "Previous slide"
+
+#: includes/shortcodes.php:218 parts/home/portfolio.php:66
+msgid "Следующий слайд"
+msgstr "Next slide"
+
+#: includes/shortcodes.php:222
+msgid "Смотреть все"
+msgstr "See all"
 
 #: includes/template-functions.php:67
 msgid "Главная"
@@ -292,41 +170,57 @@ msgstr "Home"
 msgid "Домашняя страница"
 msgstr "Homepage"
 
-#: includes/template-functions.php:149
+#: includes/template-functions.php:161
 msgid "Смотреть предыдущий пост"
 msgstr "View previous post"
 
-#: includes/template-functions.php:153
+#: includes/template-functions.php:165
 msgid "Смотреть следующий пост"
 msgstr "See next post"
 
-#: includes/template-functions.php:282
+#: includes/template-functions.php:291
+#, php-format
+msgid "Результаты поиска %s"
+msgstr "%s search results"
+
+#: includes/template-functions.php:297
 msgid "Поделиться в VK"
 msgstr "Share on VK"
 
-#: includes/template-functions.php:283
+#: includes/template-functions.php:298
 msgid "Поделиться в Facebook"
 msgstr "Share on Facebook"
 
-#: includes/template-functions.php:284
+#: includes/template-functions.php:299
 msgid "Поделиться в Twitter"
 msgstr "Share on Twitter"
 
-#: includes/template-functions.php:285
+#: includes/template-functions.php:300
 msgid "Поделиться в LinkedIn"
 msgstr "Share on LinkedIn"
 
-#: includes/template-functions.php:286
+#: includes/template-functions.php:301
 msgid "Отправить по email"
 msgstr "Email"
 
-#: parts/home/portfolio.php:62
-msgid "Предыдущий слайд"
-msgstr "Previous slide"
+#: includes/template-functions.php:440 parts/home/myblog.php:48
+#: parts/home/services.php:19 parts/search.php:28
+#: settings/home/services.php:100 views/home/way.php:13
+msgid "Подробней"
+msgstr "More details"
 
-#: parts/home/portfolio.php:65
-msgid "Следующий слайд"
-msgstr "Next slide"
+#: parts/home/myblog.php:46 settings/home/myblog.php:12
+#: settings/home/myblog.php:43
+msgid "Блог"
+msgstr "Blog"
+
+#: parts/home/services.php:18 settings/home/services.php:62
+msgid "Чем я занимаюсь"
+msgstr "What I'm doing"
+
+#: parts/home/skills.php:12 settings/home/advantages.php:62
+msgid "Мои скилы"
+msgstr "My skills"
 
 #: parts/nav.php:17
 msgid "Закрыть меню"
@@ -343,3 +237,306 @@ msgstr "Share"
 #: parts/nav.php:35
 msgid "Поиск по сайту"
 msgstr "Site search"
+
+#: searchform.php:3
+msgid "Найти"
+msgstr "Search"
+
+#: settings/home/aboutme.php:14
+msgid "Секция главной страницы. Якорь #aboutme"
+msgstr "Section of the main page. Anchor #aboutme"
+
+#: settings/home/aboutme.php:33 settings/home/advantages.php:33
+#: settings/home/jumbotron.php:33 settings/home/myblog.php:33
+#: settings/home/portfolio.php:33 settings/home/reviews.php:33
+#: settings/home/services.php:33 settings/home/way.php:34
+msgid "Использовать секцию"
+msgstr "Use section"
+
+#: settings/home/aboutme.php:52 settings/home/advantages.php:52
+#: settings/home/reviews.php:113 settings/home/services.php:52
+msgid "Выбор страницы"
+msgstr "Page Selection"
+
+#: settings/home/aboutme.php:71 settings/home/advantages.php:71
+#: settings/home/jumbotron.php:52 settings/home/myblog.php:52
+#: settings/home/portfolio.php:72 settings/home/reviews.php:75
+#: settings/home/services.php:71 settings/pages/error404.php:34
+msgid "Заголовок"
+msgstr "Headline"
+
+#: settings/home/aboutme.php:91
+msgid "Фото"
+msgstr "Foto"
+
+#: settings/home/aboutme.php:112 settings/home/aboutme.php:131
+#: settings/home/myblog.php:133 settings/home/services.php:109
+msgid "Текст кнопки"
+msgstr "Button text"
+
+#: settings/home/aboutme.php:151
+msgid "Файл"
+msgstr "File"
+
+#: settings/home/advantages.php:12
+msgid "Секция преимуществ"
+msgstr "Benefits Section"
+
+#: settings/home/advantages.php:14
+msgid ""
+"Секция главной страницы. Якорь #skills. В секции так же отображаются скилы и "
+"опыт."
+msgstr ""
+"Section of the main page. Anchor #skills. The section also displays skills "
+"and experience."
+
+#: settings/home/jumbotron.php:12
+msgid "Первый экран"
+msgstr "First screen"
+
+#: settings/home/jumbotron.php:14
+msgid "Секция главной страницы. Якорь #jumbotron"
+msgstr "Section of the main page. Anchor #jumbotron"
+
+#: settings/home/jumbotron.php:72
+msgid "Фон"
+msgstr "Background"
+
+#: settings/home/myblog.php:14
+msgid ""
+"Секция главной страницы. Якорь #myblog. Выборка постов производится из "
+"категории."
+msgstr ""
+"Section of the main page. Anchor #myblog. A selection of posts is made from "
+"the category."
+
+#: settings/home/myblog.php:71 settings/home/portfolio.php:91
+#: settings/home/reviews.php:94 settings/pages/error404.php:53
+msgid "Подзаголовок"
+msgstr "Subtitle"
+
+#: settings/home/myblog.php:90 settings/home/portfolio.php:52
+msgid "Выбор категории"
+msgstr "Category selection"
+
+#: settings/home/myblog.php:110
+msgid "Количество постов"
+msgstr "Number of posts"
+
+#: settings/home/myblog.php:124
+msgid "Смотреть все записи"
+msgstr "View all entries"
+
+#: settings/home/portfolio.php:14
+msgid ""
+"Секция главной страницы. Якорь #portfolio. Работы (посты) берутся из "
+"категории."
+msgstr ""
+"Section of the main page. Anchor #portfolio. Jobs (posts) are taken from the "
+"category."
+
+#: settings/home/reviews.php:14
+msgid ""
+"Секция главной страницы. Якорь #reviews. Отзывы заполняются в панели "
+"кастомазера \"Списки темы\"."
+msgstr ""
+"Section of the main page. Anchor #reviews. Reviews are filled in in the "
+"custom panel \"Template Lists\"."
+
+#: settings/home/reviews.php:52
+msgid "Тип содержимого секции"
+msgstr "Section Content Type"
+
+#: settings/home/reviews.php:55
+msgid "формализованный список"
+msgstr "formalized list"
+
+#: settings/home/reviews.php:56
+msgid "содержимое страницы"
+msgstr "page content"
+
+#: settings/home/reviews.php:132
+msgid "Подпись кнопки"
+msgstr "Button label"
+
+#: settings/home/services.php:12 settings/lists/services.php:12
+msgid "Услуги"
+msgstr "Services"
+
+#: settings/home/services.php:14 settings/lists/services.php:14
+msgid "Секция главной страницы. Якорь #services"
+msgstr "Section of the main page. Anchor #services"
+
+#: settings/home/services.php:90
+msgid "Описание"
+msgstr "Description"
+
+#: settings/home/skills.php:13
+msgid "Скилы"
+msgstr "Skills"
+
+#: settings/home/skills.php:15
+msgid ""
+"Секция главной страницы. Якорь #skills. При изменении количества зписей "
+"сохранитесь и перезагрузите страницу."
+msgstr ""
+"Section of the main page. Anchor #skills. If you change the number of "
+"entries, save and reload the page."
+
+#: settings/home/skills.php:34
+msgid "Количество навыков"
+msgstr "Number of skills"
+
+#: settings/home/skills.php:58
+#, php-format
+msgid "заголовок %1$s"
+msgstr "header %1$s"
+
+#: settings/home/skills.php:74
+#, php-format
+msgid "оценка навыка %1$s"
+msgstr "skill rating %1$s"
+
+#: settings/home/way.php:13
+msgid "Образование и опыт работы"
+msgstr "Education and work experience"
+
+#: settings/home/way.php:15
+msgid "Секция главной страницы. Якорь #way"
+msgstr "Section of the main page. Anchor #way"
+
+#: settings/home/way.php:54
+msgid "Фоновое изображение"
+msgstr "Background image"
+
+#: settings/home/way.php:75
+msgid "Количество страниц"
+msgstr "Number of pages"
+
+#: settings/home/way.php:99
+#, php-format
+msgid "Выбор страницы #%1$s"
+msgstr "Page Selection #%1$s"
+
+#: settings/lists/contacts.php:12
+msgid "Контакты"
+msgstr "Contacts"
+
+#: settings/lists/contacts.php:14
+msgid "Список контактов"
+msgstr "Contact list"
+
+#: settings/lists/contacts.php:22
+msgid "Viber"
+msgstr "Viber"
+
+#: settings/lists/contacts.php:23
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: settings/lists/contacts.php:24
+msgid "Telegram"
+msgstr "Telegram"
+
+#: settings/lists/contacts.php:25
+msgid "Email"
+msgstr "Email"
+
+#: settings/lists/experience.php:13
+msgid "Опыт"
+msgstr "Experience"
+
+#: settings/lists/experience.php:15 settings/lists/reviews.php:15
+msgid "Отображаются в сеции преимуществ"
+msgstr "Displayed in Benefits Section"
+
+#: settings/lists/experience.php:35
+#, php-format
+msgid "Заголовок №%1$s"
+msgstr "Title #%1$s"
+
+#: settings/lists/experience.php:51
+#, php-format
+msgid "Значение %1$s"
+msgstr "%1$s value"
+
+#: settings/lists/links.php:13
+msgid "Профили"
+msgstr "Profiles"
+
+#: settings/lists/links.php:15
+msgid "Ссылки на профили в в социальных сетях и прочее"
+msgstr "Links to profiles on social networks and more"
+
+#: settings/lists/links.php:22
+msgid "Facebook"
+msgstr "Facebook"
+
+#: settings/lists/links.php:23
+msgid "Twitter"
+msgstr "Twitter"
+
+#: settings/lists/links.php:24
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: settings/lists/links.php:25
+msgid "Вконтакте"
+msgstr "VKontacte"
+
+#: settings/lists/links.php:26
+msgid "GitHub"
+msgstr "GitHub"
+
+#: settings/lists/links.php:27
+msgid "YouTube"
+msgstr "YouTube"
+
+#: settings/lists/reviews.php:34
+msgid "Количесство отзывов"
+msgstr "Number of reviews"
+
+#: settings/lists/reviews.php:53
+msgid "Ссылка на все отзывы"
+msgstr "Link to all reviews"
+
+#: settings/lists/reviews.php:74
+#, php-format
+msgid "фото №%d"
+msgstr "foto №%d"
+
+#: settings/lists/reviews.php:96
+#, php-format
+msgid "имя №%1$s"
+msgstr "author №%1$s"
+
+#: settings/lists/reviews.php:112
+#, php-format
+msgid "текст №%1$s"
+msgstr "text №%1$s"
+
+#: settings/lists/reviews.php:128
+#, php-format
+msgid "ссылка №%1$s"
+msgstr "link №%1$s"
+
+#: settings/lists/reviews.php:144
+#, php-format
+msgid "текст кнопки №%1$s"
+msgstr "label №%1$s"
+
+#: settings/lists/services.php:33
+msgid "Количество услуг"
+msgstr "Number of Services"
+
+#: settings/lists/services.php:57
+#, php-format
+msgid "услуга %1$s"
+msgstr "service %1$s"
+
+#: settings/pages/error404.php:13
+msgid "Страница ошибки 404"
+msgstr "404 Error Page"
+
+#~ msgid "Настройки темы \"Резюме\""
+#~ msgstr "RESUME theme settings"

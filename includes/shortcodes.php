@@ -114,12 +114,12 @@ function get_defaut_contact_form() {
 					$subject = sprintf( '%1$s %2$s', __( 'Сообщение с сайта', RESUME_TEXTDOMAIN ), get_bloginfo( 'name', 'raw' ) );
 					if ( wp_mail( get_bloginfo( 'admin_email', 'raw' ), $subject, $content, $headers ) ) {
 						$fields = array_map( '__return_empty_string', $fields );
-						$result = '<div class="text-primary">' . __( 'Сообщение отправлено, мы с Вами обяжательно свяжемся.', RESUME_TEXTDOMAIN ) . '</div>';
+						$result = '<div class="text-primary">' . __( 'Сообщение отправлено, мы с Вами обязательно свяжемся.', RESUME_TEXTDOMAIN ) . '</div>';
 					} else {
 						$result = '<div class="text-warning">' . __( 'Произошла ошибка. Попробуйте позже или свяжитесь с администратором', RESUME_TEXTDOMAIN ) . '</div>';
 					}
 				} else {
-					$result = '<div class="text-warning">' . __( 'Вы в черном списке. Попробуйте позже или свяжитесь с администратором', RESUME_TEXTDOMAIN ) . '</div>';
+					$result = '<div class="text-warning">' . __( 'Вы в черном списке. Попробуйте позже или свяжитесь с администратором.', RESUME_TEXTDOMAIN ) . '</div>';
 				}
 			} else {
 				$result = '<div class="text-warning">' . __( 'Введён некорректный email', RESUME_TEXTDOMAIN ) . '</div>';
