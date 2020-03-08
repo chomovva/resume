@@ -14,13 +14,6 @@
 // @import "base/flexboxgrid";
 
 
-@import "widgets/tagcloud";
-@import "widgets/calendar";
-
-
-@import "wp/gallery";          // блочная галерея
-
-
 @import "blocks/preloader";
 @import "blocks/languages";
 @import "blocks/thumbnail";
@@ -43,8 +36,18 @@
 @import "blocks/buttons";
 @import "blocks/breadcrumbs";    // "хлебные крошки"
 @import "blocks/to-top-button";  // кнопка наверх
+@import "blocks/googlesearch";   // форма поиска гугл
 // @import "blocks/header";         // Шапка сайта
 @import "blocks/footer";         // Подвал сайта
+
+
+
+@import "widgets/tagcloud";
+@import "widgets/calendar";
+@import "widgets/searchform";
+
+
+@import "wp/gallery";          // блочная галерея
 
 
 @import "home/jumbotron";        // главная страница - первый экран

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-23 23:11+0200\n"
-"PO-Revision-Date: 2020-02-23 23:11+0200\n"
+"POT-Creation-Date: 2020-03-08 19:10+0200\n"
+"PO-Revision-Date: 2020-03-08 19:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -18,10 +18,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: src\n"
 "X-Poedit-SearchPathExcluded-2: examples\n"
-
-#: 404.php:8 includes/register-strings.php:17 settings/pages/error404.php:25
-msgid "Ошибка 404"
-msgstr "Помилка 404"
 
 #: 404.php:21
 msgid "На главную"
@@ -43,53 +39,119 @@ msgstr "Сайдбар підвалу"
 msgid "Колонка"
 msgstr "Колонка"
 
+#: functions.php:186
+msgid "Поиск Google"
+msgstr "Пошук Google"
+
+#: functions.php:197
+msgid "Получите код пользовательского поиска Google"
+msgstr "Отримайте код користувальницького пошуку Google"
+
 #: header.php:33
 msgid "Открыть меню"
 msgstr "Відкрити меню"
 
-#: includes/customizer.php:15
+#: includes/customizer.php:18
 msgid "Блоки домашней страницы"
 msgstr "Блоки домашньої сторінки"
 
-#: includes/customizer.php:37
+#: includes/customizer.php:39
 msgid "Шаблоны страниц"
 msgstr "Шаблони сторінок"
 
-#: includes/customizer.php:51
+#: includes/customizer.php:55
 msgid "Списки темы"
 msgstr "Списки теми"
 
-#: includes/register-strings.php:19 parts/home/aboutme.php:18
-#: settings/home/aboutme.php:12 settings/home/aboutme.php:62
+#: includes/default-settings.php:25 settings/home/aboutme.php:12
 msgid "Обо мне"
 msgstr "Про мене"
 
-#: includes/register-strings.php:20 parts/home/aboutme.php:25
-#: settings/home/aboutme.php:103
+#: includes/default-settings.php:27
 msgid "Подробней обо мне"
 msgstr "Детальніше про мене"
 
-#: includes/register-strings.php:21 parts/home/aboutme.php:26
-#: settings/home/aboutme.php:122
+#: includes/default-settings.php:28
 msgid "Скачать резюме"
 msgstr "Завантажити резюме"
 
-#: includes/register-strings.php:24 parts/home/portfolio.php:45
-#: settings/home/portfolio.php:12 settings/home/portfolio.php:63
-#: settings/home/portfolio.php:82
+#: includes/default-settings.php:34 settings/home/services.php:62
+msgid "Чем я занимаюсь"
+msgstr "Чим я займаюсь"
+
+#: includes/default-settings.php:36 includes/template-functions.php:447
+#: parts/search.php:28 settings/home/services.php:100 views/home/way.php:23
+msgid "Подробней"
+msgstr "Детальніше"
+
+#: includes/default-settings.php:47
+msgid "Мои скилы"
+msgstr "Мої навички"
+
+#: includes/default-settings.php:53 settings/home/portfolio.php:12
 msgid "Портфолио"
 msgstr "Портфоліо"
 
-#: includes/register-strings.php:26 parts/home/reviews.php:11
-#: settings/home/reviews.php:12 settings/home/reviews.php:66
-#: settings/lists/reviews.php:13
+#: includes/default-settings.php:59 settings/home/reviews.php:12
+#: settings/home/reviews.php:66 settings/lists/reviews.php:13
 msgid "Отзывы"
 msgstr "Відгуки"
 
-#: includes/register-strings.php:28 parts/home/reviews.php:15
-#: settings/home/reviews.php:123
+#: includes/default-settings.php:62 settings/home/reviews.php:123
 msgid "Смотреть все отзывы"
 msgstr "Дивитися всі відгуки"
+
+#: includes/default-settings.php:67 settings/home/myblog.php:12
+msgid "Блог"
+msgstr "Блог"
+
+#: includes/default-settings.php:71
+msgid "Смотреть все записи"
+msgstr "Дивитися всі записи"
+
+#: includes/default-settings.php:74
+msgid "Ошибка 404"
+msgstr "Помилка 404"
+
+#: includes/default-settings.php:105
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/default-settings.php:106
+msgid "Twitter"
+msgstr "Twitter"
+
+#: includes/default-settings.php:107
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/default-settings.php:108
+msgid "Вконтакте"
+msgstr "Вконтакте"
+
+#: includes/default-settings.php:109
+msgid "GitHub"
+msgstr "GitHub"
+
+#: includes/default-settings.php:110
+msgid "YouTube"
+msgstr "YouTube"
+
+#: includes/default-settings.php:120
+msgid "Viber"
+msgstr "Viber"
+
+#: includes/default-settings.php:121
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: includes/default-settings.php:122
+msgid "Telegram"
+msgstr "Telegram"
+
+#: includes/default-settings.php:123
+msgid "Email"
+msgstr "Email"
 
 #: includes/shortcodes.php:59
 msgid "Аноним"
@@ -126,7 +188,7 @@ msgstr "Виникла помилка. Спробуйте пізніше або 
 #: includes/shortcodes.php:122
 msgid "Вы в черном списке. Попробуйте позже или свяжитесь с администратором."
 msgstr ""
-"Ви в чорному списку. Спробуйте пізніше або зв'яжіться з адміністратором"
+"Ви в чорному списку. Спробуйте пізніше або зв'яжіться з адміністратором."
 
 #: includes/shortcodes.php:125
 msgid "Введён некорректный email"
@@ -152,11 +214,11 @@ msgstr "Надіслати"
 msgid "Подробней о проекте"
 msgstr "Детальніше про проект"
 
-#: includes/shortcodes.php:215 parts/home/portfolio.php:63
+#: includes/shortcodes.php:215 parts/home/portfolio.php:73
 msgid "Предыдущий слайд"
 msgstr "Попередній слайд"
 
-#: includes/shortcodes.php:218 parts/home/portfolio.php:66
+#: includes/shortcodes.php:218 parts/home/portfolio.php:76
 msgid "Следующий слайд"
 msgstr "Наступний слайд"
 
@@ -164,65 +226,46 @@ msgstr "Наступний слайд"
 msgid "Смотреть все"
 msgstr "Дивитись все"
 
-#: includes/template-functions.php:67
+#: includes/template-functions.php:74
 msgid "Главная"
 msgstr "Головна"
 
-#: includes/template-functions.php:80
+#: includes/template-functions.php:87
 msgid "Домашняя страница"
 msgstr "Домашня сторінка"
 
-#: includes/template-functions.php:161
+#: includes/template-functions.php:168
 msgid "Смотреть предыдущий пост"
 msgstr "Дивитися попередній пост"
 
-#: includes/template-functions.php:165
+#: includes/template-functions.php:172
 msgid "Смотреть следующий пост"
 msgstr "Наступне пост"
 
-#: includes/template-functions.php:291
+#: includes/template-functions.php:298
 #, php-format
 msgid "Результаты поиска %s"
 msgstr "Результати пошуку %s"
 
-#: includes/template-functions.php:297
+#: includes/template-functions.php:304
 msgid "Поделиться в VK"
 msgstr "Поділіться в VK"
 
-#: includes/template-functions.php:298
+#: includes/template-functions.php:305
 msgid "Поделиться в Facebook"
 msgstr "Поділіться в Facebook"
 
-#: includes/template-functions.php:299
+#: includes/template-functions.php:306
 msgid "Поделиться в Twitter"
 msgstr "Поділіться в Twitter"
 
-#: includes/template-functions.php:300
+#: includes/template-functions.php:307
 msgid "Поделиться в LinkedIn"
 msgstr "Поділіться в LinkedIn"
 
-#: includes/template-functions.php:301
+#: includes/template-functions.php:308
 msgid "Отправить по email"
 msgstr "Надіслати по email"
-
-#: includes/template-functions.php:440 parts/home/myblog.php:48
-#: parts/home/services.php:19 parts/search.php:28
-#: settings/home/services.php:100 views/home/way.php:13
-msgid "Подробней"
-msgstr "Детальніше"
-
-#: parts/home/myblog.php:46 settings/home/myblog.php:12
-#: settings/home/myblog.php:43
-msgid "Блог"
-msgstr "Блог"
-
-#: parts/home/services.php:18 settings/home/services.php:62
-msgid "Чем я занимаюсь"
-msgstr "Чим я займаюсь"
-
-#: parts/home/skills.php:12 settings/home/advantages.php:62
-msgid "Мои скилы"
-msgstr "Мої навички"
 
 #: parts/nav.php:17
 msgid "Закрыть меню"
@@ -240,9 +283,29 @@ msgstr "Поділіться"
 msgid "Поиск по сайту"
 msgstr "Пошук по сайту"
 
-#: searchform.php:3
+#: searchform.php:5
 msgid "Найти"
 msgstr "Знайти"
+
+#: settings/google-cse.php:13
+msgid "Пользовательский поиск Google"
+msgstr "Користувацький пошук Google"
+
+#: settings/google-cse.php:15
+msgid ""
+"Скопируйте код google и вставьте его в поле textarea ниже. Форма и "
+"результаты поиска будут отображаться в модальном окне."
+msgstr ""
+"Скопіюйте код google і вставте його в поле textarea нижче. Форма і "
+"результати пошуку будуть відображатися в модальному вікні."
+
+#: settings/google-cse.php:33
+msgid "Использовать Пользовательский поиск"
+msgstr "Використовувати для користувача пошук"
+
+#: settings/google-cse.php:52
+msgid "Код"
+msgstr "Код"
 
 #: settings/home/aboutme.php:14
 msgid "Секция главной страницы. Якорь #aboutme"
@@ -263,7 +326,7 @@ msgstr "Вибір сторінки"
 #: settings/home/aboutme.php:71 settings/home/advantages.php:71
 #: settings/home/jumbotron.php:52 settings/home/myblog.php:52
 #: settings/home/portfolio.php:72 settings/home/reviews.php:75
-#: settings/home/services.php:71 settings/pages/error404.php:34
+#: settings/home/services.php:71 settings/templates/error404.php:34
 msgid "Заголовок"
 msgstr "Заголовок"
 
@@ -286,11 +349,11 @@ msgstr "Секція переваг"
 
 #: settings/home/advantages.php:14
 msgid ""
-"Секция главной страницы. Якорь #skills. В секции так же отображаются скилы и "
-"опыт."
+"Секция главной страницы. Якорь #advantages. В секции так же отображаются "
+"скилы и опыт."
 msgstr ""
-"Секція головної сторінки. Якір #skills. У секції так же відображаються "
-"навички і досвід."
+"Секція головної сторінки. Якір #advantages. У секції також відображаються "
+"скіли і досвід."
 
 #: settings/home/jumbotron.php:12
 msgid "Первый экран"
@@ -313,7 +376,7 @@ msgstr ""
 "категорії."
 
 #: settings/home/myblog.php:71 settings/home/portfolio.php:91
-#: settings/home/reviews.php:94 settings/pages/error404.php:53
+#: settings/home/reviews.php:94 settings/templates/error404.php:53
 msgid "Подзаголовок"
 msgstr "Підзаголовок"
 
@@ -324,10 +387,6 @@ msgstr "Вибір категорії"
 #: settings/home/myblog.php:110
 msgid "Количество постов"
 msgstr "Кількість постів"
-
-#: settings/home/myblog.php:124
-msgid "Смотреть все записи"
-msgstr "Дивитися всі записи"
 
 #: settings/home/portfolio.php:14
 msgid ""
@@ -373,32 +432,6 @@ msgstr "Секція головної сторінки. Якір #services"
 msgid "Описание"
 msgstr "Опис"
 
-#: settings/home/skills.php:13
-msgid "Скилы"
-msgstr "Навички"
-
-#: settings/home/skills.php:15
-msgid ""
-"Секция главной страницы. Якорь #skills. При изменении количества зписей "
-"сохранитесь и перезагрузите страницу."
-msgstr ""
-"Секція головної сторінки. Якір #skills. При зміні кількості зпісей "
-"збережетеся і перезавантажте сторінку."
-
-#: settings/home/skills.php:34
-msgid "Количество навыков"
-msgstr "Кількість навичок"
-
-#: settings/home/skills.php:58
-#, php-format
-msgid "заголовок %1$s"
-msgstr "заголовок %1$s"
-
-#: settings/home/skills.php:74
-#, php-format
-msgid "оценка навыка %1$s"
-msgstr "оцінка досвіду %1$s"
-
 #: settings/home/way.php:13
 msgid "Образование и опыт работы"
 msgstr "Освіта і досвід роботи"
@@ -428,22 +461,6 @@ msgstr "Контакти"
 msgid "Список контактов"
 msgstr "Список контактів"
 
-#: settings/lists/contacts.php:22
-msgid "Viber"
-msgstr "Viber"
-
-#: settings/lists/contacts.php:23
-msgid "WhatsApp"
-msgstr "WhatsApp"
-
-#: settings/lists/contacts.php:24
-msgid "Telegram"
-msgstr "Telegram"
-
-#: settings/lists/contacts.php:25
-msgid "Email"
-msgstr "Email"
-
 #: settings/lists/experience.php:13
 msgid "Опыт"
 msgstr "Досвід"
@@ -469,30 +486,6 @@ msgstr "Профілі"
 #: settings/lists/links.php:15
 msgid "Ссылки на профили в в социальных сетях и прочее"
 msgstr "Посилання на профілі в в соціальних мережах та інше"
-
-#: settings/lists/links.php:22
-msgid "Facebook"
-msgstr "Facebook"
-
-#: settings/lists/links.php:23
-msgid "Twitter"
-msgstr "Twitter"
-
-#: settings/lists/links.php:24
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: settings/lists/links.php:25
-msgid "Вконтакте"
-msgstr "Вконтакте"
-
-#: settings/lists/links.php:26
-msgid "GitHub"
-msgstr "GitHub"
-
-#: settings/lists/links.php:27
-msgid "YouTube"
-msgstr "YouTube"
 
 #: settings/lists/reviews.php:34
 msgid "Количесство отзывов"
@@ -536,7 +529,33 @@ msgstr "Кількість послуг"
 msgid "услуга %1$s"
 msgstr "послуги %1$s"
 
-#: settings/pages/error404.php:13
+#: settings/lists/skills.php:13
+msgid "Скилы"
+msgstr "Навички"
+
+#: settings/lists/skills.php:15
+msgid ""
+"Секция главной страницы. Якорь #skills. При изменении количества зписей "
+"сохранитесь и перезагрузите страницу."
+msgstr ""
+"Секція головної сторінки. Якір #skills. При зміні кількості зпісей "
+"збережетеся і перезавантажте сторінку."
+
+#: settings/lists/skills.php:34
+msgid "Количество навыков"
+msgstr "Кількість навичок"
+
+#: settings/lists/skills.php:58
+#, php-format
+msgid "заголовок %1$s"
+msgstr "заголовок %1$s"
+
+#: settings/lists/skills.php:74
+#, php-format
+msgid "оценка навыка %1$s"
+msgstr "оцінка досвіду %1$s"
+
+#: settings/templates/error404.php:13
 msgid "Страница ошибки 404"
 msgstr "Сторінка помилки 404"
 

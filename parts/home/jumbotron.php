@@ -1,16 +1,18 @@
 <?php
 
 
+namespace resume;
+
 
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-$title = get_theme_mod( RESUME_SLUG . '_jumbotron_title', get_bloginfo( 'name' ) );
-$src = get_theme_mod( RESUME_SLUG . '_jumbotron_bgi', RESUME_URL . 'images/jumbotron.jpg' );
+$title = get_theme_setting( 'jumbotron_title' );
+$src = get_theme_setting( 'jumbotron_bgi' );
 
 
 if ( empty( $src ) ) {
-	$src = RESUME_URL . 'images/jumbotron.jpg';
+	$src = apply_filters( 'get_default_setting', 'jumbotron_bgi' );
 }
 
 

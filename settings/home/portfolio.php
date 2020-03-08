@@ -19,11 +19,11 @@ $wp_customize->add_section(
 
 
 $wp_customize->add_setting(
-    "{$slug}_portfolio_flag",
+    "{$slug}_portfolio_cat_id",
     array(
-        'default'           => false,
+        'default'           => apply_filters( 'get_default_setting', 'portfolio_cat_id' ),
         'transport'         => 'reset',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'is_bool',
     )
 );
 $wp_customize->add_control(
@@ -40,7 +40,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     "{$slug}_portfolio_cat_id",
     array(
-        'default'           => '',
+        'default'           => apply_filters( 'get_default_setting', 'portfolio_cat_id' ),
         'transport'         => 'reset',
         'sanitize_callback' => 'absint',
     )
@@ -60,7 +60,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     "{$slug}_portfolio_title",
     array(
-        'default'           => __( 'Портфолио', RESUME_TEXTDOMAIN ),
+        'default'           => apply_filters( 'get_default_setting', 'portfolio_title' ),
         'transport'         => 'reset',
         'sanitize_callback' => 'sanitize_text_field',
     )
@@ -79,7 +79,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     "{$slug}_portfolio_description",
     array(
-        'default'           => __( 'Портфолио', RESUME_TEXTDOMAIN ),
+        'default'           => apply_filters( 'get_default_setting', 'portfolio_description' ),
         'transport'         => 'reset',
         'sanitize_callback' => 'sanitize_textarea_field',
     )

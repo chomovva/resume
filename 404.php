@@ -5,8 +5,8 @@
 		<div class="wrap">
 			<div class="counter404" id="counter404"></div>
 			<?php
-				$title = get_theme_mod( RESUME_SLUG . '_error404_title', __( 'Ошибка 404', RESUME_TEXTDOMAIN ) );
-				$description = get_theme_mod( RESUME_SLUG . '_error404_description', '' );
+				$title = get_theme_setting( 'error404_title' );
+				$description = get_theme_setting( 'error404_description' );
 				if ( empty( trim( $title ) ) ) { echo "<h1>" . $title . "</h1>"; }
 				if ( has_nav_menu( 'error404' ) ) wp_nav_menu( array(
 					'theme_location'  => 'error404',

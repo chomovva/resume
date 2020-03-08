@@ -10,6 +10,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 
+function get_theme_setting( $name ) {
+	$value = get_theme_mod( RESUME_TEXTDOMAIN . '_' . $name, apply_filters( 'get_default_setting', $name ) );
+	return apply_filters( 'get_theme_setting', $value, $name );
+}
+
+
+
 function get_custom_logo_img() {
 	$result = __return_empty_string();
 	$custom_logo_id = get_theme_mod( 'custom_logo' );

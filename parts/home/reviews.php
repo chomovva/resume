@@ -8,12 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 $section_name = 'reviews';
-$title = get_theme_mod( RESUME_SLUG . '_reviews_title', __( 'Отзывы', RESUME_TEXTDOMAIN ) );
-$description = get_theme_mod( RESUME_SLUG . '_reviews_description', '' );
+$title = get_theme_setting( 'reviews_title' );
+$description = get_theme_setting( 'reviews_description' );
 $content = __return_empty_string();
 $morelink = __return_empty_string();
-$label = get_theme_mod( RESUME_SLUG . '_reviews_label', __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ) );
-$page_id = get_translate_id( get_theme_mod( RESUME_SLUG . '_reviews_page_id', '' ), 'page' );
+$label = get_theme_setting( 'reviews_label' );
+$page_id = get_translate_id( get_theme_setting( 'reviews_page_id' ), 'page' );
 $page = ( empty( $page_id ) ) ? __return_false() : get_post( $page_id, OBJECT );
 
 

@@ -1,10 +1,13 @@
 <?php
 
 
+namespace resume;
+
+
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-function resume_customize_register( $wp_customize ) {
+function customize_register( $wp_customize ) {
 	
 	$slug = RESUME_SLUG;
 	
@@ -16,32 +19,33 @@ function resume_customize_register( $wp_customize ) {
 			'priority'        => 200
 		)
 	);
-	foreach ( array(
+	foreach ( apply_filters( 'resume_front_page_customizer_sections', array(
 		'jumbotron',    // "первый экран"
 		'aboutme',      // обо мне
 		'services',     // чем я занимаюсь
 		'advantages',   // мои преимущества
-		'skills',       // мои скилы
 		'way',          // опыт работы и образование 
 		'portfolio',    // моё портфолио
 		'reviews',      // отзывы
 		'myblog',       // блог
-	) as $path_name ) {
+	) ) as $path_name ) {
 		include get_theme_file_path( "settings/home/{$path_name}.php" );
 	}
 
 	$wp_customize->add_panel(
-		"{$slug}_pages",
+		"{$slug}_templates",
 		array(
 			'capability'      => 'edit_theme_options',
 			'title'           => __( 'Шаблоны страниц', RESUME_TEXTDOMAIN ),
 			'priority'        => 201
 		)
 	);
-	foreach ( array(
-		'error404',     // страница ошибки 404
-	) as $path_name ) {
-		include get_theme_file_path( "settings/pages/{$path_name}.php" );
+	foreach ( apply_filters( 'resume_templates_customizer_sections', array(
+		'home',         // шаблон главной страницы
+		'archive',      // шаблон архива
+		'error404',     // шаблон страницы ошибки 404
+	) ) as $path_name ) {
+		include get_theme_file_path( "settings/templates/{$path_name}.php" );
 	}
 
 	$wp_customize->add_panel(
@@ -52,16 +56,20 @@ function resume_customize_register( $wp_customize ) {
 			'priority'        => 201
 		)
 	);
-	foreach ( array(
+	foreach ( apply_filters( 'resume_customizer_lists', array(
 		'experience',   // опыт работы (показатель - значение)
 		'services',     // список услуг
+		'skills',       // список моих скилов
 		'reviews',      // отзывы
 		'contacts',     // список моих контактов
 		'links',        // ссылки на профили социальных сетей
-	) as $path_name ) {
+	) ) as $path_name ) {
 		include get_theme_file_path( "settings/lists/{$path_name}.php" );
 	}
 
+	// форма поиска гугл
+	include get_theme_file_path( "settings/google-cse.php" );
+
 }
 
-add_action( 'customize_register', 'resume_customize_register' );
+add_action( 'customize_register', 'resume\customize_register' );

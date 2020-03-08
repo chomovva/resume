@@ -21,9 +21,9 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
 	"{$slug}_myblog_flag",
 	array(
-		'default'           => false,
+		'default'           => apply_filters( 'get_default_setting', 'myblog_flag' ),
 		'transport'         => 'reset',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'is_bool',
 	)
 );
 $wp_customize->add_control(
@@ -40,7 +40,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_myblog_title",
 	array(
-		'default'           => __( 'Блог', RESUME_TEXTDOMAIN ),
+		'default'           => apply_filters( 'get_default_setting', 'myblog_title' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)
@@ -59,7 +59,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_myblog_description",
 	array(
-		'default'           => '',
+		'default'           => apply_filters( 'get_default_setting', 'myblog_description' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_textarea_field',
 	)
@@ -78,7 +78,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_myblog_cat_id",
 	array(
-		'default'           => '',
+		'default'           => apply_filters( 'get_default_setting', 'myblog_cat_id' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)
@@ -98,7 +98,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_myblog_numberposts",
 	array(
-		'default'           => 3,
+		'default'           => apply_filters( 'get_default_setting', 'myblog_numberposts' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)
@@ -121,7 +121,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_myblog_label",
 	array(
-		'default'           => __( 'Смотреть все записи', RESUME_TEXTDOMAIN ),
+		'default'           => apply_filters( 'get_default_setting', 'myblog_label' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)

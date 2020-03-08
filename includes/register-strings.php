@@ -1,35 +1,29 @@
 <?php
 
 
-
 if ( ! defined( 'ABSPATH' ) ) { exit; };
-
-
-
-
-
 
 
 /**
  * Перевод сблоков
  */
 foreach ( array(
-    'error404_title'        => __( 'Ошибка 404', RESUME_TEXTDOMAIN ),
-    'error404_description'  => '',
-    'aboutme_title'         => __( 'Обо мне', RESUME_TEXTDOMAIN ),
-    'aboutme_more_label'    => __( 'Подробней обо мне', RESUME_TEXTDOMAIN ),
-    'aboutme_file_label'    => __( 'Скачать резюме', RESUME_TEXTDOMAIN ),
-    'jumbotron_title'       => '',
-    'skills_title'          => '',
-    'portfolio_title'       => __( 'Портфолио', RESUME_TEXTDOMAIN ),
-    'portfolio_description' => '',
-    'reviews_title'         => __( 'Отзывы', RESUME_TEXTDOMAIN ),
-    'reviews_description'   => '',
-    'reviews_label'         => __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ),
-    'services_title'        => '',
-    'services_excerpt'      => '',
+    'error404_title',
+    'error404_description',
+    'aboutme_title',
+    'aboutme_more_label',
+    'aboutme_file_label',
+    'jumbotron_title',
+    'skills_title',
+    'portfolio_title',
+    'portfolio_description',
+    'reviews_title',
+    'reviews_description',
+    'reviews_label',
+    'services_title',
+    'services_excerpt',
 ) as $key ) {
-    $value = wp_strip_all_tags( get_theme_mod( RESUME_SLUG . '_' . $key, '' ) );
+    $value = wp_strip_all_tags( get_theme_mod( RESUME_SLUG . '_' . $key, apply_filters( 'get_default_setting', $key ) ) );
     if ( ! empty( trim( $value ) ) ) {
         pll_register_string( $key, $value, RESUME_TEXTDOMAIN, false );
     }
@@ -85,7 +79,7 @@ if ( is_array( $experience ) && ! empty( $experience ) ) {
  */
 $services = get_theme_mod( RESUME_SLUG . '_services', array() );
 if ( is_array( $services ) && ! empty( $services ) ) {
-    for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_services_count', 6 ); $i++ ) { 
+    for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_services_count', apply_filters( 'get_default_setting', 'services_count' ) ); $i++ ) { 
         if ( isset( $services[ $i ] ) && ! empty( trim( $services[ $i ] ) ) )  {
             pll_register_string( "services_{$i}", $services[ $i ], RESUME_TEXTDOMAIN, false );
         }
@@ -100,7 +94,7 @@ if ( is_array( $services ) && ! empty( $services ) ) {
  */
 $reviews = get_theme_mod( RESUME_SLUG . '_reviews', array() );
 if ( is_array( $reviews ) && ! empty( $reviews ) ) {
-    for ( $i = 0;  $i < get_theme_mod( RESUME_SLUG . '_reviews_count', 5 );  $i++ ) {
+    for ( $i = 0;  $i < get_theme_mod( RESUME_SLUG . '_reviews_count', apply_filters( 'get_default_setting', 'reviews_count' ) );  $i++ ) {
         if ( isset( $reviews[ $i ] ) && is_array( $reviews[ $i ] ) ) {
             foreach ( array( 'author', 'content', 'link', 'label' ) as $key ) {
                 if ( isset( $reviews[ $i ][ $key ] ) && ! empty( trim( $reviews[ $i ][ $key ] ) ) ) {

@@ -21,9 +21,9 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
 	"{$slug}_services_flag",
 	array(
-		'default'           => false,
+		'default'           => apply_filters( 'get_default_setting', 'services_flag' ),
 		'transport'         => 'reset',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'is_bool',
 	)
 );
 $wp_customize->add_control(

@@ -1,16 +1,20 @@
 <?php
 
 
+namespace resume;
+
 
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
+$page_id = get_theme_setting( 'advantages_page_id' );
+$page_id = get_translate_id( $page_id, 'page' );
 
-$page_id = resume\get_translate_id( get_theme_mod( RESUME_SLUG . '_skills_page_id', '' ), 'page' );
-$experience = get_theme_mod( RESUME_SLUG . '_experience', array() );
-$skills = get_theme_mod( RESUME_SLUG . '_skills', array() );
-$title = get_theme_mod( RESUME_SLUG . '_skills_title', __( 'Мои скилы', RESUME_TEXTDOMAIN ) );
-$skills_count = get_theme_mod( RESUME_SLUG . '_skills_count', 5 );
+
+$experience = get_theme_setting( 'experience' );
+$skills = get_theme_setting( 'skills' );
+$title = get_theme_setting( 'advantages_title' );
+$skills_count = get_theme_setting( 'skills_count' );
 $content = __return_empty_string();
 
 
@@ -22,8 +26,6 @@ if ( ! empty( $page_id ) ) {
 		$parts = get_extended( $page->post_content );
 		$content = do_shortcode( $parts[ 'main' ], false );
 	}
-
-	$skills = get_theme_mod( RESUME_SLUG . '_skills', array() );
 
 }
 

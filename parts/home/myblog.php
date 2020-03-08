@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 
-$cat_id = get_translate_id( get_theme_mod( RESUME_SLUG . '_blog_cat_id', '' ), 'category' );
+$cat_id = get_translate_id( get_theme_setting( 'blog_cat_id' ), 'category' );
 
 
 $cat = get_category( $cat_id, OBJECT, 'raw' );
@@ -18,7 +18,7 @@ $cat = get_category( $cat_id, OBJECT, 'raw' );
 if ( $cat && ! is_wp_error( $cat ) ) {
 
 	$entries = get_posts( array(
-		'numberposts' => get_theme_mod( RESUME_SLUG . '_myblog_numberposts', 3 ),
+		'numberposts' => get_theme_setting( 'myblog_numberposts' ),
 		'category'    => $cat->term_id,
 		'orderby'     => 'date',
 		'order'       => 'DESC',
@@ -43,9 +43,9 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 
 		if ( ! empty( $content ) ) {
 			$section_name = 'myblog';
-			$title = get_theme_mod( RESUME_SLUG . '_myblog_title', __( 'Блог', RESUME_TEXTDOMAIN ) );
-			$description = get_theme_mod( RESUME_SLUG . '_myblog_description', '' );
-			$label = get_theme_mod( RESUME_SLUG . '_myblog_label', __( 'Подробней', RESUME_TEXTDOMAIN ) );
+			$title = get_theme_setting( 'myblog_title' );
+			$description = get_theme_setting( 'myblog_description' );
+			$label = get_theme_setting( 'myblog_label' );
 			$morelink = get_category_link( $cat );
 			include get_theme_file_path( 'views/home/section.php' );
 		}

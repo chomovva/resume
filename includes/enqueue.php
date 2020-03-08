@@ -1,9 +1,10 @@
 <?php
 
 
+namespace resume;
+
+
 if ( ! defined( 'ABSPATH' ) ) { exit; };
-
-
 
 
 /**
@@ -15,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
  * @param string|bool $ver версия
  * @param bool $in_footer подключать в шапке или подвале
  */
-function resume_scripts() {
+function scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'resume-main', RESUME_URL . 'scripts/main.min.js', array( 'jquery', 'slick', 'fancybox' ), RESUME_VERSION, true );
 	wp_localize_script( 'resume-main', 'resumeTheme', array( 'toTopBtn' => 'Наверх' ) );
@@ -28,12 +29,12 @@ function resume_scripts() {
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 	) );
 }
-add_action( 'wp_enqueue_scripts', 'resume_scripts' );
+add_action( 'wp_enqueue_scripts', 'resume\scripts' );
 
 
 
 
-function resume_print_styles() {
+function print_styles() {
 	wp_dequeue_style( 'contact-form-7' );
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'mkaz-code-syntax-css' );
@@ -42,7 +43,7 @@ function resume_print_styles() {
 	wp_dequeue_style( 'wpdiscuz-frontend-css' );
 	wp_dequeue_style( 'wpdiscuz-user-content-css' );
 }
-add_action( 'wp_print_styles', 'resume_print_styles' );
+add_action( 'wp_print_styles', 'resume\print_styles' );
 
 
 
@@ -56,7 +57,7 @@ add_action( 'wp_print_styles', 'resume_print_styles' );
  * @param string|bool $ver версия
  * @param string $media для каких устройств подключать
  */
-function resume_styles() {
+function styles() {
 	wp_enqueue_style( 'resume-main', RESUME_URL . 'styles/main.min.css', array(), RESUME_VERSION, 'all' );
 	wp_enqueue_style( 'resume-font', RESUME_URL . 'styles/fonts.min.css', array(), RESUME_VERSION, 'all' );
 	wp_enqueue_style( 'fancybox', RESUME_URL . 'styles/fancybox.min.css', array(), '3.3.5', 'all' );
@@ -69,14 +70,14 @@ function resume_styles() {
 	wp_enqueue_style( 'wpdiscuz-frontend-css' );
 	wp_enqueue_style( 'wpdiscuz-user-content-css' );
 	if ( is_front_page() && ! get_theme_mod( RESUME_SLUG . '_jumbotron_flag', false ) ) {
-		wp_add_inline_style( 'resume-main', resume\css_array_to_css( array(
+		wp_add_inline_style( 'resume-main', css_array_to_css( array(
 			'.home .header' => array(
 				'background-color'  => '#3598db',
 			),
 		), array( 'container' => false ) ) );
 	}
 }
-add_action( 'get_footer', 'resume_styles', 10, 0 );
+add_action( 'get_footer', 'resume\styles', 10, 0 );
 
 
 
@@ -84,9 +85,9 @@ add_action( 'get_footer', 'resume_styles', 10, 0 );
 
 
 
-function resume_ctitical_styles() {
+function ctitical_styles() {
 	if ( file_exists( RESUME_DIR . 'styles/critical.min.css' ) ) {
 		echo '<style type="text/css">' . file_get_contents( RESUME_DIR . 'styles/critical.min.css' ) . '</style>';
 	}
 }
-add_action( 'wp_head', 'resume_ctitical_styles', 10, 0 );
+add_action( 'wp_head', 'resume\ctitical_styles', 10, 0 );

@@ -22,9 +22,9 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
 	"{$slug}_way_flag",
 	array(
-		'default'           => false,
+		'default'           => apply_filters( 'get_default_setting', 'way_flag' ),
 		'transport'         => 'reset',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'is_bool',
 	)
 );
 $wp_customize->add_control(
@@ -41,7 +41,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_way_bgi",
 	array(
-		'default'           => RESUME_URL . 'images/way.jpg',
+		'default'           => apply_filters( 'get_default_setting', 'way_bgi' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_url',
 	)
@@ -63,7 +63,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_way_count",
 	array(
-		'default'           => 2,
+		'default'           => apply_filters( 'get_default_setting', 'way_count' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)

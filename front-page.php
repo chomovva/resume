@@ -1,23 +1,26 @@
 <?php
 
 
+namespace resume;
+
+
 get_header();
 
 
-foreach ( array(
+foreach ( apply_filters( 'resume_front_page_sections', array(
 	'jumbotron',
     'aboutme',
     'services',
     'way',
-    'skills',
+    'advantages',
     'portfolio',
     'reviews',
     'myblog',
-) as $key ) {
-    if ( get_theme_mod( RESUME_SLUG . "_{$key}_flag", false ) )
+) ) as $key ) {
+    if ( get_theme_setting( "{$key}_flag" ) ) {
         get_template_part( "parts/home/$key" );
+    }
 }
-
 
 
 get_footer();
