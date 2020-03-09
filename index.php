@@ -32,13 +32,13 @@ get_header();
 
 					<?php
 
-					the_breadcrumbs();
-
 					if ( is_singular() ) {
+						the_breadcrumbs();
 						get_template_part( 'parts/singular' );
 					} elseif ( is_search() ) {
 						get_template_part( 'parts/search' );
 					} else {
+						the_breadcrumbs();
 						get_template_part( 'parts/archive' );
 					}
 				?>

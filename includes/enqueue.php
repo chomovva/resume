@@ -43,8 +43,8 @@ function print_styles() {
 	wp_dequeue_style( 'wpdiscuz-frontend-css' );
 	wp_dequeue_style( 'wpdiscuz-user-content-css' );
 }
-add_action( 'wp_print_styles', 'resume\print_styles' );
 
+add_action( 'wp_print_styles', 'resume\print_styles' );
 
 
 

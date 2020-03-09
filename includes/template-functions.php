@@ -190,9 +190,6 @@ function the_pager() {
 
 
 
-
-
-
 function get_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src', $class_name = 'lazy' ) {
 	return sprintf(
 		'<img class="%4$s wp-post-thumbnail" src="#" data-%3$s="%1$s" alt="%2$s"/>',
@@ -222,8 +219,17 @@ function the_pageheader() {
 	if ( is_archive() ) {
 		$title = get_the_archive_title();
 		$excerpt = do_shortcode( get_the_archive_description() );
-		$thumbnail = __return_empty_string();
-		$date = __return_empty_string();
+		$thumbnail = '';
+		$date = '';
+	} elseif ( is_search() ) {
+		$title = __( 'Поиск по сайту', RESUME_TEXTDOMAIN );
+		$excerpt = sprintf( '%1$s: <span class="bg-success">%2$s</span>', __( 'Вы искали', RESUME_TEXTDOMAIN ), get_search_query() );
+		$thumbnail = sprintf(
+			'<img class="lazy wp-post-thumbnail" src="#" data-src="%1$s" alt="%2$s"/>',
+			RESUME_URL . 'images/document.svg',
+			esc_attr__( 'Поиск по сайту', RESUME_TEXTDOMAIN )
+		);
+		$date = '';
 	} else {
 		$title = single_post_title( '', false );
 		$excerpt = ( has_excerpt( get_the_ID() ) ) ? get_the_excerpt( get_the_ID() ) : false;
