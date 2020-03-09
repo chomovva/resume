@@ -1,18 +1,20 @@
 <?php
 
 
+namespace resume;
+
 
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 
-$page_ids = get_theme_mod( RESUME_SLUG . '_way_page_ids', array() );
+$page_ids = get_theme_setting( 'way_page_ids' );
 $entries = __return_empty_array();
-$bgi_src = get_theme_mod( RESUME_SLUG . '_way_bgi', RESUME_URL . 'images/way.jpg' );
+$bgi_src = get_theme_setting( 'way_bgi' );
 
 
 if ( empty( $bgi_src ) ) {
-	$bgi_src = RESUME_URL . 'images/way.jpg';
+	$bgi_src = apply_filters( 'get_default_setting', way_bgi );
 }
 
 
@@ -21,7 +23,7 @@ if ( is_array( $page_ids ) && ! empty( $page_ids ) ) {
 
 	foreach ( $page_ids as $page_id ) {
 
-		$page_id = resume\get_translate_id( $page_id, 'page' );
+		$page_id = get_translate_id( $page_id, 'page' );
 		
 		if ( ! empty( $page_id ) ) {
 			$page = get_page( $page_id, OBJECT, 'raw' );

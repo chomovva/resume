@@ -15,9 +15,9 @@ define( 'RESUME_SLUG', 'resume' );
 
 
 
-
-get_template_part( 'includes/enqueue' );
+get_template_part( 'includes/default-settings' );
 get_template_part( 'includes/template-functions' );
+get_template_part( 'includes/enqueue' );
 get_template_part( 'includes/shortcodes' );
 get_template_part( 'includes/gutenberg' );
 get_template_part( 'includes/brand' );
@@ -175,3 +175,30 @@ function resume_add_content_lazyload_images( $content ) {
 	return implode( "", $result );
 }
 add_filter( 'the_content', 'resume_add_content_lazyload_images', 10, 1 );
+
+
+/**
+ * Добавляем кнопку открытия пользовательского поиска гугл в стандартной форме поиска
+ */
+function resume_add_google_cse_button() {
+	?>
+		<a class="google-search-fancybox-button fancybox" href="#google-search-fancybox-container">
+			<?php _e( 'Поиск Google', RESUME_TEXTDOMAIN ); ?>
+		</a>
+	<?php
+}
+
+
+/**
+ * Добавляет код пользовательского поиска гугл
+ */
+function resume_add_google_cse_code() {
+	$code = get_theme_mod( RESUME_SLUG . '_google_cse_code', apply_filters( 'get_default_setting', 'google_cse_code' ) );
+	$code = ( empty( trim( $code ) ) ) ? __( 'Получите код пользовательского поиска Google', RESUME_TEXTDOMAIN ) : htmlspecialchars_decode( $code );
+	echo '<div id="google-search-fancybox-container" class="google-search-fancybox-container">' . $code . '</div>';
+}
+
+if ( get_theme_mod( RESUME_SLUG . '_google_cse_flag', apply_filters( 'get_default_setting', 'google_cse_flag' ) ) ) {
+	add_action( 'resume_searchform_after', 'resume_add_google_cse_button', 10, 0 );
+	add_action( 'wp_footer', 'resume_add_google_cse_code', 10, 0 );
+}

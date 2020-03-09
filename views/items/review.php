@@ -1,6 +1,11 @@
 <?php
 
+
+namespace resume;
+
+
 if ( ! defined( 'ABSPATH' ) ) { exit; };
+
 
 ?>
 

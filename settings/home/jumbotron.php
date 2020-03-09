@@ -21,9 +21,9 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
     "{$slug}_jumbotron_flag",
     array(
-        'default'           => false,
+        'default'           => apply_filters( 'get_default_setting', 'jumbotron_flag' ),
         'transport'         => 'reset',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'is_bool',
     )
 );
 $wp_customize->add_control(
@@ -40,7 +40,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_jumbotron_title",
 	array(
-		'default'           => get_bloginfo( 'name' ),
+		'default'           => apply_filters( 'get_default_setting', 'jumbotron_title' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)
@@ -59,7 +59,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_jumbotron_bgi",
 	array(
-		'default'           => RESUME_URL . 'images/jumbotron.jpg',
+		'default'           => apply_filters( 'get_default_setting', 'jumbotron_bgi' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_url',
 	)

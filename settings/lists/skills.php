@@ -8,29 +8,29 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 $wp_customize->add_section(
-	RESUME_SLUG . '_skills',
+	"{$slug}_list_of_skills",
 	array(
 		'title'            => __( 'Скилы', RESUME_TEXTDOMAIN ),
 		'priority'         => 10,
 		'description'      => __( 'Секция главной страницы. Якорь #skills. При изменении количества зписей сохранитесь и перезагрузите страницу.', RESUME_TEXTDOMAIN ),
-		'panel'            => RESUME_SLUG
+		'panel'            => "{$slug}_lists"
 	)
 ); /**/
 
 
 
 $wp_customize->add_setting(
-	RESUME_SLUG . '_skills_count',
+	"{$slug}_skills_count",
 	array(
-		'default'           => 5,
+		'default'           => apply_filters( 'get_default_setting', 'skills_count' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)
 );
 $wp_customize->add_control(
-	RESUME_SLUG . '_skills_count',
+	"{$slug}_skills_count",
 	array(
-		'section'           => RESUME_SLUG . '_skills',
+		'section'           => "{$slug}_list_of_skills",
 		'label'             => __( 'Количество навыков', RESUME_TEXTDOMAIN ),
 		'type'              => 'number',
 		'atts'              => array(
@@ -42,7 +42,7 @@ $wp_customize->add_control(
 
 
 
-for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_skills_count', 5 ); $i++ ) {
+for ( $i = 0; $i < apply_filters( 'get_default_setting', 'skills_count' ); $i++ ) {
 	$wp_customize->add_setting(
 		RESUME_SLUG . "_skills[{$i}][label]",
 		array(
@@ -54,7 +54,7 @@ for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_skills_count', 5 ); $i++ ) {
 	$wp_customize->add_control(
 		RESUME_SLUG . "_skills[{$i}][label]",
 		array(
-			'section'           => RESUME_SLUG . '_skills',
+			'section'           => "{$slug}_list_of_skills",
 			'label'             => sprintf( __( 'заголовок %1$s', RESUME_TEXTDOMAIN ), ( $i + 1 ) ),
 			'type'              => 'text',
 		)
@@ -70,7 +70,7 @@ for ( $i = 0; $i < get_theme_mod( RESUME_SLUG . '_skills_count', 5 ); $i++ ) {
 	$wp_customize->add_control(
 		RESUME_SLUG . "_skills[{$i}][value]",
 		array(
-			'section'           => RESUME_SLUG . '_skills',
+			'section'           => "{$slug}_list_of_skills",
 			'label'             => sprintf( __( 'оценка навыка %1$s', RESUME_TEXTDOMAIN ), ( $i + 1 ) ),
 			'type'              => 'number',
 			'atts'              => array(

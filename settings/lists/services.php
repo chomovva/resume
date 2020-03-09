@@ -21,7 +21,7 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
 	"{$slug}_number_of_services",
 	array(
-		'default'           => 6,
+		'default'           => apply_filters( 'get_default_setting', 'number_of_services' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)
@@ -41,7 +41,7 @@ $wp_customize->add_control(
 
 
 
-for ( $i = 0; $i < get_theme_mod( "{$slug}_services_count", 6 ); $i++ ) { 
+for ( $i = 0; $i < get_theme_mod( "{$slug}_services_count", apply_filters( 'get_default_setting', 'number_of_services' ) ); $i++ ) { 
 	$wp_customize->add_setting(
 		"{$slug}_services[{$i}]",
 		array(

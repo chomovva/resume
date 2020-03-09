@@ -23,7 +23,7 @@ $wp_customize->add_setting(
 	array(
 		'default'           => false,
 		'transport'         => 'reset',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'is_bool',
 	)
 );
 $wp_customize->add_control(

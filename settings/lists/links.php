@@ -18,14 +18,7 @@ $wp_customize->add_section(
 ); /**/
 
 
-foreach ( array(
-	'facebook'  => __( 'Facebook', RESUME_TEXTDOMAIN ),
-	'Twitter'   => __( 'Twitter', RESUME_TEXTDOMAIN ),
-	'linkedin'  => __( 'LinkedIn', RESUME_TEXTDOMAIN ),
-	'vk'        => __( 'Вконтакте', RESUME_TEXTDOMAIN ),
-	'github'    => __( 'GitHub', RESUME_TEXTDOMAIN ),
-	'youtube'   => __( 'YouTube', RESUME_TEXTDOMAIN ),
-) as $key => $label ) {
+foreach ( apply_filters( 'get_list_of_social_networks', 'links' ) as $key => $label ) {
 	$wp_customize->add_setting(
 		"{$slug}_links[$key]",
 		array(

@@ -13,7 +13,7 @@ $wp_customize->add_section(
         'title'            => __( 'Страница ошибки 404', RESUME_TEXTDOMAIN ),
         'priority'         => 10,
         'description'      => '',
-        'panel'            => "{$slug}_pages",
+        'panel'            => "{$slug}_templates",
     )
 ); /**/
 
@@ -22,7 +22,7 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
     "{$slug}_error404_title",
     array(
-        'default'           => __( 'Ошибка 404', RESUME_TEXTDOMAIN ),
+        'default'           => apply_filters( 'get_default_setting', 'error404_title' ),
         'transport'         => 'reset',
         'sanitize_callback' => 'sanitize_text_field',
     )
@@ -41,7 +41,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     "{$slug}_error404_description",
     array(
-        'default'           => '',
+        'default'           => apply_filters( 'get_default_setting', 'error404_description' ),
         'transport'         => 'reset',
         'sanitize_callback' => 'sanitize_textarea_field',
     )

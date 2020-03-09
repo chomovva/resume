@@ -21,9 +21,9 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
 	"{$slug}_aboutme_flag",
 	array(
-		'default'           => false,
+		'default'           => apply_filters( 'get_default_setting', 'aboutme_flag' ),
 		'transport'         => 'reset',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'is_bool',
 	)
 );
 $wp_customize->add_control(
@@ -40,7 +40,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_aboutme_page_id",
 	array(
-		'default'           => '',
+		'default'           => apply_filters( 'get_default_setting', 'aboutme_page_id' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)
@@ -59,7 +59,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_aboutme_title",
 	array(
-		'default'           => __( 'Обо мне', RESUME_TEXTDOMAIN ),
+		'default'           => apply_filters( 'get_default_setting', 'aboutme_title' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)
@@ -78,7 +78,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_aboutme_foto",
 	array(
-		'default'           => RESUME_URL . 'images/user.png',
+		'default'           => apply_filters( 'get_default_setting', 'aboutme_foto' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_url',
 	)
@@ -100,7 +100,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_aboutme_more_label",
 	array(
-		'default'           => __( 'Подробней обо мне', RESUME_TEXTDOMAIN ),
+		'default'           => apply_filters( 'get_default_setting', 'aboutme_more_label' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)
@@ -119,7 +119,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_aboutme_file_label",
 	array(
-		'default'           => __( 'Скачать резюме', RESUME_TEXTDOMAIN ),
+		'default'           => apply_filters( 'get_default_setting', 'aboutme_file_label' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)
@@ -138,7 +138,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_aboutme_file",
 	array(
-		'default'           => '',
+		'default'           => apply_filters( 'get_default_setting', 'aboutme_file' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_url',
 	)

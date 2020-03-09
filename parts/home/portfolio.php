@@ -8,11 +8,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 
-$cat_id = get_translate_id( get_theme_mod( RESUME_SLUG . '_portfolio_cat_id', '' ), 'category' );
+$cat_id = get_translate_id( get_theme_setting( 'portfolio_cat_id' ), 'category' );
 
 
 $cat = get_category( $cat_id, OBJECT, 'raw' );
-
 
 
 if ( $cat && ! is_wp_error( $cat ) ) {
@@ -42,9 +41,11 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 		if ( wp_doing_ajax() ) {
 			echo $slides;
 		} else {
-			$title = get_theme_mod( RESUME_SLUG . '_portfolio_title', __( 'Портфолио', RESUME_TEXTDOMAIN ) );
+			$title = get_theme_setting( 'portfolio_title' );
+			$description = get_theme_setting( 'portfolio_description' );
 			if ( function_exists( 'pll__' ) ) {
 				$title = pll__( $title );
+				$description = pll__( $description );
 			}
 			if ( empty( $title ) ) $title = strip_tags( apply_filters( 'single_cat_title', $cat->name ) );
 			wp_enqueue_script( 'jquery' );
@@ -53,7 +54,16 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 			?>
 				<section class="section portfolio" id="portfolio">
 					<div class="container">
-						<h2><?php echo $title; ?></h2>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md">
+								<h2><?php echo $title; ?></h2>
+							</div>
+							<?php if ( ! empty( $description ) ) : ?>
+								<div class="col-xs-12 col-sm-12 col-md-10">
+									<p><?php echo $description; ?></p>
+								</div>
+							<?php endif; ?>
+						</div>
 						<div class="slider">
 							<div id="portfolio-items">
 								<?php echo $slides; ?>

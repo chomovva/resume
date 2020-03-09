@@ -37,4 +37,6 @@ if ( have_posts() ) {
 
 	the_posts_pagination();
 
+} else {
+	echo '<p class="lead font-bold">' . __( 'К сожалению ничего не найдено. Попробуйте изменить поисковый запрос.', RESUME_TEXTDOMAIN ) . '<p>';
 }

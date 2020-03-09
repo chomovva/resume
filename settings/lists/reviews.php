@@ -22,7 +22,7 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
 	"{$slug}_reviews_count",
 	array(
-		'default'           => 5,
+		'default'           => apply_filters( 'get_default_setting', 'reviews_count' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)
@@ -36,7 +36,7 @@ $wp_customize->add_control(
 	)
 ); /**/
 
-$reviews_page_id = get_theme_mod( "{$slug}_reviews_page_id", '' );
+$reviews_page_id = get_theme_setting( 'reviews_page_id' );
 
 $wp_customize->add_setting(
 	"{$slug}_reviews_morelink",
@@ -57,7 +57,7 @@ $wp_customize->add_control(
 
 
 
-for ( $i = 0; $i < get_theme_mod( "{$slug}_reviews_count", 5 ); $i++ ) {
+for ( $i = 0; $i < get_theme_mod( "{$slug}_reviews_count", apply_filters( 'get_default_setting', 'reviews_count' ) ); $i++ ) {
 	$wp_customize->add_setting(
         "{$slug}_reviews[{$i}][foto]",
             array(
