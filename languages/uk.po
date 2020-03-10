@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-08 19:10+0200\n"
-"PO-Revision-Date: 2020-03-08 19:12+0200\n"
+"POT-Creation-Date: 2020-03-10 22:43+0200\n"
+"PO-Revision-Date: 2020-03-10 22:44+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: src\n"
 "X-Poedit-SearchPathExcluded-2: examples\n"
 
-#: 404.php:21
+#: 404.php:40
 msgid "На главную"
 msgstr "На головну"
 
@@ -79,7 +79,7 @@ msgstr "Завантажити резюме"
 msgid "Чем я занимаюсь"
 msgstr "Чим я займаюсь"
 
-#: includes/default-settings.php:36 includes/template-functions.php:447
+#: includes/default-settings.php:36 includes/template-functions.php:453
 #: parts/search.php:28 settings/home/services.php:100 views/home/way.php:23
 msgid "Подробней"
 msgstr "Детальніше"
@@ -93,7 +93,7 @@ msgid "Портфолио"
 msgstr "Портфоліо"
 
 #: includes/default-settings.php:59 settings/home/reviews.php:12
-#: settings/home/reviews.php:66 settings/lists/reviews.php:13
+#: settings/home/reviews.php:66 settings/lists/reviews.php:17
 msgid "Отзывы"
 msgstr "Відгуки"
 
@@ -210,7 +210,7 @@ msgstr "Ваш email"
 msgid "Отправить"
 msgstr "Надіслати"
 
-#: includes/shortcodes.php:180 settings/lists/reviews.php:135
+#: includes/shortcodes.php:180 settings/lists/reviews.php:139
 msgid "Подробней о проекте"
 msgstr "Детальніше про проект"
 
@@ -242,28 +242,37 @@ msgstr "Дивитися попередній пост"
 msgid "Смотреть следующий пост"
 msgstr "Наступне пост"
 
-#: includes/template-functions.php:298
+#: includes/template-functions.php:225 includes/template-functions.php:230
+#: parts/nav.php:35
+msgid "Поиск по сайту"
+msgstr "Пошук по сайту"
+
+#: includes/template-functions.php:226
+msgid "Вы искали"
+msgstr "Ви шукали"
+
+#: includes/template-functions.php:304
 #, php-format
 msgid "Результаты поиска %s"
 msgstr "Результати пошуку %s"
 
-#: includes/template-functions.php:304
+#: includes/template-functions.php:310
 msgid "Поделиться в VK"
 msgstr "Поділіться в VK"
 
-#: includes/template-functions.php:305
+#: includes/template-functions.php:311
 msgid "Поделиться в Facebook"
 msgstr "Поділіться в Facebook"
 
-#: includes/template-functions.php:306
+#: includes/template-functions.php:312
 msgid "Поделиться в Twitter"
 msgstr "Поділіться в Twitter"
 
-#: includes/template-functions.php:307
+#: includes/template-functions.php:313
 msgid "Поделиться в LinkedIn"
 msgstr "Поділіться в LinkedIn"
 
-#: includes/template-functions.php:308
+#: includes/template-functions.php:314
 msgid "Отправить по email"
 msgstr "Надіслати по email"
 
@@ -279,9 +288,9 @@ msgstr "Меню"
 msgid "Поделиться"
 msgstr "Поділіться"
 
-#: parts/nav.php:35
-msgid "Поиск по сайту"
-msgstr "Пошук по сайту"
+#: parts/search.php:41
+msgid "К сожалению ничего не найдено. Попробуйте изменить поисковый запрос."
+msgstr "На жаль нічого не знайдено. Спробуйте змінити пошуковий запит."
 
 #: searchform.php:5
 msgid "Найти"
@@ -465,7 +474,7 @@ msgstr "Список контактів"
 msgid "Опыт"
 msgstr "Досвід"
 
-#: settings/lists/experience.php:15 settings/lists/reviews.php:15
+#: settings/lists/experience.php:15 settings/lists/reviews.php:19
 msgid "Отображаются в сеции преимуществ"
 msgstr "Відображаються в сеціі переваг"
 
@@ -487,35 +496,35 @@ msgstr "Профілі"
 msgid "Ссылки на профили в в социальных сетях и прочее"
 msgstr "Посилання на профілі в в соціальних мережах та інше"
 
-#: settings/lists/reviews.php:34
+#: settings/lists/reviews.php:38
 msgid "Количесство отзывов"
 msgstr "Кількість відгуків"
 
-#: settings/lists/reviews.php:53
+#: settings/lists/reviews.php:57
 msgid "Ссылка на все отзывы"
 msgstr "Посилання на всі відгуки"
 
-#: settings/lists/reviews.php:74
+#: settings/lists/reviews.php:78
 #, php-format
 msgid "фото №%d"
 msgstr "фото №%d"
 
-#: settings/lists/reviews.php:96
+#: settings/lists/reviews.php:100
 #, php-format
 msgid "имя №%1$s"
 msgstr "ім'я №%1$s"
 
-#: settings/lists/reviews.php:112
+#: settings/lists/reviews.php:116
 #, php-format
 msgid "текст №%1$s"
 msgstr "текст №%1$s"
 
-#: settings/lists/reviews.php:128
+#: settings/lists/reviews.php:132
 #, php-format
 msgid "ссылка №%1$s"
 msgstr "посилання №%1$s"
 
-#: settings/lists/reviews.php:144
+#: settings/lists/reviews.php:148
 #, php-format
 msgid "текст кнопки №%1$s"
 msgstr "текст кнопки №%1$s"

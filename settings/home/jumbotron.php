@@ -23,7 +23,7 @@ $wp_customize->add_setting(
     array(
         'default'           => apply_filters( 'get_default_setting', 'jumbotron_flag' ),
         'transport'         => 'reset',
-        'sanitize_callback' => 'is_bool',
+        'sanitize_callback' => 'resume\sanitize_checkbox',
     )
 );
 $wp_customize->add_control(

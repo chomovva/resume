@@ -21,9 +21,9 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
 	"{$slug}_reviews_flag",
 	array(
-		'default'           => false,
+		'default'           => apply_filters( 'get_default_setting', 'reviews_flag' ),
 		'transport'         => 'reset',
-		'sanitize_callback' => 'is_bool',
+		'sanitize_callback' => 'resume\sanitize_checkbox',
 	)
 );
 $wp_customize->add_control(
@@ -40,7 +40,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_reviews_type",
 	array(
-		'default'           => 'items',
+		'default'           => apply_filters( 'get_default_setting', 'reviews_type' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)
@@ -52,7 +52,7 @@ $wp_customize->add_control(
 		'label'             => __( 'Тип содержимого секции', RESUME_TEXTDOMAIN ),
 		'type'              => 'select',
 		'choices'           => array(
-			'items'           => esc_attr__( 'формализованный список', RESUME_TEXTDOMAIN ),
+			'list'            => esc_attr__( 'формализованный список', RESUME_TEXTDOMAIN ),
 			'content'         => esc_attr__( 'содержимое страницы', RESUME_TEXTDOMAIN ),
 		),
 	)
@@ -63,7 +63,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_reviews_title",
 	array(
-		'default'           => __( 'Отзывы', RESUME_TEXTDOMAIN ),
+		'default'           => apply_filters( 'get_default_setting', 'reviews_title' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)
@@ -82,7 +82,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_reviews_description",
 	array(
-		'default'           => '',
+		'default'           => apply_filters( 'get_default_setting', 'reviews_description' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_textarea_field',
 	)
@@ -101,7 +101,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_reviews_page_id",
 	array(
-		'default'           => '',
+		'default'           => apply_filters( 'get_default_setting', 'reviews_page_id' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'absint',
 	)
@@ -120,7 +120,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	"{$slug}_reviews_label",
 	array(
-		'default'           => __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ),
+		'default'           => apply_filters( 'get_default_setting', 'reviews_label' ),
 		'transport'         => 'reset',
 		'sanitize_callback' => 'sanitize_text_field',
 	)

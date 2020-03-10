@@ -33,7 +33,7 @@ if ( $page instanceof \WP_Post ) {
 }
 
 
-switch ( get_theme_mod( RESUME_SLUG . '_reviews_type', 'list' ) ) {
+switch ( get_theme_setting( 'reviews_type' ) ) {
 	case 'content':
 		if ( $page instanceof \WP_Post ) {
 			$parts = get_extended( $page->post_content );

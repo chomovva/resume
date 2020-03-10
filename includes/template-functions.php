@@ -32,6 +32,12 @@ function get_custom_logo_img() {
 
 
 
+function sanitize_checkbox( $checked ) {
+  return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+
+
+
 function get_languages_list() {
 	$result = __return_empty_array();
 	if ( ( function_exists( 'pll_the_languages' ) ) && ( function_exists( 'pll_current_language' ) ) ) {

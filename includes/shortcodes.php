@@ -167,10 +167,10 @@ function get_reviews_list( $atts ) {
 		'section' => true,
 	), $atts, 'the_reviews_list' );
 	$html = __return_empty_string();
-	$items = get_theme_mod( RESUME_SLUG . '_reviews', array() );
+	$items = get_theme_setting( 'reviews' );
 	if ( is_array( $items ) && ! empty( $items ) ) {
 		ob_start();
-		for ( $i = 0;  $i < get_theme_mod( RESUME_SLUG . '_reviews_count', 5 );  $i++ ) {
+		for ( $i = 0;  $i < get_theme_setting( 'reviews_count' );  $i++ ) {
 			if ( isset( $items[ $i ] ) && is_array( $items[ $i ] ) ) {
 				$items[ $i ] = parse_only_allowed_args( array(
 					'author'  => '',
@@ -201,7 +201,7 @@ function get_reviews_list( $atts ) {
 		ob_end_clean();
 	}
 	if ( ! empty( $html ) ) {
-		$morelink = get_theme_mod( RESUME_SLUG . '_reviews_morelink', '' );
+		$morelink = get_theme_setting( 'reviews_morelink' );
 		wp_enqueue_script( 'slick' );
 		wp_enqueue_style( 'slick' );
 		ob_start();
@@ -212,10 +212,10 @@ function get_reviews_list( $atts ) {
 				</div>
 				<div class="controls">
 					<button class="slider-arrow arrow-prev" id="reviews-slider-prev">
-						<span class="sr-only"><?php _e( 'Предыдущий слайд' ); ?></span>
+						<span class="sr-only"><?php _e( 'Предыдущий слайд', RESUME_TEXTDOMAIN ); ?></span>
 					</button>
 					<button class="slider-arrow arrow-next" id="reviews-slider-next">
-						<span class="sr-only"><?php _e( 'Следующий слайд' ); ?></span>
+						<span class="sr-only"><?php _e( 'Следующий слайд', RESUME_TEXTDOMAIN ); ?></span>
 					</button>
 					<?php if ( ! empty( $morelink ) ) : ?>
 						<a class="morelink" href="<?php echo esc_attr( $morelink ); ?>">

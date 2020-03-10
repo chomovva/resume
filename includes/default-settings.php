@@ -55,7 +55,7 @@ function get_default_setting( $key ) {
 
 		// главная страница - отзывы
 		'reviews_flag'       => false,
-		'reviews_type'       => 'items',
+		'reviews_type'       => 'list',
 		'reviews_title'      => __( 'Отзывы', RESUME_TEXTDOMAIN ),
 		'reviews_description'=> '',
 		'reviews_page_id'    => '',
