@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-10 22:43+0200\n"
-"PO-Revision-Date: 2020-03-10 22:44+0200\n"
+"POT-Creation-Date: 2020-03-13 23:58+0200\n"
+"PO-Revision-Date: 2020-03-13 23:58+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -79,7 +79,7 @@ msgstr "Завантажити резюме"
 msgid "Чем я занимаюсь"
 msgstr "Чим я займаюсь"
 
-#: includes/default-settings.php:36 includes/template-functions.php:453
+#: includes/default-settings.php:36 includes/template-functions.php:460
 #: parts/search.php:28 settings/home/services.php:100 views/home/way.php:23
 msgid "Подробней"
 msgstr "Детальніше"
@@ -93,11 +93,11 @@ msgid "Портфолио"
 msgstr "Портфоліо"
 
 #: includes/default-settings.php:59 settings/home/reviews.php:12
-#: settings/home/reviews.php:66 settings/lists/reviews.php:17
+#: settings/lists/reviews.php:17
 msgid "Отзывы"
 msgstr "Відгуки"
 
-#: includes/default-settings.php:62 settings/home/reviews.php:123
+#: includes/default-settings.php:62
 msgid "Смотреть все отзывы"
 msgstr "Дивитися всі відгуки"
 
@@ -226,53 +226,53 @@ msgstr "Наступний слайд"
 msgid "Смотреть все"
 msgstr "Дивитись все"
 
-#: includes/template-functions.php:74
+#: includes/template-functions.php:80
 msgid "Главная"
 msgstr "Головна"
 
-#: includes/template-functions.php:87
+#: includes/template-functions.php:93
 msgid "Домашняя страница"
 msgstr "Домашня сторінка"
 
-#: includes/template-functions.php:168
+#: includes/template-functions.php:174
 msgid "Смотреть предыдущий пост"
 msgstr "Дивитися попередній пост"
 
-#: includes/template-functions.php:172
+#: includes/template-functions.php:178
 msgid "Смотреть следующий пост"
 msgstr "Наступне пост"
 
-#: includes/template-functions.php:225 includes/template-functions.php:230
+#: includes/template-functions.php:231 includes/template-functions.php:236
 #: parts/nav.php:35
 msgid "Поиск по сайту"
 msgstr "Пошук по сайту"
 
-#: includes/template-functions.php:226
+#: includes/template-functions.php:232
 msgid "Вы искали"
 msgstr "Ви шукали"
 
-#: includes/template-functions.php:304
+#: includes/template-functions.php:310
 #, php-format
 msgid "Результаты поиска %s"
 msgstr "Результати пошуку %s"
 
-#: includes/template-functions.php:310
+#: includes/template-functions.php:317
 msgid "Поделиться в VK"
 msgstr "Поділіться в VK"
 
-#: includes/template-functions.php:311
+#: includes/template-functions.php:318
 msgid "Поделиться в Facebook"
 msgstr "Поділіться в Facebook"
 
-#: includes/template-functions.php:312
+#: includes/template-functions.php:319
 msgid "Поделиться в Twitter"
 msgstr "Поділіться в Twitter"
 
-#: includes/template-functions.php:313
+#: includes/template-functions.php:320
 msgid "Поделиться в LinkedIn"
 msgstr "Поділіться в LinkedIn"
 
-#: includes/template-functions.php:314
+#: includes/template-functions.php:321
 msgid "Отправить по email"
 msgstr "Надіслати по email"
 
@@ -291,6 +291,10 @@ msgstr "Поділіться"
 #: parts/search.php:41
 msgid "К сожалению ничего не найдено. Попробуйте изменить поисковый запрос."
 msgstr "На жаль нічого не знайдено. Спробуйте змінити пошуковий запит."
+
+#: searchform.php:3
+msgid "Поиск"
+msgstr "Пошук"
 
 #: searchform.php:5
 msgid "Найти"

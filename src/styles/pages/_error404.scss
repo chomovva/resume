@@ -36,7 +36,7 @@
 
 	.home-link {
 		@extend %button;
-		@extend %button-primary;
+		@extend %button-warning;
 		margin-top: 2em;
 	}
 
@@ -46,6 +46,12 @@
 		@extend %icon-home-link;
 		content: '';
 		margin-left: 1em;
+	}
+
+	.searchform {
+		margin-top: 2em;
+		padding: .5em;
+		border: 1px solid #eee;
 	}
 
 

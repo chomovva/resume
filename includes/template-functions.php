@@ -297,18 +297,19 @@ function get_share( $post_id = false ) {
 	$permalink = __return_empty_string();
 	$thumbnail_url = RESUME_URL . 'images/thumbnail.png';
 	$blog_name = get_bloginfo( 'name' );
-	if ( $post_id || is_singular() ) {
-		$permalink = get_permalink( $post_id );
-		$title = get_the_title( $post_id );
-		$thumbnail_url = ( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, 'medium' ) : $thumbnail_url;
-	} elseif ( is_front_page() ) {
+	if ( is_front_page() ) {
 		$permalink = get_home_url();
 		$title = get_bloginfo( 'name' );
 		$thumbnail_url = ( has_header_image() ) ? get_header_image() : $thumbnail_url;
+	} elseif ( $post_id || is_singular() ) {
+		$permalink = get_permalink( $post_id );
+		$title = get_the_title( $post_id );
+		$thumbnail_url = ( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, 'medium' ) : $thumbnail_url;
 	} elseif ( is_search() ) {
 		$permalink = get_search_link( get_search_query() );
 		$title = sprintf( __( 'Результаты поиска %s', RESUME_TEXTDOMAIN ), get_search_query() );
-	} elseif ( $term_id = get_queried_object()->term_id ) {
+	} elseif ( is_archive() ) {
+		$term_id = get_queried_object()->term_id;
 		$permalink = get_term_link( $term_id );
 		$title = single_term_title( $term_id, 0 );
 	}

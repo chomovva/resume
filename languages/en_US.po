@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-08 19:13+0200\n"
-"PO-Revision-Date: 2020-03-08 19:14+0200\n"
+"POT-Creation-Date: 2020-03-13 23:59+0200\n"
+"PO-Revision-Date: 2020-03-14 00:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: src\n"
 "X-Poedit-SearchPathExcluded-2: examples\n"
 
-#: 404.php:21
+#: 404.php:40
 msgid "На главную"
 msgstr "To Home Page"
 
@@ -78,7 +78,7 @@ msgstr "Download CV"
 msgid "Чем я занимаюсь"
 msgstr "What I'm doing"
 
-#: includes/default-settings.php:36 includes/template-functions.php:447
+#: includes/default-settings.php:36 includes/template-functions.php:460
 #: parts/search.php:28 settings/home/services.php:100 views/home/way.php:23
 msgid "Подробней"
 msgstr "More details"
@@ -92,11 +92,11 @@ msgid "Портфолио"
 msgstr "Portfolio"
 
 #: includes/default-settings.php:59 settings/home/reviews.php:12
-#: settings/home/reviews.php:66 settings/lists/reviews.php:13
+#: settings/lists/reviews.php:17
 msgid "Отзывы"
 msgstr "Reviews"
 
-#: includes/default-settings.php:62 settings/home/reviews.php:123
+#: includes/default-settings.php:62
 msgid "Смотреть все отзывы"
 msgstr "See all reviews"
 
@@ -208,7 +208,7 @@ msgstr "Your email"
 msgid "Отправить"
 msgstr "Send"
 
-#: includes/shortcodes.php:180 settings/lists/reviews.php:135
+#: includes/shortcodes.php:180 settings/lists/reviews.php:139
 msgid "Подробней о проекте"
 msgstr "More about the project"
 
@@ -224,44 +224,53 @@ msgstr "Next slide"
 msgid "Смотреть все"
 msgstr "See all"
 
-#: includes/template-functions.php:74
+#: includes/template-functions.php:80
 msgid "Главная"
 msgstr "Home"
 
-#: includes/template-functions.php:87
+#: includes/template-functions.php:93
 msgid "Домашняя страница"
 msgstr "Homepage"
 
-#: includes/template-functions.php:168
+#: includes/template-functions.php:174
 msgid "Смотреть предыдущий пост"
 msgstr "View previous post"
 
-#: includes/template-functions.php:172
+#: includes/template-functions.php:178
 msgid "Смотреть следующий пост"
 msgstr "See next post"
 
-#: includes/template-functions.php:298
+#: includes/template-functions.php:231 includes/template-functions.php:236
+#: parts/nav.php:35
+msgid "Поиск по сайту"
+msgstr "Site search"
+
+#: includes/template-functions.php:232
+msgid "Вы искали"
+msgstr "You searched"
+
+#: includes/template-functions.php:310
 #, php-format
 msgid "Результаты поиска %s"
 msgstr "%s search results"
 
-#: includes/template-functions.php:304
+#: includes/template-functions.php:317
 msgid "Поделиться в VK"
 msgstr "Share on VK"
 
-#: includes/template-functions.php:305
+#: includes/template-functions.php:318
 msgid "Поделиться в Facebook"
 msgstr "Share on Facebook"
 
-#: includes/template-functions.php:306
+#: includes/template-functions.php:319
 msgid "Поделиться в Twitter"
 msgstr "Share on Twitter"
 
-#: includes/template-functions.php:307
+#: includes/template-functions.php:320
 msgid "Поделиться в LinkedIn"
 msgstr "Share on LinkedIn"
 
-#: includes/template-functions.php:308
+#: includes/template-functions.php:321
 msgid "Отправить по email"
 msgstr "Email"
 
@@ -277,9 +286,13 @@ msgstr "Menu"
 msgid "Поделиться"
 msgstr "Share"
 
-#: parts/nav.php:35
-msgid "Поиск по сайту"
-msgstr "Site search"
+#: parts/search.php:41
+msgid "К сожалению ничего не найдено. Попробуйте изменить поисковый запрос."
+msgstr "Sorry, nothing was found. Try changing your search query."
+
+#: searchform.php:3
+msgid "Поиск"
+msgstr "Search"
 
 #: searchform.php:5
 msgid "Найти"
@@ -463,7 +476,7 @@ msgstr "Contact list"
 msgid "Опыт"
 msgstr "Experience"
 
-#: settings/lists/experience.php:15 settings/lists/reviews.php:15
+#: settings/lists/experience.php:15 settings/lists/reviews.php:19
 msgid "Отображаются в сеции преимуществ"
 msgstr "Displayed in Benefits Section"
 
@@ -485,35 +498,35 @@ msgstr "Profiles"
 msgid "Ссылки на профили в в социальных сетях и прочее"
 msgstr "Links to profiles on social networks and more"
 
-#: settings/lists/reviews.php:34
+#: settings/lists/reviews.php:38
 msgid "Количесство отзывов"
 msgstr "Number of reviews"
 
-#: settings/lists/reviews.php:53
+#: settings/lists/reviews.php:57
 msgid "Ссылка на все отзывы"
 msgstr "Link to all reviews"
 
-#: settings/lists/reviews.php:74
+#: settings/lists/reviews.php:78
 #, php-format
 msgid "фото №%d"
 msgstr "foto №%d"
 
-#: settings/lists/reviews.php:96
+#: settings/lists/reviews.php:100
 #, php-format
 msgid "имя №%1$s"
 msgstr "author №%1$s"
 
-#: settings/lists/reviews.php:112
+#: settings/lists/reviews.php:116
 #, php-format
 msgid "текст №%1$s"
 msgstr "text №%1$s"
 
-#: settings/lists/reviews.php:128
+#: settings/lists/reviews.php:132
 #, php-format
 msgid "ссылка №%1$s"
 msgstr "link №%1$s"
 
-#: settings/lists/reviews.php:144
+#: settings/lists/reviews.php:148
 #, php-format
 msgid "текст кнопки №%1$s"
 msgstr "label №%1$s"

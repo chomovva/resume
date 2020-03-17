@@ -40,6 +40,7 @@ get_header( '404' );
 			<?php _e( 'На главную', RESUME_TEXTDOMAIN ); ?>
 		</a>
 	</p>
+	<?php get_search_form( true ); ?>
 
 <?php
 

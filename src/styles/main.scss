@@ -8,22 +8,22 @@
 @import "helpers/extends";
 
 
-// @import "base/normalize";
-// @import "base/type";
-// @import "base/wrapper";
-// @import "base/flexboxgrid";
+@import "base/normalize";
+@import "base/type";
+@import "base/wrapper";
+@import "base/flexboxgrid";
 
 
 @import "blocks/preloader";
 @import "blocks/languages";
 @import "blocks/thumbnail";
-// @import "blocks/pageheader";
+@import "blocks/pageheader";
 @import "blocks/categories";
 @import "blocks/share";
-// @import "blocks/nav";
+@import "blocks/nav";
 @import "blocks/aside";
 @import "blocks/pager";
-// @import "blocks/bloginfo";
+@import "blocks/bloginfo";
 @import "blocks/progress";
 @import "blocks/section";
 @import "blocks/socials";
@@ -37,7 +37,7 @@
 @import "blocks/breadcrumbs";    // "хлебные крошки"
 @import "blocks/to-top-button";  // кнопка наверх
 @import "blocks/googlesearch";   // форма поиска гугл
-// @import "blocks/header";         // Шапка сайта
+@import "blocks/header";         // Шапка сайта
 @import "blocks/footer";         // Подвал сайта
 
 

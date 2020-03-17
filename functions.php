@@ -200,5 +200,5 @@ function resume_add_google_cse_code() {
 
 if ( get_theme_mod( RESUME_SLUG . '_google_cse_flag', apply_filters( 'get_default_setting', 'google_cse_flag' ) ) ) {
 	add_action( 'resume_searchform_after', 'resume_add_google_cse_button', 10, 0 );
-	add_action( 'wp_footer', 'resume_add_google_cse_code', 10, 0 );
+	add_action( 'wp_enqueue_scripts', 'resume_add_google_cse_code', 10, 0 );
 }
