@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 function get_theme_setting( $name ) {
-	$value = get_theme_mod( RESUME_TEXTDOMAIN . '_' . $name, apply_filters( 'get_default_setting', $name ) );
+	$value = get_theme_mod( RESUME_SLUG . '_' . $name, apply_filters( 'get_default_setting', $name ) );
 	return apply_filters( 'get_theme_setting', $value, $name );
 }
 
@@ -240,7 +240,14 @@ function the_pageheader() {
 		$title = single_post_title( '', false );
 		$excerpt = ( has_excerpt( get_the_ID() ) ) ? get_the_excerpt( get_the_ID() ) : false;
 		$thumbnail = get_thumbnail_image( get_the_ID(), 'thumbnail_medium' );
-		$date = ( is_single() ) ? get_publish_date() : __return_empty_string();
+		$date = '';
+		if ( is_single() ) {
+			$categories = get_the_category( get_the_ID() );
+			$hide_post_date_flag = ( is_array( $categories ) && ! empty( $categories ) ) ? ( bool ) get_term_meta( $categories[ 0 ]->term_id, 'hide_post_date', true ) : false;
+			if ( ! $hide_post_date_flag ) {
+				$date = get_publish_date( get_the_date( '', get_the_ID() ) );
+			}
+		}
 	}
 	include get_theme_file_path( 'views/pageheader.php' );
 }
@@ -448,7 +455,7 @@ function css_array_to_css( $rules, $args = array() ) {
 
 
 
-function render_entry( $entry, $classes, $current_term_id ) {
+function render_entry( $entry, $classes, $current_term_id, $template = 'default' ) {
 	$entry = get_post( $entry );
 	$post_id = $entry->ID;
 	$classes = implode( " ", get_post_class( $classes . ' entry', $entry->ID ) );
@@ -456,24 +463,41 @@ function render_entry( $entry, $classes, $current_term_id ) {
 	$excerpt = ( empty( $entry->post_excerpt ) ) ? wp_trim_excerpt( $entry->post_excerpt, $entry ) : $entry->post_excerpt;
 	$permalink = get_the_permalink( $entry->ID );
 	$thumbnail_image = get_thumbnail_image( $entry->ID, 'thumbnail_medium' );
-	$publish_date = get_publish_date( $entry->post_date );
+	$publish_date = ( get_theme_setting( 'archive_hide_post_date' ) || get_term_meta( $current_term_id, 'hide_post_date', true ) ) ? '' : get_publish_date( $entry->post_date );
 	$label = __( 'Подробней', RESUME_TEXTDOMAIN );
 	$share = get_share( $entry->ID );
 	$categories = get_entry_categories( $entry->ID, $current_term_id );
-	include get_theme_file_path( 'views/entry.php' );
+	include get_theme_file_path( "views/entry-{$template}.php" );
 }
 
 
 
-function parse_only_allowed_args( $default, $args ) {
+/**
+ * Функция для очистки массива параметров
+ * @param  array $default           расзерённые парметры и стандартные значения
+ * @param  array $args              неочищенные параметры
+ * @param  array $sanitize_callbackодномерный массив с именами функция, с помощью поторых нужно очистить параметры
+ * @param  array $required          обязательные параметры
+ * @return array                    возвращает ощиченный массив разрешённых параметров
+ */
+function parse_only_allowed_args( $default, $args, $sanitize_callback = [], $required = [] ) {
 	$args = ( array ) $args;
-	$result  = array();
-	foreach ( $default as $key => $value ) {
+	$result = [];
+	$count = 0;
+	while ( ( $value = current( $default ) ) !== false ) {
+		$key = key( $default );
 		if ( array_key_exists( $key, $args ) ) {
 			$result[ $key ] = $args[ $key ];
+			if ( isset( $sanitize_callback[ $count ] ) && ! empty( $sanitize_callback[ $count ] ) ) {
+				$result[ $key ] = $sanitize_callback[ $count ]( $result[ $key ] );
+			}
+		} elseif ( in_array( $key, $required ) ) {
+			return null;
 		} else {
 			$result[ $key ] = $value;
 		}
+		$count = $count + 1;
+		next( $default );
 	}
 	return $result;
 }

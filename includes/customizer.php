@@ -15,7 +15,7 @@ function customize_register( $wp_customize ) {
 		"{$slug}_home",
 		array(
 			'capability'      => 'edit_theme_options',
-			'title'           => __( 'Блоки домашней страницы', RESUME_TEXTDOMAIN ),
+			'title'           => __( 'Домашняя страница', RESUME_TEXTDOMAIN ),
 			'priority'        => 200
 		)
 	);
@@ -69,6 +69,20 @@ function customize_register( $wp_customize ) {
 
 	// форма поиска гугл
 	include get_theme_file_path( "settings/google-cse.php" );
+
+	$wp_customize->add_panel(
+		"{$slug}_blocks",
+		array(
+			'capability'      => 'edit_theme_options',
+			'title'           => __( 'Блоки темы', RESUME_TEXTDOMAIN ),
+			'priority'        => 201
+		)
+	);
+	foreach ( apply_filters( 'resume_customizer_blocks', array(
+		'aside_footer',   // сайдбар подвала
+	) ) as $path_name ) {
+		include get_theme_file_path( "settings/blocks/{$path_name}.php" );
+	}
 
 }
 

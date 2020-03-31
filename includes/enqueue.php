@@ -84,10 +84,22 @@ add_action( 'get_footer', 'resume\styles', 10, 0 );
 
 
 
-
+/**
+ * Подключение "критических" стилей необходимых для оптимизации загрузки страницы
+ */
 function ctitical_styles() {
 	if ( file_exists( RESUME_DIR . 'styles/critical.min.css' ) ) {
 		echo '<style type="text/css">' . file_get_contents( RESUME_DIR . 'styles/critical.min.css' ) . '</style>';
 	}
 }
 add_action( 'wp_head', 'resume\ctitical_styles', 10, 0 );
+
+
+
+/**
+ * Подключение скриптов административной части сайта
+ */
+function admin_scripts() {
+	wp_enqueue_style( 'resume-admin', RESUME_URL . 'styles/admin.css', array(), RESUME_VERSION, 'all' );
+}
+add_action( 'admin_enqueue_scripts', 'resume\admin_scripts', 10, 1 );

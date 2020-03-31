@@ -20,7 +20,14 @@ get_template_part( 'includes/template-functions' );
 get_template_part( 'includes/enqueue' );
 get_template_part( 'includes/shortcodes' );
 get_template_part( 'includes/gutenberg' );
-get_template_part( 'includes/brand' );
+
+
+
+if ( is_admin() ) {
+	get_template_part( 'includes/archive-fields' );
+	get_template_part( 'includes/brand' );
+	get_template_part( 'includes/custom-columns' );
+}
 
 
 
@@ -88,19 +95,27 @@ function resume_register_sidebars() {
 		'class'            => '',
 		'before_widget'    => '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"><div id="%1$s" class="widget %2$s">',
 		'after_widget'     => '</div></div>',
-		'before_title'     => '<h3 class="widget__title">',
+		'before_title'     => '<h3 class="widget__title title">',
 		'after_title'      => '</h3>',
 	) );
-	register_sidebar( array(
-		'name'             => __( 'Колонка', RESUME_TEXTDOMAIN ),
-		'id'               => 'column',
-		'description'      => '',
-		'class'            => '',
-		'before_widget'    => '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div id="%1$s" class="widget %2$s">',
-		'after_widget'     => '</div></div>',
-		'before_title'     => '<h3 class="widget__title">',
-		'after_title'      => '</h3>',
-	) );
+	$columns = array_merge( [ [
+		'name'          => __( 'Колонка', RESUME_TEXTDOMAIN ),
+		'id'            => 'column',
+		'description'   => '',
+		'class'         => '',
+	] ], get_theme_mod( 'register_columns', [] ) );
+	foreach ( $columns as $column ) {
+		register_sidebar( array(
+			'name'             => $column[ 'name' ],
+			'id'               => $column[ 'id' ],
+			'description'      => $column[ 'description' ],
+			'class'            => $column[ 'class' ],
+			'before_widget'    => '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div id="%1$s" class="widget %2$s">',
+			'after_widget'     => '</div></div>',
+			'before_title'     => '<h3 class="widget__title title">',
+			'after_title'      => '</h3>',
+		) );
+	}
 }
 add_action( 'widgets_init', 'resume_register_sidebars' );
 
@@ -202,3 +217,37 @@ if ( get_theme_mod( RESUME_SLUG . '_google_cse_flag', apply_filters( 'get_defaul
 	add_action( 'resume_searchform_after', 'resume_add_google_cse_button', 10, 0 );
 	add_action( 'wp_enqueue_scripts', 'resume_add_google_cse_code', 10, 0 );
 }
+
+
+
+/**
+ * Проверяем есть нужна ли замена колонки у страницы и если есть,
+ * то регистрируем соответствующий фильтр
+ */
+function resume_replace_default_column() {
+	$custom_columns = '';
+	if ( is_singular( 'page' ) ) {
+		$custom_columns = get_post_meta( get_the_ID(), '_custom_columns', true );
+	} elseif ( is_singular( 'post' ) ) {
+		$categories = get_terms( [
+			'taxonomy'   => 'category',
+			'object_ids' => get_the_ID(),
+			'fields'     => 'ids',
+			'meta_key'   => '_custom_columns',
+		] );
+		if ( is_array( $categories ) && ! empty( $categories ) ) {
+			$custom_columns = get_term_meta( $categories[ 0 ], '_custom_columns', true );
+		}
+	} elseif ( is_category() ) {
+		$custom_columns = get_term_meta( get_queried_object()->term_id, '_custom_columns', true );
+	}
+	if ( ! empty( $custom_columns ) ) {
+		add_filter( 'sidebars_widgets', function( $sidebars ) use ( $custom_columns ) {
+			if ( array_key_exists( $custom_columns, $sidebars ) ) {
+				$sidebars[ 'column' ] = $sidebars[ $custom_columns ];
+			}
+			return $sidebars;
+		}, 5, 1 );
+	}
+}
+add_action( 'wp', 'resume_replace_default_column' );

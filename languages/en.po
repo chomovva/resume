@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-13 23:58+0200\n"
-"PO-Revision-Date: 2020-03-13 23:59+0200\n"
+"POT-Creation-Date: 2020-03-31 21:35+0300\n"
+"PO-Revision-Date: 2020-03-31 21:35+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "На главную"
 msgstr "To Home Page"
 
-#: functions.php:72
+#: functions.php:79
 msgid "Главное меню"
 msgstr "Main menu"
 
-#: functions.php:73
+#: functions.php:80
 msgid "Меню страницы 404"
 msgstr "Page Menu 404"
 
-#: functions.php:85
+#: functions.php:92
 msgid "Сайдбар подвала"
 msgstr "Basement sidebar"
 
-#: functions.php:95
+#: functions.php:102
 msgid "Колонка"
 msgstr "Column"
 
-#: functions.php:186
+#: functions.php:201
 msgid "Поиск Google"
 msgstr "Google search"
 
-#: functions.php:197
+#: functions.php:212
 msgid "Получите код пользовательского поиска Google"
 msgstr "Get Google Custom Search Code"
 
@@ -50,9 +50,103 @@ msgstr "Get Google Custom Search Code"
 msgid "Открыть меню"
 msgstr "Open menu"
 
-#: includes/customizer.php:18
-msgid "Блоки домашней страницы"
-msgstr "Homepage Blocks"
+#: includes/archive-fields.php:20 includes/archive-fields.php:35
+msgid "Скрыть дату"
+msgstr "Hide date"
+
+#: includes/archive-fields.php:25 includes/archive-fields.php:38
+msgid "Скрывать дату публикации поста в записях этой категории"
+msgstr "Hide post publication date in posts in this category"
+
+#: includes/custom-columns.php:16 includes/custom-columns.php:36
+#: includes/custom-columns.php:89
+msgid "Выбрать сайдбар"
+msgstr "Choose sidebar"
+
+#: includes/custom-columns.php:20 includes/custom-columns.php:38
+#: includes/custom-columns.php:91
+msgid "Стандартная колонка"
+msgstr "Standard column"
+
+#: includes/custom-columns.php:73 includes/custom-columns.php:117
+#: includes/custom-columns.php:118
+msgid "Пользовательские колонки"
+msgstr "Custom columns"
+
+#: includes/custom-columns.php:220
+msgid "Добавление"
+msgstr "Adding"
+
+#: includes/custom-columns.php:225 includes/custom-columns.php:248
+#: includes/custom-columns.php:267
+msgid "Название"
+msgstr "Name"
+
+#: includes/custom-columns.php:226 includes/custom-columns.php:249
+#: includes/custom-columns.php:268 settings/home/services.php:90
+msgid "Описание"
+msgstr "Description"
+
+#: includes/custom-columns.php:227 includes/custom-columns.php:250
+#: includes/custom-columns.php:269
+msgid "CSS-класс"
+msgstr "CSS-class"
+
+#: includes/custom-columns.php:228 includes/custom-columns.php:261
+msgid "Добавить"
+msgstr "Add"
+
+#: includes/custom-columns.php:229 includes/custom-columns.php:253
+msgid "Отмена"
+msgstr "Cancel"
+
+#: includes/custom-columns.php:233
+msgid "Редактирование"
+msgstr "Editing"
+
+#: includes/custom-columns.php:254
+msgid "Сохранить"
+msgstr "Save"
+
+#: includes/custom-columns.php:266
+msgid "№"
+msgstr "N"
+
+#: includes/custom-columns.php:270 includes/custom-columns.php:304
+msgid "Страницы"
+msgstr "Pages"
+
+#: includes/custom-columns.php:271
+msgid "Виджеты"
+msgstr ""
+
+#: includes/custom-columns.php:311
+msgid "Колонка не используется на постоянных страницах."
+msgstr "The column is not used on permanent pages."
+
+#: includes/custom-columns.php:314
+msgid "Категории"
+msgstr "Categories"
+
+#: includes/custom-columns.php:321
+msgid "Колонка не используется на страницах категорий."
+msgstr "The column is not used on category pages."
+
+#: includes/custom-columns.php:328
+msgid "Вы уверены?"
+msgstr "Are you sure?"
+
+#: includes/custom-columns.php:328
+msgid "Удалить"
+msgstr "Delete"
+
+#: includes/custom-columns.php:329
+msgid "Редактировать"
+msgstr "Edit"
+
+#: includes/customizer.php:18 includes/template-functions.php:93
+msgid "Домашняя страница"
+msgstr "Homepage"
 
 #: includes/customizer.php:39
 msgid "Шаблоны страниц"
@@ -61,6 +155,10 @@ msgstr "Page Templates"
 #: includes/customizer.php:55
 msgid "Списки темы"
 msgstr "Template lists"
+
+#: includes/customizer.php:77
+msgid "Блоки темы"
+msgstr "Topic blocks"
 
 #: includes/default-settings.php:25 settings/home/aboutme.php:12
 msgid "Обо мне"
@@ -78,7 +176,7 @@ msgstr "Download CV"
 msgid "Чем я занимаюсь"
 msgstr "What I'm doing"
 
-#: includes/default-settings.php:36 includes/template-functions.php:460
+#: includes/default-settings.php:36 includes/template-functions.php:467
 #: parts/search.php:28 settings/home/services.php:100 views/home/way.php:23
 msgid "Подробней"
 msgstr "More details"
@@ -112,43 +210,43 @@ msgstr "View all entries"
 msgid "Ошибка 404"
 msgstr "Share on vkontacte"
 
-#: includes/default-settings.php:105
+#: includes/default-settings.php:108
 msgid "Facebook"
 msgstr "Facebook"
 
-#: includes/default-settings.php:106
+#: includes/default-settings.php:109
 msgid "Twitter"
 msgstr "Twitter"
 
-#: includes/default-settings.php:107
+#: includes/default-settings.php:110
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: includes/default-settings.php:108
+#: includes/default-settings.php:111
 msgid "Вконтакте"
 msgstr "VKontacte"
 
-#: includes/default-settings.php:109
+#: includes/default-settings.php:112
 msgid "GitHub"
 msgstr "GitHub"
 
-#: includes/default-settings.php:110
+#: includes/default-settings.php:113
 msgid "YouTube"
 msgstr "YouTube"
 
-#: includes/default-settings.php:120
+#: includes/default-settings.php:123
 msgid "Viber"
 msgstr "Viber"
 
-#: includes/default-settings.php:121
+#: includes/default-settings.php:124
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: includes/default-settings.php:122
+#: includes/default-settings.php:125
 msgid "Telegram"
 msgstr "Telegram"
 
-#: includes/default-settings.php:123
+#: includes/default-settings.php:126
 msgid "Email"
 msgstr "Email"
 
@@ -228,10 +326,6 @@ msgstr "See all"
 msgid "Главная"
 msgstr "Home"
 
-#: includes/template-functions.php:93
-msgid "Домашняя страница"
-msgstr "Homepage"
-
 #: includes/template-functions.php:174
 msgid "Смотреть предыдущий пост"
 msgstr "View previous post"
@@ -249,28 +343,28 @@ msgstr "Site search"
 msgid "Вы искали"
 msgstr "You searched"
 
-#: includes/template-functions.php:310
+#: includes/template-functions.php:317
 #, php-format
 msgid "Результаты поиска %s"
 msgstr "%s search results"
 
-#: includes/template-functions.php:317
+#: includes/template-functions.php:324
 msgid "Поделиться в VK"
 msgstr "Share on VK"
 
-#: includes/template-functions.php:318
+#: includes/template-functions.php:325
 msgid "Поделиться в Facebook"
 msgstr "Share on Facebook"
 
-#: includes/template-functions.php:319
+#: includes/template-functions.php:326
 msgid "Поделиться в Twitter"
 msgstr "Share on Twitter"
 
-#: includes/template-functions.php:320
+#: includes/template-functions.php:327
 msgid "Поделиться в LinkedIn"
 msgstr "Share on LinkedIn"
 
-#: includes/template-functions.php:321
+#: includes/template-functions.php:328
 msgid "Отправить по email"
 msgstr "Email"
 
@@ -439,10 +533,6 @@ msgstr "Services"
 msgid "Секция главной страницы. Якорь #services"
 msgstr "Section of the main page. Anchor #services"
 
-#: settings/home/services.php:90
-msgid "Описание"
-msgstr "Description"
-
 #: settings/home/way.php:13
 msgid "Образование и опыт работы"
 msgstr "Education and work experience"
@@ -566,9 +656,26 @@ msgstr "header %1$s"
 msgid "оценка навыка %1$s"
 msgstr "skill rating %1$s"
 
+#: settings/templates/archive.php:13
+msgid "Страница архива / категории"
+msgstr "Archive / Category Page"
+
+#: settings/templates/archive.php:34
+msgid "Скрывать дату публикации поста"
+msgstr "Hide post publication date"
+
 #: settings/templates/error404.php:13
 msgid "Страница ошибки 404"
 msgstr "404 Error Page"
+
+#~ msgid "Количество страниц на кторых используется"
+#~ msgstr "Number of pages used"
+
+#~ msgid "Количество добавленных виджетов"
+#~ msgstr "Number of widgets added"
+
+#~ msgid "Блоки домашней страницы"
+#~ msgstr "Homepage Blocks"
 
 #~ msgid "Настройки темы \"Резюме\""
 #~ msgstr "RESUME theme settings"

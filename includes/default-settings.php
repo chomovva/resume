@@ -15,79 +15,82 @@ function get_default_setting( $key ) {
 	$settings = array(
 
 		// главная страница - первый экран
-		'jumbotron_flag'     => false,
-		'jumbotron_title'    => get_bloginfo( 'name' ),
-		'jumbotron_bgi'      => RESUME_URL . 'images/jumbotron.jpg',
+		'jumbotron_flag'         => false,
+		'jumbotron_title'        => get_bloginfo( 'name' ),
+		'jumbotron_bgi'          => RESUME_URL . 'images/jumbotron.jpg',
 
 		// главная страница - обо мне
-		'aboutme_flag'       => false,
-		'aboutme_page_id'    => '',
-		'aboutme_title'      => __( 'Обо мне', RESUME_TEXTDOMAIN ),
-		'aboutme_foto'       => RESUME_URL . 'images/user.png',
-		'aboutme_more_label' => __( 'Подробней обо мне', RESUME_TEXTDOMAIN ),
-		'aboutme_file_label' => __( 'Скачать резюме', RESUME_TEXTDOMAIN ),
-		'aboutme_file'       => '',
+		'aboutme_flag'           => false,
+		'aboutme_page_id'        => '',
+		'aboutme_title'          => __( 'Обо мне', RESUME_TEXTDOMAIN ),
+		'aboutme_foto'           => RESUME_URL . 'images/user.png',
+		'aboutme_more_label'     => __( 'Подробней обо мне', RESUME_TEXTDOMAIN ),
+		'aboutme_file_label'     => __( 'Скачать резюме', RESUME_TEXTDOMAIN ),
+		'aboutme_file'           => '',
 
 		// главная страница - услуги
-		'services_flag'      => false,
-		'services_page_id'   => '',
-		'services_title'     => __( 'Чем я занимаюсь', RESUME_TEXTDOMAIN ),
-		'services_excerpt'   => '',
-		'services_label'     => __( 'Подробней', RESUME_TEXTDOMAIN ),
-		'number_of_services' => 6,
+		'services_flag'          => false,
+		'services_page_id'       => '',
+		'services_title'         => __( 'Чем я занимаюсь', RESUME_TEXTDOMAIN ),
+		'services_excerpt'       => '',
+		'services_label'         => __( 'Подробней', RESUME_TEXTDOMAIN ),
+		'number_of_services'     => 6,
 
 		// главная страница - Образование и опыт работы
-		'way_flag'           => false,
-		'way_bgi'            => RESUME_URL . 'images/way.jpg',
-		'way_count'          => 2,
+		'way_flag'               => false,
+		'way_bgi'                => RESUME_URL . 'images/way.jpg',
+		'way_count'              => 2,
 
 		// главная страница - преимущества
-		'advantages_flag'    => false,
-		'advantages_page_id' => '',
-		'advantages_title'   => __( 'Мои скилы', RESUME_TEXTDOMAIN ),
+		'advantages_flag'        => false,
+		'advantages_page_id'     => '',
+		'advantages_title'       => __( 'Мои скилы', RESUME_TEXTDOMAIN ),
 
 
 		// главная страница - портфолио
-		'portfolio_flag'     => false,
-		'portfolio_cat_id'   => '',
-		'portfolio_title'    => __( 'Портфолио', RESUME_TEXTDOMAIN ),
-		'portfolio_description' => '',
+		'portfolio_flag'         => false,
+		'portfolio_cat_id'       => '',
+		'portfolio_title'        => __( 'Портфолио', RESUME_TEXTDOMAIN ),
+		'portfolio_description'  => '',
 
 		// главная страница - отзывы
-		'reviews_flag'       => false,
-		'reviews_type'       => 'list',
-		'reviews_title'      => __( 'Отзывы', RESUME_TEXTDOMAIN ),
-		'reviews_description'=> '',
-		'reviews_page_id'    => '',
-		'reviews_label'      => __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ),
-		'reviews_count'      => 5,
+		'reviews_flag'           => false,
+		'reviews_type'           => 'list',
+		'reviews_title'          => __( 'Отзывы', RESUME_TEXTDOMAIN ),
+		'reviews_description'    => '',
+		'reviews_page_id'        => '',
+		'reviews_label'          => __( 'Смотреть все отзывы', RESUME_TEXTDOMAIN ),
+		'reviews_count'          => 5,
 
 		// главная страница - блог
-		'myblog_flag'        => false,
-		'myblog_title'       => __( 'Блог', RESUME_TEXTDOMAIN ),
-		'myblog_description' => '',
-		'myblog_cat_id'      => '',
-		'myblog_numberposts' => 3,
-		'myblog_label'       => __( 'Смотреть все записи', RESUME_TEXTDOMAIN ),
+		'myblog_flag'            => false,
+		'myblog_title'           => __( 'Блог', RESUME_TEXTDOMAIN ),
+		'myblog_description'     => '',
+		'myblog_cat_id'          => '',
+		'myblog_numberposts'     => 3,
+		'myblog_label'           => __( 'Смотреть все записи', RESUME_TEXTDOMAIN ),
 
 		// страница ошибки 404
-		'error404_title'     => __( 'Ошибка 404', RESUME_TEXTDOMAIN ),
-		'error404_description' => '',
+		'error404_title'         => __( 'Ошибка 404', RESUME_TEXTDOMAIN ),
+		'error404_description'   => '',
+
+		// страница архива
+		'archive_hide_post_date' => false,
 
 		// скилы
-		'skills_count'       => 5,
+		'skills_count'           => 5,
 
 		// форма поиска гугл
-		'google_cse_flag'    => false,
-		'google_cse'         => '',
+		'google_cse_flag'        => false,
+		'google_cse'             => '',
 
 		// списки
-		'contacts'           => array(),
-		'experience'         => array(),
-		'links'              => array(),
-		'reviews'            => array(),
-		'services'           => array(),
-		'skills'             => array(),
+		'contacts'               => [],
+		'experience'             => [],
+		'links'                  => [],
+		'reviews'                => [],
+		'services'               => [],
+		'skills'                 => [],
 
 	);
 

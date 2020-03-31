@@ -13,9 +13,11 @@ $current_term_id = __return_empty_array();
 
 if ( is_tax() || is_tag() || is_category() ) {
 	$term = get_queried_object();
-	$current_term_id = $term->term_id;
-	if ( ! empty( trim( $term->description ) ) ) {
-		echo '<div class="lead">' . $tems->description . '</div>';
+	if ( is_object( $term ) ) {
+		$current_term_id = $term->term_id;
+		if ( ! empty( trim( $term->description ) ) ) {
+			echo '<div class="lead">' . $term->description . '</div>';
+		}
 	}
 }
 
