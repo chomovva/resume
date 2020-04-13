@@ -8,12 +8,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 $title = get_theme_setting( 'jumbotron_title' );
-$src = get_theme_setting( 'jumbotron_bgi' );
-
-
-if ( empty( $src ) ) {
-	$src = apply_filters( 'get_default_setting', 'jumbotron_bgi' );
-}
 
 
 if ( function_exists( 'pll__' ) ) {

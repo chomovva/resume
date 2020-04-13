@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-31 21:34+0300\n"
-"PO-Revision-Date: 2020-03-31 21:35+0300\n"
+"POT-Creation-Date: 2020-04-13 17:46+0300\n"
+"PO-Revision-Date: 2020-04-13 17:46+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -119,7 +119,7 @@ msgstr "Сторінки"
 
 #: includes/custom-columns.php:271
 msgid "Виджеты"
-msgstr ""
+msgstr "Віджети"
 
 #: includes/custom-columns.php:311
 msgid "Колонка не используется на постоянных страницах."
@@ -161,93 +161,93 @@ msgstr "Списки теми"
 msgid "Блоки темы"
 msgstr "Блоки теми"
 
-#: includes/default-settings.php:25 settings/home/aboutme.php:12
+#: includes/default-settings.php:26 settings/home/aboutme.php:12
 msgid "Обо мне"
 msgstr "Про мене"
 
-#: includes/default-settings.php:27
+#: includes/default-settings.php:28
 msgid "Подробней обо мне"
 msgstr "Детальніше про мене"
 
-#: includes/default-settings.php:28
+#: includes/default-settings.php:29
 msgid "Скачать резюме"
 msgstr "Завантажити резюме"
 
-#: includes/default-settings.php:34 settings/home/services.php:62
+#: includes/default-settings.php:35 settings/home/services.php:62
 msgid "Чем я занимаюсь"
 msgstr "Чим я займаюсь"
 
-#: includes/default-settings.php:36 includes/template-functions.php:467
+#: includes/default-settings.php:37 includes/template-functions.php:470
 #: parts/search.php:28 settings/home/services.php:100 views/home/way.php:23
 msgid "Подробней"
 msgstr "Детальніше"
 
-#: includes/default-settings.php:47
+#: includes/default-settings.php:48
 msgid "Мои скилы"
 msgstr "Мої навички"
 
-#: includes/default-settings.php:53 settings/home/portfolio.php:12
+#: includes/default-settings.php:54 settings/home/portfolio.php:12
 msgid "Портфолио"
 msgstr "Портфоліо"
 
-#: includes/default-settings.php:59 settings/home/reviews.php:12
+#: includes/default-settings.php:60 settings/home/reviews.php:12
 #: settings/lists/reviews.php:17
 msgid "Отзывы"
 msgstr "Відгуки"
 
-#: includes/default-settings.php:62
+#: includes/default-settings.php:63
 msgid "Смотреть все отзывы"
 msgstr "Дивитися всі відгуки"
 
-#: includes/default-settings.php:67 settings/home/myblog.php:12
+#: includes/default-settings.php:68 settings/home/myblog.php:12
 msgid "Блог"
 msgstr "Блог"
 
-#: includes/default-settings.php:71
+#: includes/default-settings.php:72
 msgid "Смотреть все записи"
 msgstr "Дивитися всі записи"
 
-#: includes/default-settings.php:74
+#: includes/default-settings.php:75
 msgid "Ошибка 404"
 msgstr "Помилка 404"
 
-#: includes/default-settings.php:108
+#: includes/default-settings.php:109
 msgid "Facebook"
 msgstr "Facebook"
 
-#: includes/default-settings.php:109
+#: includes/default-settings.php:110
 msgid "Twitter"
 msgstr "Twitter"
 
-#: includes/default-settings.php:110
+#: includes/default-settings.php:111
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: includes/default-settings.php:111
+#: includes/default-settings.php:112
 msgid "Вконтакте"
 msgstr "Вконтакте"
 
-#: includes/default-settings.php:112
+#: includes/default-settings.php:113
 msgid "GitHub"
 msgstr "GitHub"
 
-#: includes/default-settings.php:113
+#: includes/default-settings.php:114
 msgid "YouTube"
 msgstr "YouTube"
 
-#: includes/default-settings.php:123
+#: includes/default-settings.php:124
 msgid "Viber"
 msgstr "Viber"
 
-#: includes/default-settings.php:124
+#: includes/default-settings.php:125
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: includes/default-settings.php:125
+#: includes/default-settings.php:126
 msgid "Telegram"
 msgstr "Telegram"
 
-#: includes/default-settings.php:126
+#: includes/default-settings.php:127
 msgid "Email"
 msgstr "Email"
 
@@ -470,9 +470,13 @@ msgstr "Перший екран"
 msgid "Секция главной страницы. Якорь #jumbotron"
 msgstr "Секція головної сторінки. Якір #jumbotron"
 
-#: settings/home/jumbotron.php:72
-msgid "Фон"
-msgstr "Фон"
+#: settings/home/jumbotron.php:72 settings/home/way.php:54
+msgid "Фоновое изображение"
+msgstr "Фонове зображення"
+
+#: settings/home/jumbotron.php:94
+msgid "Цвет фона"
+msgstr "Колір фона"
 
 #: settings/home/myblog.php:14
 msgid ""
@@ -542,10 +546,6 @@ msgstr "Освіта і досвід роботи"
 #: settings/home/way.php:15
 msgid "Секция главной страницы. Якорь #way"
 msgstr "Секція головної сторінки. Якір #way"
-
-#: settings/home/way.php:54
-msgid "Фоновое изображение"
-msgstr "Фонове зображення"
 
 #: settings/home/way.php:75
 msgid "Количество страниц"
@@ -669,6 +669,9 @@ msgstr "Приховувати дату публікації поста"
 #: settings/templates/error404.php:13
 msgid "Страница ошибки 404"
 msgstr "Сторінка помилки 404"
+
+#~ msgid "Фон"
+#~ msgstr "Фон"
 
 #~ msgid "Количество страниц на кторых используется"
 #~ msgstr "Кількість сторінок на яких використовується"

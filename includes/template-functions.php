@@ -446,6 +446,9 @@ function css_array_to_css( $rules, $args = array() ) {
 			$css .= $prefix . "}\n";
 		} else {
 			$property = $key;
+			if ( filter_var( $value, FILTER_VALIDATE_URL ) ) {
+				$value = 'url(' . $value . ')';
+			}
 			$css .= $prefix . "$property: $value;\n";
 		}
 	}

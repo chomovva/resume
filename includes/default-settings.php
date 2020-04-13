@@ -18,6 +18,7 @@ function get_default_setting( $key ) {
 		'jumbotron_flag'         => false,
 		'jumbotron_title'        => get_bloginfo( 'name' ),
 		'jumbotron_bgi'          => RESUME_URL . 'images/jumbotron.jpg',
+		'jumbotron_bgc'          => '#3598db',
 
 		// главная страница - обо мне
 		'aboutme_flag'           => false,

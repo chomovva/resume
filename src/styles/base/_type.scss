@@ -66,3 +66,8 @@ img.alignright, a.alignright img { margin: 5px 0px 10px 10px; }
 .text-primary {color: $brand-primary; }
 .text-warning {color: $brand-warning; }
 .text-success {color: $brand-success; }
+
+
+.block-with-shadow {
+  box-shadow: 0 .5em 1em rgba( 0, 0, 0, .5 );
+}

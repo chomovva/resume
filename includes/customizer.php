@@ -79,7 +79,7 @@ function customize_register( $wp_customize ) {
 		)
 	);
 	foreach ( apply_filters( 'resume_customizer_blocks', array(
-		'aside_footer',   // сайдбар подвала
+		'aside-footer',   // сайдбар подвала
 	) ) as $path_name ) {
 		include get_theme_file_path( "settings/blocks/{$path_name}.php" );
 	}

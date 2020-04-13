@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-03-31 21:35+0300\n"
-"PO-Revision-Date: 2020-03-31 21:35+0300\n"
+"PO-Revision-Date: 2020-04-13 17:47+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -118,7 +118,7 @@ msgstr "Pages"
 
 #: includes/custom-columns.php:271
 msgid "Виджеты"
-msgstr ""
+msgstr "Widgets"
 
 #: includes/custom-columns.php:311
 msgid "Колонка не используется на постоянных страницах."

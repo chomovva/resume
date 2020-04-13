@@ -91,6 +91,12 @@ function ctitical_styles() {
 	if ( file_exists( RESUME_DIR . 'styles/critical.min.css' ) ) {
 		echo '<style type="text/css">' . file_get_contents( RESUME_DIR . 'styles/critical.min.css' ) . '</style>';
 	}
+	echo css_array_to_css( [
+		'#jumbotron .bg' => [
+			'background-color' => get_theme_setting( 'jumbotron_bgc' ),
+			'background-image' => get_theme_setting( 'jumbotron_bgi' ),
+		],
+	], [ 'container' => true ] );
 }
 add_action( 'wp_head', 'resume\ctitical_styles', 10, 0 );
 

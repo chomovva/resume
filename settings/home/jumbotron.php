@@ -69,9 +69,31 @@ $wp_customize->add_control(
 	   $wp_customize,
 	   "{$slug}_jumbotron_bgi",
 	   array(
-		   'label'      => __( 'Фон', RESUME_TEXTDOMAIN ),
+		   'label'      => __( 'Фоновое изображение', RESUME_TEXTDOMAIN ),
 		   'section'    => "{$slug}_jumbotron",
 		   'settings'   => "{$slug}_jumbotron_bgi",
+	   )
+   )
+);
+
+
+
+$wp_customize->add_setting(
+	"{$slug}_jumbotron_bgc",
+	array(
+		'default'           => apply_filters( 'get_default_setting', 'jumbotron_bgc' ),
+		'transport'         => 'reset',
+		'sanitize_callback' => 'sanitize_hex_color',
+	)
+);
+$wp_customize->add_control(
+   new WP_Customize_Color_Control(
+	   $wp_customize,
+	   "{$slug}_jumbotron_bgc",
+	   array(
+		   'label'      => __( 'Цвет фона', RESUME_TEXTDOMAIN ),
+		   'section'    => "{$slug}_jumbotron",
+		   'settings'   => "{$slug}_jumbotron_bgc",
 	   )
    )
 );

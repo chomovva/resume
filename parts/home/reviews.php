@@ -30,6 +30,7 @@ if ( $page instanceof \WP_Post ) {
 	if ( empty( $description ) ) {
 		$description = $page->post_excerpt;
 	}
+	$morelink = get_permalink( $page );
 }
 
 
