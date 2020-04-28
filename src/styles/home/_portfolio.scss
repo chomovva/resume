@@ -11,8 +11,8 @@
 
 .portfolio {
 
-	background-color: lighten( $brand-primary, 30% );
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 
 	.controls {
 		display: flex;
@@ -23,13 +23,16 @@
 		margin-left: .5em
 	}
 
+	.slider .entry {
+		max-width: 300px;
+	}
+
 	.entry {
 		display: block;
 		color: #fff;
 		text-decoration: none;
 		position: relative;
 		margin: 1em;
-		max-width: 300px;
 		transition: opacity .2s;
 		&:hover {
 			color: #fff;
@@ -50,12 +53,24 @@
 	}
 
 	&__entry {
-		.wp-post-thumbnail {
+		.bg {
 			display: block;
 			width: 100%;
 			height: auto;
+			z-index: -1;
+		}
+		.wp-post-thumbnail {
+			position: absolute;
+			display: block;
+			width: 100%;
+			top: 0;
+			left: 0;
 			filter: grayscale( 60% );
-			transition: filter .2s;
+			transition: filter .2s, opacity .2s;
+			opacity: 1;
+		}
+		.wp-post-thumbnail[ src="#" ] {
+			opacity: 0;
 		}
 		.overlay {
 			position: absolute;
@@ -95,6 +110,9 @@
 			z-index: 1;
 			text-transform: lowercase;
 			transition: background-color .2s;
+			max-height: 2em;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 		.categories li {
 			display: inline;

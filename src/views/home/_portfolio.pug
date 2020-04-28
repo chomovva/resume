@@ -3,29 +3,18 @@
 	"Портфолио"
 
 
-mixin portfolio_entry( args )
-	a.portfolio__entry.entry( href="#" )
-		img.wp-post-thumbnail( src="#", data-lazy=args.thumbnail, alt=args.title )
-		.overlay
-			h3.title #{args.title}
-			ul.categories
-				li #{args.category}
-				li #{args.category}
-			p.excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam reprehenderit, tenetur libero quae maiores recusandae. Deserunt excepturi nemo aliquam repudiandae nulla explicabo assumenda minus earum animi. Impedit id, maiores fuga.
 
-
-
-section.section.portfolio#portfolio: .container
+section.section.portfolio.bg-primary#portfolio: .container
 	.row
 		.col-xs-12.col-sm-12.col-md: h2 Мои работы
 		.col-xs-12.col-sm-12.col-md-10: p Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	.slider
 		#portfolio-items
-			+portfolio_entry( { title: 'Абитуриент', category: 'Плагины', thumbnail: src.img+'portfolio/01.jpg' } )
-			+portfolio_entry( { title: 'Абитуриент', category: 'Темы', thumbnail: src.img+'portfolio/02.jpg' } )
-			+portfolio_entry( { title: 'ПГТУ', category: 'Сайт', thumbnail: src.img+'portfolio/03.jpg' } )
-			+portfolio_entry( { title: 'Контакты', category: 'Плагин', thumbnail: src.img+'portfolio/04.jpg' } )
-			+portfolio_entry( { title: 'DumDJ', category: 'Вёрстка', thumbnail: src.img+'portfolio/05.jpg' } )
+			+portfolio_entry( { lazyAttr: 'lazy', title: 'Абитуриент', category: 'Плагины', thumbnail: src.img+'portfolio/01.jpg' } )
+			+portfolio_entry( { lazyAttr: 'lazy', title: 'Абитуриент', category: 'Темы', thumbnail: src.img+'portfolio/02.jpg' } )
+			+portfolio_entry( { lazyAttr: 'lazy', title: 'ПГТУ', category: 'Сайт', thumbnail: src.img+'portfolio/03.jpg' } )
+			+portfolio_entry( { lazyAttr: 'lazy', title: 'Контакты', category: 'Плагин', thumbnail: src.img+'portfolio/04.jpg' } )
+			+portfolio_entry( { lazyAttr: 'lazy', title: 'DumDJ', category: 'Вёрстка', thumbnail: src.img+'portfolio/05.jpg' } )
 		.controls
 			button.slider-arrow.arrow-prev#portfolio-slider-prev: span.sr-only Предыдущий слайд
 			button.slider-arrow.arrow-next#portfolio-slider-next: span.sr-only Следующий слайд

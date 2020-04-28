@@ -7,18 +7,20 @@ namespace resume;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-
-$cat_id = get_translate_id( get_theme_setting( 'portfolio_cat_id' ), 'category' );
-
-
-$cat = get_category( $cat_id, OBJECT, 'raw' );
+global $post;
 
 
-if ( $cat && ! is_wp_error( $cat ) ) {
+$current_term_id = get_translate_id( get_theme_setting( 'portfolio_cat_id' ), 'category' );
+
+
+$current_term = get_category( $current_term_id, OBJECT, 'raw' );
+
+
+if ( $current_term && ! is_wp_error( $current_term ) ) {
 
 	$entries = get_posts( array(
 		'numberposts' => 5,
-		'category'    => $cat->term_id,
+		'category'    => $current_term->term_id,
 		'orderby'     => 'date',
 		'order'       => 'DESC',
 		'post_type'   => 'post',
@@ -28,11 +30,13 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 
 
 	if ( is_array( $entries ) && ! empty( $entries ) ) {
-
+		$lazy_attr = 'lazy';
+		$lazy_class = '';
 		ob_start();
-		foreach ( $entries as $entry ) {
-			setup_postdata( $entry );
-			include get_theme_file_path( 'views/home/portfolio-entry.php' );
+		foreach ( $entries as &$entry ) {
+			$post = $entry;
+			setup_postdata( $post );
+			include get_theme_file_path( 'views/entry-portfolio.php' );
 		}
 		wp_reset_postdata();
 		$slides = ob_get_contents();
@@ -52,7 +56,7 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 			wp_enqueue_script( 'slick' );
 			wp_enqueue_style( 'slick' );
 			?>
-				<section class="section portfolio" id="portfolio">
+				<section class="section portfolio bg-primary" id="portfolio">
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md">

@@ -1,0 +1,31 @@
+extend layout/_index
+
+
+mixin category_portfolio_entry( args )
+	.col-xs-12.col-sm-6
+		+portfolio_entry( args )
+
+block variables
+	- page.type = 'archive';
+	- page.title = 'Архив';
+
+block main
+	.container: .row
+		.col-xs-12.col-sm-12.col-md-8.col-lg-8
+			h1.title #{page.title}
+			p.lead #{page.excerpt}
+			include blocks/_breadcrumb
+			.row.portfolio
+				+category_portfolio_entry( { title: 'Абитуриент', category: 'Плагины', thumbnail: src.img+'portfolio/01.jpg' } )
+				+category_portfolio_entry( { title: 'Абитуриент', category: 'Темы', thumbnail: src.img+'portfolio/02.jpg' } )
+				+category_portfolio_entry( { title: 'ПГТУ', category: 'Сайт', thumbnail: src.img+'portfolio/03.jpg' } )
+				+category_portfolio_entry( { title: 'Контакты', category: 'Плагин', thumbnail: src.img+'portfolio/04.jpg' } )
+				+category_portfolio_entry( { title: 'DumDJ', category: 'Вёрстка', thumbnail: src.img+'portfolio/05.jpg' } )
+				+category_portfolio_entry( { title: 'Абитуриент', category: 'Плагины', thumbnail: src.img+'portfolio/01.jpg' } )
+				+category_portfolio_entry( { title: 'Абитуриент', category: 'Темы', thumbnail: src.img+'portfolio/02.jpg' } )
+				+category_portfolio_entry( { title: 'ПГТУ', category: 'Сайт', thumbnail: src.img+'portfolio/03.jpg' } )
+				+category_portfolio_entry( { title: 'Контакты', category: 'Плагин', thumbnail: src.img+'portfolio/04.jpg' } )
+				+category_portfolio_entry( { title: 'DumDJ', category: 'Вёрстка', thumbnail: src.img+'portfolio/05.jpg' } )
+			include blocks/_pagination
+		.col-xs-12.col-sm-12.col-md-4.col-lg-4
+			include asides/_column

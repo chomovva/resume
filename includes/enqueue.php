@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
  */
 function scripts() {
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'resume-main', RESUME_URL . 'scripts/main.min.js', array( 'jquery', 'slick', 'fancybox' ), RESUME_VERSION, true );
+	wp_enqueue_script( 'resume-main', RESUME_URL . 'scripts/main.min.js', array( 'jquery', 'slick', 'fancybox' ), filemtime( get_theme_file_path( 'styles/main.css' ) ), true );
 	wp_localize_script( 'resume-main', 'resumeTheme', array( 'toTopBtn' => 'Наверх' ) );
 	wp_enqueue_script( 'lazyload', RESUME_URL . 'scripts/lazyload.min.js', array( 'jquery' ), '1.7.6', true );
 	wp_add_inline_script( 'lazyload', 'jQuery( ".lazy" ).lazy();', 'after' );
@@ -58,8 +58,8 @@ add_action( 'wp_print_styles', 'resume\print_styles' );
  * @param string $media для каких устройств подключать
  */
 function styles() {
-	wp_enqueue_style( 'resume-main', RESUME_URL . 'styles/main.min.css', array(), RESUME_VERSION, 'all' );
-	wp_enqueue_style( 'resume-font', RESUME_URL . 'styles/fonts.min.css', array(), RESUME_VERSION, 'all' );
+	wp_enqueue_style( 'resume-main', RESUME_URL . 'styles/main.min.css', array(), filemtime( get_theme_file_path( 'styles/main.css' ) ), 'all' );
+	wp_enqueue_style( 'resume-font', RESUME_URL . 'styles/fonts.min.css', array(), filemtime( get_theme_file_path( 'styles/fonts.css' ) ), 'all' );
 	wp_enqueue_style( 'fancybox', RESUME_URL . 'styles/fancybox.min.css', array(), '3.3.5', 'all' );
 	wp_enqueue_style( 'slick', RESUME_URL . 'styles/slick.min.css', array(), '1.8.0', 'all' );
 	wp_enqueue_style( 'contact-form-7' );
@@ -106,6 +106,6 @@ add_action( 'wp_head', 'resume\ctitical_styles', 10, 0 );
  * Подключение скриптов административной части сайта
  */
 function admin_scripts() {
-	wp_enqueue_style( 'resume-admin', RESUME_URL . 'styles/admin.css', array(), RESUME_VERSION, 'all' );
+	wp_enqueue_style( 'resume-admin', RESUME_URL . 'styles/admin.css', array(), filemtime( get_theme_file_path( 'styles/admin.css' ) ), 'all' );
 }
 add_action( 'admin_enqueue_scripts', 'resume\admin_scripts', 10, 1 );

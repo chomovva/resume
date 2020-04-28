@@ -19,9 +19,9 @@ $wp_customize->add_section(
 
 
 $wp_customize->add_setting(
-    "{$slug}_portfolio_cat_id",
+    "{$slug}_portfolio_flag",
     array(
-        'default'           => apply_filters( 'get_default_setting', 'portfolio_cat_id' ),
+        'default'           => apply_filters( 'get_default_setting', 'portfolio_flag' ),
         'transport'         => 'reset',
         'sanitize_callback' => 'resume\sanitize_checkbox',
     )

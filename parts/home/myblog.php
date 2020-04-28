@@ -7,19 +7,21 @@ namespace resume;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-
-$cat_id = get_translate_id( get_theme_setting( 'blog_cat_id' ), 'category' );
-
-
-$cat = get_category( $cat_id, OBJECT, 'raw' );
+global $post;
 
 
+$current_term_id = get_translate_id( get_theme_setting( 'blog_cat_id' ), 'category' );
 
-if ( $cat && ! is_wp_error( $cat ) ) {
+
+$current_term = get_category( $current_term_id, OBJECT, 'raw' );
+
+
+
+if ( $current_term && ! is_wp_error( $current_term ) ) {
 
 	$entries = get_posts( array(
 		'numberposts' => get_theme_setting( 'myblog_numberposts' ),
-		'category'    => $cat->term_id,
+		'category'    => $current_term->term_id,
 		'orderby'     => 'date',
 		'order'       => 'DESC',
 		'post_type'   => 'post',
@@ -31,9 +33,11 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 
 		ob_start();
 
-		foreach ( $entries as $entry ) {
-			setup_postdata( $entry );
-			render_entry( $entry, 'myblog__entry', $cat_id );
+		foreach ( $entries as &$entry ) {
+			$post = $entry;
+			setup_postdata( $post );
+			$additional_classes = 'myblog__entry';
+			include get_theme_file_path( 'views/entry-default.php' );
 		}
 
 		wp_reset_postdata();
@@ -46,7 +50,7 @@ if ( $cat && ! is_wp_error( $cat ) ) {
 			$title = get_theme_setting( 'myblog_title' );
 			$description = get_theme_setting( 'myblog_description' );
 			$label = get_theme_setting( 'myblog_label' );
-			$morelink = get_category_link( $cat );
+			$morelink = get_category_link( $current_term );
 			include get_theme_file_path( 'views/home/section.php' );
 		}
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-13 17:46+0300\n"
-"PO-Revision-Date: 2020-04-13 17:46+0300\n"
+"POT-Creation-Date: 2020-04-28 18:47+0300\n"
+"PO-Revision-Date: 2020-04-28 18:48+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -51,11 +51,24 @@ msgstr "Отримайте код користувальницького пош�
 msgid "Открыть меню"
 msgstr "Відкрити меню"
 
-#: includes/archive-fields.php:20 includes/archive-fields.php:35
+#: includes/archive-fields.php:20 includes/archive-fields.php:61
+msgid "Шаблон вывода записей"
+msgstr "Шаблони публикації постів"
+
+#: includes/archive-fields.php:30 includes/archive-fields.php:66
+msgid "Стандартный"
+msgstr "Стандартний"
+
+#: includes/archive-fields.php:31 includes/archive-fields.php:67
+#: includes/default-settings.php:54 settings/home/portfolio.php:12
+msgid "Портфолио"
+msgstr "Портфоліо"
+
+#: includes/archive-fields.php:46 includes/archive-fields.php:80
 msgid "Скрыть дату"
 msgstr "Приховати дату"
 
-#: includes/archive-fields.php:25 includes/archive-fields.php:38
+#: includes/archive-fields.php:51 includes/archive-fields.php:83
 msgid "Скрывать дату публикации поста в записях этой категории"
 msgstr "Приховувати дату публікації поста в записах цієї категорії"
 
@@ -177,18 +190,15 @@ msgstr "Завантажити резюме"
 msgid "Чем я занимаюсь"
 msgstr "Чим я займаюсь"
 
-#: includes/default-settings.php:37 includes/template-functions.php:470
-#: parts/search.php:28 settings/home/services.php:100 views/home/way.php:23
+#: includes/default-settings.php:37 parts/search.php:28
+#: settings/home/services.php:100 views/entry-default.php:44
+#: views/home/way.php:23
 msgid "Подробней"
 msgstr "Детальніше"
 
 #: includes/default-settings.php:48
 msgid "Мои скилы"
 msgstr "Мої навички"
-
-#: includes/default-settings.php:54 settings/home/portfolio.php:12
-msgid "Портфолио"
-msgstr "Портфоліо"
 
 #: includes/default-settings.php:60 settings/home/reviews.php:12
 #: settings/lists/reviews.php:17
@@ -312,15 +322,15 @@ msgstr "Надіслати"
 msgid "Подробней о проекте"
 msgstr "Детальніше про проект"
 
-#: includes/shortcodes.php:215 parts/home/portfolio.php:73
+#: includes/shortcodes.php:217 parts/home/portfolio.php:77
 msgid "Предыдущий слайд"
 msgstr "Попередній слайд"
 
-#: includes/shortcodes.php:218 parts/home/portfolio.php:76
+#: includes/shortcodes.php:220 parts/home/portfolio.php:80
 msgid "Следующий слайд"
 msgstr "Наступний слайд"
 
-#: includes/shortcodes.php:222
+#: includes/shortcodes.php:224
 msgid "Смотреть все"
 msgstr "Дивитись все"
 

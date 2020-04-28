@@ -41,6 +41,23 @@ mixin entry( args )
 
 
 
+mixin portfolio_entry( args )
+	a.portfolio__entry.entry( href="#" )
+		svg.bg( viewBox="0 0 600 400" ).
+			<rect style="fill:#8686bf;fill-opacity:1;stroke-width:0.26458332;opacity:0.25" width="600" height="400" x="0" y="0" />
+		if ( 'lazy' == args.lazyAttr ) 
+			img.wp-post-thumbnail( src="#", data-lazy=args.thumbnail, alt=args.title )
+		else
+			img.wp-post-thumbnail.lazy( src="#", data-src=args.thumbnail, alt=args.title )
+		.overlay
+			h3.title #{args.title}
+			ul.categories
+				li #{args.category}
+				li #{args.category}
+			p.excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam reprehenderit, tenetur libero quae maiores recusandae. Deserunt excepturi nemo aliquam repudiandae nulla explicabo assumenda minus earum animi. Impedit id, maiores fuga.
+
+
+
 mixin widget( args )
 	.widget
 		h3.widget__title.title #{args.title}

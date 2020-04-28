@@ -20,7 +20,7 @@
 	padding: 0.25em 1.5em;
 	color: #fff;
 	text-transform: uppercase;
-	border-radius: 5px;
+	border-radius: $border-radius;
 	&:hover { text-decoration: none; }
 
 }

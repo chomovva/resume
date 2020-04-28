@@ -18,7 +18,7 @@ jQuery( document ).ready( function () {
 						class: 'expand-button',
 					} ).click( function () {
 							jQuery.fancybox.open( {
-								src : jQuery( '<div>' ).append( $inner ),
+								src : jQuery( '<div>', { style: 'max-width: 640px;' } ).append( $inner ),
 								type : 'html',
 								slideClass : 'fancybox-top'
 							} );

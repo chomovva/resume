@@ -55,6 +55,39 @@ form {
 		resize: vertical;
 	}
 
+	input[ type="checkbox" ],
+	input[ type="radio" ] {
+		display: inline-block;
+		width: 1.5em;
+		height: 1.5em;
+		border: 1px solid #b4b9be;
+		background-color: #fff;
+		cursor: pointer;
+		outline: 0;
+		padding: 0 !important;
+		margin-right: .5em;
+		vertical-align: middle;
+		appearance: none;
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+		background-position: center center;
+		background-size: .7em .7em;
+		background-repeat: no-repeat;
+		min-height: auto !important;
+	}
+
+
+	input[type="checkbox"]:checked {
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNDQyLjUzMyA0NDIuNTMzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NDIuNTMzIDQ0Mi41MzM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48Zz4KCTxwYXRoIGQ9Ik00MzQuNTM5LDk4LjQ5OWwtMzguODI4LTM4LjgyOGMtNS4zMjQtNS4zMjgtMTEuNzk5LTcuOTkzLTE5LjQxLTcuOTkzYy03LjYxOCwwLTE0LjA5MywyLjY2NS0xOS40MTcsNy45OTNMMTY5LjU5LDI0Ny4yNDggICBsLTgzLjkzOS04NC4yMjVjLTUuMzMtNS4zMy0xMS44MDEtNy45OTItMTkuNDEyLTcuOTkyYy03LjYxNiwwLTE0LjA4NywyLjY2Mi0xOS40MTcsNy45OTJMNy45OTQsMjAxLjg1MiAgIEMyLjY2NCwyMDcuMTgxLDAsMjEzLjY1NCwwLDIyMS4yNjljMCw3LjYwOSwyLjY2NCwxNC4wODgsNy45OTQsMTkuNDE2bDEwMy4zNTEsMTAzLjM0OWwzOC44MzEsMzguODI4ICAgYzUuMzI3LDUuMzMyLDExLjgsNy45OTQsMTkuNDE0LDcuOTk0YzcuNjExLDAsMTQuMDg0LTIuNjY5LDE5LjQxNC03Ljk5NGwzOC44My0zOC44MjhMNDM0LjUzOSwxMzcuMzMgICBjNS4zMjUtNS4zMyw3Ljk5NC0xMS44MDIsNy45OTQtMTkuNDE3QzQ0Mi41MzcsMTEwLjMwMiw0MzkuODY0LDEwMy44MjksNDM0LjUzOSw5OC40OTl6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBmaWxsPSIjMzU5OERCIi8+CjwvZz48L2c+IDwvc3ZnPgo=);
+	}
+
+	input[ type="radio" ] {
+		border-radius: 50%;
+	}
+
+	input[ type="radio" ]:checked {
+		background-image: radial-gradient( circle, $brand-primary 50%, #fff 50% );
+	}
+
 
 	[ type="submit" ] {
 		@extend %button;

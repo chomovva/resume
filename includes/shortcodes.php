@@ -170,7 +170,7 @@ function get_reviews_list( $atts ) {
 	$items = get_theme_setting( 'reviews' );
 	if ( is_array( $items ) && ! empty( $items ) ) {
 		ob_start();
-		for ( $i = 0;  $i < get_theme_setting( 'reviews_count' );  $i++ ) {
+		for ( $i = get_theme_setting( 'reviews_count' ) - 1;  $i >= 0;  $i-- ) {
 			if ( isset( $items[ $i ] ) && is_array( $items[ $i ] ) ) {
 				$items[ $i ] = parse_only_allowed_args( array(
 					'author'  => '',
@@ -192,8 +192,10 @@ function get_reviews_list( $atts ) {
 						$items[ $i ][ 'link' ] = pll__( $items[ $i ][ 'link' ] );
 						$items[ $i ][ 'label' ] = pll__( $items[ $i ][ 'label' ] );
 					}
-					extract( $items[ $i ] );
-					include get_theme_file_path( 'views/items/review.php' );
+					if ( ! empty( trim( $items[ $i ][ 'author' ] ) ) && ! empty( trim( $items[ $i ][ 'content' ] ) ) ) {
+						extract( $items[ $i ] );
+						include get_theme_file_path( 'views/review.php' );
+					}
 				}
 			}
 		}

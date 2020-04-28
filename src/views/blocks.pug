@@ -1,0 +1,17 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'page';
+	- page.title = 'Примеры блоков';
+
+
+block main
+	.container: .content
+		form
+			p: label
+				input( type="checkbox" )
+				span чекбокс
+			p: label
+				input( type="radio" )
+				span радиокнопка
