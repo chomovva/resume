@@ -71,3 +71,9 @@ img.alignright, a.alignright img { margin: 5px 0px 10px 10px; }
 .block-with-shadow {
   box-shadow: 0 .5em 1em rgba( 0, 0, 0, .5 );
 }
+
+
+.figure-with-shadow img {
+  @extend .display-inline;
+  @extend .block-with-shadow;
+}
