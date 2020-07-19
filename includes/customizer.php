@@ -24,7 +24,8 @@ function customize_register( $wp_customize ) {
 		'aboutme',      // обо мне
 		'services',     // чем я занимаюсь
 		'advantages',   // мои преимущества
-		'way',          // опыт работы и образование 
+		'way',          // опыт работы и образование
+		// 'skills',       // скилы
 		'portfolio',    // моё портфолио
 		'reviews',      // отзывы
 		'myblog',       // блог
