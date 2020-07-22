@@ -42,7 +42,7 @@ $wp_customize->add_control(
 
 
 
-for ( $i = 0; $i < apply_filters( 'get_default_setting', 'skills_count' ); $i++ ) {
+for ( $i = 0; $i < resume\get_theme_setting( 'skills_count' ); $i++ ) {
 	$wp_customize->add_setting(
 		RESUME_SLUG . "_skills[{$i}][label]",
 		array(

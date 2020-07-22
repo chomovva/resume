@@ -80,6 +80,8 @@ function get_default_setting( $key ) {
 
 		// скилы
 		'skills_count'           => 5,
+		'skills_title'           => __( 'Мои скилы', RESUME_TEXTDOMAIN ),
+		'skills_page_id'         => '',
 
 		// форма поиска гугл
 		'google_cse_flag'        => false,

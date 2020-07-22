@@ -31,7 +31,6 @@ function get_custom_logo_img() {
 }
 
 
-
 function sanitize_checkbox( $checked ) {
   return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 $wp_customize->add_section(
 	"{$slug}_skills",
 	array(
-		'title'            => __( 'Обо мне', RESUME_TEXTDOMAIN ),
+		'title'            => __( 'Скилы и достижения', RESUME_TEXTDOMAIN ),
 		'priority'         => 10,
 		'description'      => __( 'Секция главной страницы. Якорь #skills', RESUME_TEXTDOMAIN ),
 		'panel'            => "{$slug}_home",
@@ -70,24 +70,5 @@ $wp_customize->add_control(
 		'section'           => "{$slug}_skills",
 		'label'             => __( 'Заголовок', RESUME_TEXTDOMAIN ),
 		'type'              => 'text',
-	)
-); /**/
-
-
-
-$wp_customize->add_setting(
-	"{$slug}_skills_more_label",
-	array(
-		'default'           => apply_filters( 'get_default_setting', 'skills_more_label' ),
-		'transport'         => 'reset',
-		'sanitize_callback' => 'sanitize_textarea_field',
-	)
-);
-$wp_customize->add_control(
-	"{$slug}_skills_more_label",
-	array(
-		'section'           => "{$slug}_skills",
-		'label'             => __( 'Текст кнопки', RESUME_TEXTDOMAIN ),
-		'type'              => 'textarea',
 	)
 ); /**/

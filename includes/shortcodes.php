@@ -237,3 +237,57 @@ function get_reviews_list( $atts ) {
 }
 
 add_shortcode( 'the_reviews_list', 'resume\get_reviews_list' );
+
+
+
+/**
+ * Возвращает список сколов
+ * @return    string    html-код
+ */
+function get_skills_list() {
+	$html = '';
+	$items = get_theme_setting( 'skills' );
+	ob_start();
+	for ( $i = 0; $i < get_theme_setting( 'skills_count' ); $i++ ) {
+		if ( isset( $items[ $i ] ) && is_array( $items[ $i ] ) && array_key_exists( 'label', $items[ $i ] ) && array_key_exists( 'value', $items[ $i ] ) ) {
+			extract( $items[ $i ] );
+			if ( function_exists( 'pll__' ) ) {
+				$label = pll__( $label );
+				$value = pll__( $value );
+			}
+			include get_theme_file_path( 'views/skill.php' );
+		}
+	}
+	$html = ob_get_contents();
+	ob_end_clean();
+	return ( empty( $html ) ) ? '' : '<ul class="skills__list list">' . $html . '</ul>';
+}
+
+add_shortcode( 'the_skills_list', 'resume\get_skills_list' );
+
+
+
+/**
+ * Формирует html-код с достижениями (опытом) в разработке
+ * @return    string    html-код
+ */
+function get_experience_list() {
+	$html = '';
+	$items = get_theme_setting( 'experience' );
+	ob_start();
+	for ( $i = 0; $i < 4; $i++ ) {
+		if ( isset( $items[ $i ] ) && is_array( $items[ $i ] ) && array_key_exists( 'label', $items[ $i ] ) && array_key_exists( 'value', $items[ $i ] ) ) {
+			extract( $items[ $i ] );
+			if ( function_exists( 'pll__' ) ) {
+				$label = pll__( $label );
+				$value = pll__( $value );
+			}
+			include get_theme_file_path( 'views/experience-listitem.php' );
+		}
+	}
+	$html = ob_get_contents();
+	ob_end_clean();
+	return ( empty( $html ) ) ? '' : '<div class="row center-xs" role="list">' . $html . '</div>';
+}
+
+add_shortcode( 'the_experience_list', 'resume\get_experience_list' );

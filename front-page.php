@@ -12,6 +12,7 @@ foreach ( apply_filters( 'resume_front_page_sections', array(
     'aboutme',
     'services',
     'way',
+    'skills',
     'advantages',
     'portfolio',
     'reviews',
