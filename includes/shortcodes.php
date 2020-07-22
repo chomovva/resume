@@ -20,11 +20,12 @@ function the_resume_links( $atts ) {
 		$contacts = get_theme_mod( RESUME_SLUG . "_{$atts[ 'type' ]}", array() );
 		if ( ! empty( $contacts ) ) {
 			$result[] = '<ul>';
-			foreach ( $contacts as $key => $value ) {
+			foreach ( $contacts as $key => &$value ) {
 				$result[] = sprintf(
-					'<li>%1$s: <a href="%2$s">%2$s</a></li>',
+					'<li>%1$s: <a href="%2$s">%3$s</a></li>',
 					$key,
-					$value
+					$value,
+					preg_replace( '/^(tel:|mailto:|http:\/\/|https:\/\/)/', '', mb_strtolower( trim( $value ) ) )
 				);
 			}
 			$result[] = '</ul>';

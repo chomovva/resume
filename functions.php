@@ -20,30 +20,29 @@ get_template_part( 'includes/template-functions' );
 get_template_part( 'includes/enqueue' );
 get_template_part( 'includes/shortcodes' );
 get_template_part( 'includes/gutenberg' );
-
+get_template_part( 'includes/brand' );
 
 
 if ( is_admin() ) {
 	get_template_part( 'includes/archive-fields' );
-	get_template_part( 'includes/brand' );
 	get_template_part( 'includes/custom-columns' );
 }
 
 
-
+/**
+ * Регистрация переводов текстовых настроек темы
+ */
 if ( function_exists( 'pll_register_string' ) ) {
 	include get_theme_file_path( 'includes/register-strings.php' );
 }
 
 
-
-
+/**
+ * Регистрация настроек темы
+ */
 if ( is_customize_preview() ) {
 	include get_theme_file_path( 'includes/customizer.php' );
 }
-
-
-
 
 
 function resume_theme_supports() {
@@ -56,37 +55,36 @@ function resume_theme_supports() {
 	add_post_type_support( 'page', 'excerpt' );
 	add_image_size( 'thumbnail_medium', 300, 200, true );
 }
+
 add_action( 'after_setup_theme', 'resume_theme_supports' );
 
 
-
-
-
-
-
+/**
+ * Загрузка переводов темы
+ */
 function resume_load_textdomain() {
 	load_theme_textdomain( RESUME_TEXTDOMAIN, RESUME_DIR . 'languages/' );
 }
+
 add_action( 'after_setup_theme', 'resume_load_textdomain' );
 
 
-
-
-
-
+/**
+ * Регистрация меню
+ */
 function resume_register_nav_menus() {
 	register_nav_menus( array(
 		'main'      => __( 'Главное меню', RESUME_TEXTDOMAIN ),
 		'error404'  => __( 'Меню страницы 404', RESUME_TEXTDOMAIN ),
 	) );
 }
+
 add_action( 'after_setup_theme', 'resume_register_nav_menus' );
 
 
-
-
-
-
+/**
+ * Регистрация сайдбаров (колонок)
+ */
 function resume_register_sidebars() {
 	register_sidebar( array(
 		'name'             => __( 'Сайдбар подвала', RESUME_TEXTDOMAIN ),
@@ -117,10 +115,8 @@ function resume_register_sidebars() {
 		) );
 	}
 }
+
 add_action( 'widgets_init', 'resume_register_sidebars' );
-
-
-
 
 
 /**
@@ -134,10 +130,8 @@ function resume_single_result(){
 		die;
 	}  
 }
+
 add_action( 'template_redirect', 'resume_single_result' );
-
-
-
 
 
 /**
@@ -149,10 +143,6 @@ function resume_ajax_portfolio_load_posts() {
 }
 add_action( 'wp_ajax_portfolio_pagination', 'resume_ajax_portfolio_load_posts' );
 add_action( 'wp_ajax_nopriv_portfolio_pagination', 'resume_ajax_portfolio_load_posts' );
-
-
-
-
 
 
 /**
@@ -189,6 +179,7 @@ function resume_add_content_lazyload_images( $content ) {
 	}
 	return implode( "", $result );
 }
+
 add_filter( 'the_content', 'resume_add_content_lazyload_images', 10, 1 );
 
 
@@ -250,4 +241,5 @@ function resume_replace_default_column() {
 		}, 5, 1 );
 	}
 }
+
 add_action( 'wp', 'resume_replace_default_column' );
